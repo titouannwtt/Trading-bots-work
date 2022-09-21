@@ -46,7 +46,7 @@ from cBot_perp_ftx import cBot_perp_ftx
 # dans le dossier ./dependencies/
 try :
     if len(sys.argv) == 2:
-        folder_name = str(sys.argv[1]).split("/")[-1]
+        folder_name = str(sys.argv[1]).split("/")[0]
         sys.path.append(sys.argv[1])
         path = os.path.dirname(os.path.abspath(__file__)) + "/" + folder_name
     elif len(sys.argv) == 1 :
@@ -86,6 +86,13 @@ warnings.simplefilter("ignore")
 # CONFIGURATIONS ET DES INDICATEURS
 # =====================================
 
+try :
+    with open(path+'credentials.json') as credentials:
+        creds = json.load(credentials)
+except Exception as err :
+    print(f"Impossible de récupérer les credentials : {err}")
+    exit(1)
+
 # On récupère le fichier contenant les configurations (par défaut config-bot.cfg)
 config = configparser.ConfigParser()
 config.read(path + "config-bot.cfg")
@@ -93,7 +100,7 @@ config.read(path + "config-bot.cfg")
 try:
     botname = str(config["CONFIGS"]["botname"])
 except KeyError:
-    botname = str(config["FTX.API"]["subAccountName"])
+    botname = creds['subAccountName']
 
 print(
     f"========================\n{botname} v{version} - " + str(datetime.datetime.now())
@@ -120,22 +127,86 @@ if str(config["CONFIGS"]["debug"]) == "false":
 else:
     debug = True
 
+soldeToSaveInvestisment = float(config["STRATEGIE"]["soldeToSaveInvestisment"])
+totalInvestment = float(config["STRATEGIE"]["totalInvestment"])
+
+stopTheBotIfSoldeDownBelow = float(config["STRATEGIE"]["stopTheBotIfSoldeDownBelow"])
+
 # =========================
 #  AUTHENTIFICATION PART
 # =========================
 
 client = ftx.FtxClient(
-    api_key=str(config["FTX.API"]["apiKey"]),
-    api_secret=str(config["FTX.API"]["secret"]),
-    subaccount_name=str(config["FTX.API"]["subAccountName"]),
+    api_key=str(creds["apiKey"]),
+    api_secret=str(creds["secret"]),
+    subaccount_name=str(creds["subAccountName"]),
 )
 # Grâce à la librairie cBot_perp_ftx créée par CryptoRobotsFR, on instancie une connexion avec l'API FTX sur notre sous-compte associé au bot.
 # Grâce à cette connexion on sera par la suite en mesure de faire des appels à l'API pour récupérer des données, et envoyer des ordres à l'exchange.
 ftx = cBot_perp_ftx(
-    apiKey=str(config["FTX.API"]["apiKey"]),
-    secret=str(config["FTX.API"]["secret"]),
-    subAccountName=str(config["FTX.API"]["subAccountName"]),
+    apiKey=str(creds["apiKey"]),
+    secret=str(creds["secret"]),
+    subAccountName=str(creds["subAccountName"]),
 )
+
+# Cette fonction permet d'obtenir le nombre d'USD disponible sur ce sous-compte
+def getFreeUSDBalance():
+    jsonBalance = client.get_balances()
+    if jsonBalance == []:
+        return 0
+    pandaBalance = pd.DataFrame(jsonBalance)
+    pandaBalance.drop(
+        pandaBalance.loc[pandaBalance["coin"] != "USD"].index, inplace=True
+    )
+    return float(pandaBalance["free"].tolist()[0])
+
+
+def changeSaveInvestissement(statement) :
+    global config
+    if 0==(statement != "true" or statement != "false") :
+        print("Les arguments pour la fonction changeSaveInvestissement() ne peuvent que être 'true' ou 'false'.")
+        raise WrongArgumentException
+    with open(path + "data/saveInvestissementState.dat", 'w') as configfile:
+        configfile.write(statement)
+
+
+usdAmount=ftx.get_balance_of_one_coin("USD")
+
+def getInitialSoldeStatement() :
+    global soldeToSaveInvestisment
+    global usdAmount
+    try :
+        with open(path + "data/saveInvestissementState.dat", 'r') as configfile:
+            if configfile.read()=="true" :
+                saveInvestisment = 'true'
+                return "true"
+            else :
+                if usdAmount > soldeToSaveInvestisment :
+                    freeUSD=usdAmount-totalInvestment
+                    print(f"Votre solde a dépassé {soldeToSaveInvestisment}$, on sauvegarde le solde initial et on utilise plus que {freeUSD}$ pour conserver les {totalInvestment}$ initiaux")
+                    saveInvestisment = "true"
+                    changeSaveInvestissement("true")
+                    return "true"
+                else :
+                    changeSaveInvestissement("false")
+                    return "false"
+    except :
+        if usdAmount > soldeToSaveInvestisment :
+            freeUSD=usdAmount-totalInvestment
+            print(f"Votre solde a dépassé {soldeToSaveInvestisment}$, on sauvegarde le solde initial et on utilise plus que {freeUSD}$ pour conserver les {totalInvestment}$ initiaux")
+            saveInvestisment = "true"
+            changeSaveInvestissement("true")
+            return "true"
+        else :
+            changeSaveInvestissement("false")
+            return "false"
+        
+
+saveInvestisment = getInitialSoldeStatement()
+if saveInvestisment=="false" :
+    print("Vous ne sauvegardez pas encore votre investissement initial.")
+if saveInvestisment=="true" :
+    print("Vous sauvegardez votre investissement initial.")
 
 # ================================
 #      CONFIGS PAR DEFAUT
@@ -145,8 +216,14 @@ ftx = cBot_perp_ftx(
 defaultLeverage = int(config["STRATEGIE"]["defaultLeverage"])
 leverage = defaultLeverage
 
+
+useFixAmountOfUSD = str(config["STRATEGIE"]["useFixAmountOfUSD"])
+
 # Pourcentage d'usd qui sera alloué au bot
 usdAllocated = float(config["STRATEGIE"]["usdAllocated"])
+
+# Quantité d'USD qui sera alloué si useFixAmountOfUSD est sur "true"
+fixAmount = float(config["STRATEGIE"]["fixAmount"])
 
 
 useLimitOrderToOpen = str(config["STRATEGIE"]["useLimitOrderToOpen"])
@@ -295,18 +372,6 @@ def check():
     except Exception as err:
         print(f"Erreur survenue lors du check : {err}")
         pass
-
-
-# Cette fonction permet d'obtenir le nombre d'USD disponible sur ce sous-compte
-def getFreeUSDBalance():
-    jsonBalance = client.get_balances()
-    if jsonBalance == []:
-        return 0
-    pandaBalance = pd.DataFrame(jsonBalance)
-    pandaBalance.drop(
-        pandaBalance.loc[pandaBalance["coin"] != "USD"].index, inplace=True
-    )
-    return float(pandaBalance["free"].tolist()[0])
 
 
 # Cette fonction permet d'obtenir le prix actuel d'une crypto sur FTX
@@ -467,16 +532,21 @@ if noUse != "":
         f"Les cryptos qu'on aurait dû utiliser mais qui appartiennent aux cryptos à ne pas utiliser d'après les configs sont : {noUse}"
     )
 
-# On récupère les paires présentent dans des positions déja ouvertes pour les ajouter à la liste des cryptos que le bot va utiliser pour être en mesure de les vendre même si elles n'étaient pas dans la liste initialement.
-cointrades = ftx.get_open_position()
-for cointrade in cointrades:
-    if cointrade.get("symbol") not in perpListBase:
-        perpListBase.append(cointrade.get("symbol"))
-        if debug == True:
-            print(
-                cointrade.get("symbol"),
-                "n'aurait pas dû être utilisé mais a été ajouté à la liste car une position est en cours avec cette paire.",
-            )
+try :
+    # On récupère les paires présentent dans des positions déja ouvertes pour les ajouter à la liste des cryptos que le bot va utiliser pour être en mesure de les vendre même si elles n'étaient pas dans la liste initialement.
+    cointrades = ftx.get_open_position()
+    for cointrade in cointrades:
+        if cointrade.get("symbol") not in perpListBase:
+            perpListBase.append(cointrade.get("symbol"))
+            if debug == True:
+                print(
+                    cointrade.get("symbol"),
+                    "n'aurait pas dû être utilisé mais a été ajouté à la liste car une position est en cours avec cette paire.",
+                )
+except TypeError as err :
+    if 'Not logged in: Invalid API key' in str(err) :
+        print("ERROR : Connexion impossible à l'API FTX, veuillez vérifier vos clés API et votre subaccount dans credentials.json")
+    exit(300)
 
 # On créer 2 listes, une contenant les positions actuellement ouvertes en long et une contenant les positions actuellement ouvertes en short
 pairs_long_ouvertes = []
@@ -760,33 +830,33 @@ def placeOrder(order, perpSymbol, quantityMax, price, leverage, position):
                                 )
                         except Exception as err:
                             print(
-                                f"Même en baissant la quantité initiale de 30% : une erreur est survenue lors de l'ouverture d'une position LONG de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité (soit {usdAmount/maxOpenPosition*usdAllocated} au total)."
+                                f"Même en baissant la quantité initiale de 30% : une erreur est survenue lors de l'ouverture d'une position LONG de {quantityMax} {perpSymbol}"
                             )
                             print("Détails :", err)
                             telegram_send.send(
                                 messages=[
-                                    f"{botname} : Une erreur est survenue lors de l'ouverture d'une position LONG de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité (soit {usdAmount/maxOpenPosition*usdAllocated} au total).\n\nDétails : {err}"
+                                    f"{botname} : Une erreur est survenue lors de l'ouverture d'une position LONG de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité.\n\nDétails : {err}"
                                 ]
                             )
                     else:
                         if "Size too small" in str(err):
                             print(
-                                f"Vous n'avez pas suffisamment d'USD pour l'ouverture d'une position LONG de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité (soit {usdAmount/maxOpenPosition*usdAllocated} au total)."
+                                f"Vous n'avez pas suffisamment d'USD pour l'ouverture d'une position LONG de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité."
                             )
                             print("Détails :", err)
                             telegram_send.send(
                                 messages=[
-                                    f"{botname} : Vous n'avez pas suffisamment d'USD pour l'ouverture d'une position LONG de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité (soit {usdAmount/maxOpenPosition*usdAllocated} au total).\n\nDétails : {err}"
+                                    f"{botname} : Vous n'avez pas suffisamment d'USD pour l'ouverture d'une position LONG de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité.\n\nDétails : {err}"
                                 ]
                             )
                         else:
                             print(
-                                f"Une erreur est survenue lors de l'ouverture d'une position LONG de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité (soit {usdAmount/maxOpenPosition*usdAllocated} au total)."
+                                f"Une erreur est survenue lors de l'ouverture d'une position LONG de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité."
                             )
                             print("Détails :", err)
                             telegram_send.send(
                                 messages=[
-                                    f"{botname} : Une erreur est survenue lors de l'ouverture d'une position LONG de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité (soit {usdAmount/maxOpenPosition*usdAllocated} au total).\n\nDétails : {err}"
+                                    f"{botname} : Une erreur est survenue lors de l'ouverture d'une position LONG de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité.\n\nDétails : {err}"
                                 ]
                             )
             else:
@@ -852,23 +922,23 @@ def placeOrder(order, perpSymbol, quantityMax, price, leverage, position):
                                 )
                         except Exception as err:
                             print(
-                                f"Même en baissant la quantité initiale de 30% : une erreur est survenue lors de l'ouverture d'une position LONG de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité (soit {usdAmount/maxOpenPosition*usdAllocated} au total)."
+                                f"Même en baissant la quantité initiale de 30% : une erreur est survenue lors de l'ouverture d'une position LONG de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité."
                             )
                             print("Détails :", err)
                             telegram_send.send(
                                 messages=[
-                                    f"{botname} : Une erreur est survenue lors du placement d'un ordre limite pour ouvrir une position LONG de {quantityMax} {perpSymbol}, au prix de {price} $ unité (soit {usdAmount/maxOpenPosition*usdAllocated} au total).\n\nDétails : {err}"
+                                    f"{botname} : Une erreur est survenue lors du placement d'un ordre limite pour ouvrir une position LONG de {quantityMax} {perpSymbol}, au prix de {price} $ unité.\n\nDétails : {err}"
                                 ]
                             )
                     else:
                         if "Size too small" in str(err):
                             print(
-                                f"Vous n'avez pas suffisamment d'USD pour placer un ordre limite qui ouvrira une position long de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité (soit {usdAmount/maxOpenPosition*usdAllocated} au total)."
+                                f"Vous n'avez pas suffisamment d'USD pour placer un ordre limite qui ouvrira une position long de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité."
                             )
                             print("Détails :", err)
                         else:
                             print(
-                                f"Une erreur est survenue lors du placement d'un ordre limite pour ouvrir une position LONG de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité (soit {usdAmount/maxOpenPosition*usdAllocated} au total)."
+                                f"Une erreur est survenue lors du placement d'un ordre limite pour ouvrir une position LONG de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité."
                             )
                             print("Détails :", err)
         # Si on souhaite fermer une position LONG
@@ -1049,22 +1119,22 @@ def placeOrder(order, perpSymbol, quantityMax, price, leverage, position):
                                 )
                         except:
                             print(
-                                f"Même en baissant la quantité initiale de 10% : une erreur est survenue lors de l'achat de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité (soit {usdAmount/maxOpenPosition*usdAllocated} au total)."
+                                f"Même en baissant la quantité initiale de 10% : une erreur est survenue lors de l'achat de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité."
                             )
                             print("Détails :", err)
                             telegram_send.send(
                                 messages=[
-                                    f"{botname} : Une erreur est survenue lors de l'achat de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité (soit {usdAmount/maxOpenPosition*usdAllocated} au total).\n\nDétails : {err}"
+                                    f"{botname} : Une erreur est survenue lors de l'achat de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité.\n\nDétails : {err}"
                                 ]
                             )
                     else:
                         print(
-                            f"Une erreur est survenue lors de l'achat de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité (soit {usdAmount/maxOpenPosition*usdAllocated} au total)."
+                            f"Une erreur est survenue lors de l'achat de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité."
                         )
                         print("Détails :", err)
                         telegram_send.send(
                             messages=[
-                                f"{botname} : Une erreur est survenue lors de l'achat de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité (soit {usdAmount/maxOpenPosition*usdAllocated} au total).\n\nDétails : {err}"
+                                f"{botname} : Une erreur est survenue lors de l'achat de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité.\n\nDétails : {err}"
                             ]
                         )
             else:
@@ -1132,22 +1202,22 @@ def placeOrder(order, perpSymbol, quantityMax, price, leverage, position):
                                 )
                         except:
                             print(
-                                f"Même en baissant la quantité initiale de 10% : une erreur est survenue lors de l'achat de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité (soit {usdAmount/maxOpenPosition*usdAllocated} au total)."
+                                f"Même en baissant la quantité initiale de 10% : une erreur est survenue lors de l'achat de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité."
                             )
                             print("Détails :", err)
                             telegram_send.send(
                                 messages=[
-                                    f"{botname} : Une erreur est survenue lors de l'achat de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité (soit {usdAmount/maxOpenPosition*usdAllocated} au total).\n\nDétails : {err}"
+                                    f"{botname} : Une erreur est survenue lors de l'achat de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité.\n\nDétails : {err}"
                                 ]
                             )
                     else:
                         print(
-                            f"Une erreur est survenue lors de l'achat de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité (soit {usdAmount/maxOpenPosition*usdAllocated} au total)."
+                            f"Une erreur est survenue lors de l'achat de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité."
                         )
                         print("Détails :", err)
                         telegram_send.send(
                             messages=[
-                                f"{botname} : Une erreur est survenue lors de l'achat de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité (soit {usdAmount/maxOpenPosition*usdAllocated} au total).\n\nDétails : {err}"
+                                f"{botname} : Une erreur est survenue lors de l'achat de {quantityMax} {perpSymbol}, au prix de {getCurrentPrice(perpSymbol)} $ unité.\n\nDétails : {err}"
                             ]
                         )
         # Si on souhaite fermer une position SHORT
@@ -1265,6 +1335,52 @@ def placeOrder(order, perpSymbol, quantityMax, price, leverage, position):
                 print("Détails :", err)
                 # telegram_send.send(messages=[f"{botname} : Une erreur est survenue lors de la mise en place d'un stoploss de {getQuantite(perpSymbol)} {perpSymbol}, à un prix de {price} $ unité\nDétails : {err}"])
 
+
+# ==================================================
+#          EXECUTION DE SECURITE DU BOT :
+# ==================================================
+
+def close_all_positions():
+    global useLimitOrderToClose
+    global perpList
+    global pairs_long_ouvertes
+    global pairs_short_ouverte
+    useLimitOrderToClose='false'
+    i=0
+    for perpSymbol in perpList :
+        if perpSymbol in pairs_long_ouvertes or perpSymbol in pairs_short_ouvertes :
+            i=i+1
+            if perpSymbol in pairs_long_ouvertes :
+                time.sleep(1)
+                quantityMaxsell = getQuantite(perpSymbol)
+                if quantityMaxsell is None:
+                    quantityMaxsell = 10000000
+                # Créer une position de vente sur le marché pour cette crypto
+                price = ftx.get_bid_ask_price(symbol=perpSymbol)["ask"]
+                placeOrder(
+                    "close", perpSymbol, quantityMaxsell, price, leverage, position="LONG"
+                )
+            if perpSymbol in pairs_short_ouvertes :
+                time.sleep(1)
+                quantityMaxsell = getQuantite(perpSymbol)
+                if quantityMaxsell is None:
+                    quantityMaxsell = 10000000
+                # Créer une position de vente sur le marché pour cette crypto
+                price = ftx.get_bid_ask_price(symbol=perpSymbol)["ask"]
+                placeOrder(
+                    "close", perpSymbol, quantityMaxsell, price, leverage, position="SHORT"
+                )
+    if i==0 :
+        print("Aucune position n'est ouverte : aucune position à fermer.")
+
+if usdAmount<=stopTheBotIfSoldeDownBelow :
+    print(f"Solde inférieur à {stopTheBotIfSoldeDownBelow}$ : perte maximum tolérée atteinte.")
+    #On défini useLimitOrderToClose sur false pour que les positions se ferment automatiquement.
+    close_all_positions()
+    print(f"DANGER : Votre bot est descendu sous {stopTheBotIfSoldeDownBelow}$, toutes les positions potentiellement ouvertes ont été fermées et on a stoppé l'execution.")
+    print(f"Pour relancer le bot, diminuez la valeur de 'stopTheBotIfSoldeDownBelow' à un montant inférieur à votre solde ou ajouter de l'USD sur votre compte.")
+    exit(0)
+    
 
 # ==================================================
 #          EXECUTION PRINCIPALE DU BOT :
@@ -1411,6 +1527,7 @@ for perpSymbol in perpList:
 #Cela peut arriver si vous changez le nombre maximum de positions dans les configs durant une période d'utilisation du bot.
 if openPositions > maxOpenPosition :
     print(f"Le nombre positions ouvertes dépasse le nombre de positions maximum autorisé ({openPositions}/{maxOpenPosition}), régulation des positions...")
+    i=openPositions
     for perpSymbol in perpList.reverse():
         if perpSymbol in pairs_long_ouvertes or perpSymbol in pairs_short_ouvertes :
             if perpSymbol in pairs_long_ouvertes :
@@ -1423,6 +1540,7 @@ if openPositions > maxOpenPosition :
                 placeOrder(
                     "close", perpSymbol, quantityMaxsell, price, leverage, position="LONG"
                 )
+                i=i-1
             if perpSymbol in pairs_short_ouvertes :
                 time.sleep(1)
                 quantityMaxsell = getQuantite(perpSymbol)
@@ -1433,9 +1551,10 @@ if openPositions > maxOpenPosition :
                 placeOrder(
                     "close", perpSymbol, quantityMaxsell, price, leverage, position="SHORT"
                 )
-            if openPositions <= maxOpenPosition :
+                i=i-1
+            if i <= maxOpenPosition :
                 print(f"Le nombre positions ouvertes par rapport au nombre de positions maximum a été régulé ({openPositions}/{maxOpenPosition}).")
-                break;
+                break
 
 # On vérifie si on peut ouvrir une nouvelle position
 if openPositions < maxOpenPosition :
@@ -1477,18 +1596,30 @@ if openPositions < maxOpenPosition :
                 time.sleep(1)
                 # On défini la quantité maximum de tokens qu'on va acheter avec nos USD
                 freeUSD = getFreeUSDBalance()
+                if freeUSD>soldeToSaveInvestisment or saveInvestisment=="true":
+                    freeUSD=freeUSD-totalInvestment
+                    print(f"Votre solde a dépassé {soldeToSaveInvestisment}$, on sauvegarde le solde initial et on utilise plus que {freeUSD}$ pour conserver les {totalInvestment}$ initiaux")
+                    changeSaveInvestissement("true")
                 if freeUSD <= 0.5:
                     print(
                         "Vous n'avez pas suffisamment d'USD disponible sur votre compte pour ouvrir une nouvelle position pour le moment"
                     )
                 else:
-                    quantityMax = (
-                        freeUSD / (maxOpenPosition - openPositions) * usdAllocated
-                    )
+                    if useFixAmountOfUSD == "true" :
+                        if fixAmount>freeUSD :
+                            print(f"Vous ne disposez pas de suffisamment d'USD pour ouvrir une position de {fixAmount}$.")
+                            print(f"Vous pouvez baisser votre le montant fixe alloué à chaque position (fixAmount) ou alimenter votre compte en USD.")
+                            break
+                        else : 
+                            usdForPosition = fixAmount
+                    else :
+                        usdForPosition = (
+                            freeUSD / (maxOpenPosition - openPositions) * usdAllocated
+                        )
                     # quantityMax = usdAmount/maxOpenPosition*usdAllocated
                     price = ftx.get_bid_ask_price(symbol=perpSymbol)["bid"] * 0.9990
                     
-                    quantityMax = quantityMax / price
+                    quantityMax = usdForPosition / price
                     if quantityMax <= float(ftx.get_min_order_amount(perpSymbol)):
                         print(
                             "Vous n'avez pas suffisamment d'USD pour prendre une position sur ",
@@ -1546,16 +1677,28 @@ if openPositions < maxOpenPosition :
             ):
                 time.sleep(1)
                 freeUSD = getFreeUSDBalance()
+                if freeUSD>soldeToSaveInvestisment or saveInvestisment=="true":
+                    freeUSD=freeUSD-totalInvestment
+                    print(f"Votre solde a dépassé {soldeToSaveInvestisment}$, on sauvegarde le solde initial et on utilise plus que {freeUSD}$ pour conserver les {totalInvestment}$ initiaux")
+                    changeSaveInvestissement("true")
                 if freeUSD <= 0.5:
                     print(
                         "Vous n'avez pas suffisamment d'USD disponible sur votre compte pour ouvrir une nouvelle position pour le moment"
                     )
                 else:
-                    quantityMax = (
-                        freeUSD / (maxOpenPosition - openPositions) * usdAllocated
-                    )
+                    if useFixAmountOfUSD == "true" :
+                        if fixAmount>freeUSD :
+                            print(f"Vous ne disposez pas de suffisamment d'USD pour ouvrir une position de {fixAmount}$.")
+                            print(f"Vous pouvez baisser votre le montant fixe alloué à chaque position (fixAmount) ou alimenter votre compte en USD.")
+                            break
+                        else : 
+                            usdForPosition = fixAmount
+                    else :
+                        usdForPosition = (
+                            freeUSD / (maxOpenPosition - openPositions) * usdAllocated
+                        )
                     price = ftx.get_bid_ask_price(symbol=perpSymbol)["bid"] * 0.9990
-                    quantityMax = quantityMax / price
+                    quantityMax = usdForPosition / price
                     if quantityMax <= float(ftx.get_min_order_amount(perpSymbol)):
                         print(
                             "Vous n'avez pas suffisamment d'USD pour prendre une position sur ",
@@ -1636,7 +1779,10 @@ jourMaxAnnee = moisMaxAnnee = anneeMaxAnnee = heureMaxAnnee = 0
 jourMaxMois = moisMaxMois = anneeMaxMois = heureMaxMois = 0
 jourMaxJour = moisMaxJour = anneeMaxJour = heureMaxJour = 0
 
-print(f"Solde du compte => {usdAmount} $")
+if saveInvestisment=="true" :
+    print(f"Solde du compte => {usdAmount} $ dont {soldeToSaveInvestisment}$ d'investissement initial sécurisé")
+else :
+    print(f"Solde du compte => {usdAmount} $")
 
 # Récupérations des anciennes données dans le fichier historiques-soldes.dat
 x = []
@@ -1918,7 +2064,7 @@ if int(heure) != int(datetime.datetime.now().strftime('%H')) :
     
     with open(filename.split(".")[0]+'-1h.'+filename.split(".")[1], "a") as f:
         f.write(
-            f"{todayJour} {todayMois} {todayAnnee} {todayHeure} {todayMinutes} {todaySolde} \n"
+            f"{todayJour} {todayMois} {todayAnnee} {todayHeure} {todayMinutes} {todaySolde} {totalInvestment}\n"
         )
 
 # On créer un graphique du solde à partir de ce fichier, on génère le fichier au format PDF
@@ -2090,7 +2236,7 @@ if notifBilanEvolutionContinue == "true":
                 f" - il y a 2 mois : +{bonus}% ({solde2mois}$ +{gain}$)"
             )
 
-totalInvestment = float(config["SOLDE"]["totalInvestment"])
+totalInvestment = float(config["STRATEGIE"]["totalInvestment"])
 bonus = 100 * (todaySolde - totalInvestment) / totalInvestment
 gain = round((bonus / 100) * totalInvestment, 3)
 bonus = round(bonus, 3)
@@ -2101,7 +2247,11 @@ if gain < 0:
     addMessageComponent(f"PERTE TOTAL => {gain} $ ({bonus}%)\n")
 else:
     addMessageComponent(f"GAIN TOTAL => +{gain} $ (+{bonus}%)\n")
-addMessageComponent(f"SOLDE TOTAL => {usdAmount}$")
+if saveInvestisment == "true" :
+    addMessageComponent(f"SOLDE TOTAL => {usdAmount}$ dont {soldeToSaveInvestisment}$ d'investissement initial sécurisé")
+    addMessageComponent(f"SOLDE SECURISE => {soldeToSaveInvestisment}$")
+else :
+    addMessageComponent(f"SOLDE TOTAL => {usdAmount}$")
 
 message = message.replace(" , ", " ")
 
