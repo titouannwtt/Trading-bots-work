@@ -15,7 +15,6 @@ def load_indicators(dfList, dfListSorted, indicators):
 
     for perpSymbol in dfList:
         try:
-
             # Indicateur EMA_SHORT (avec paramètres pour l'indicateur)
             dfList[perpSymbol]["ema_short"] = ta.trend.ema_indicator(
                 close=dfList[perpSymbol]["close"], window=ema_short_windows
@@ -264,3 +263,23 @@ def btcOk(dfList):
         return True
     else:
         return False
+
+# -- Fonction to get the takeprofit price --
+def getTakeprofit(position, prixAchat, row, previousRow, dfList, indicators):
+    tpMultiplicator=float(indicators['tpMultiplicator'])
+    if position=="long" :
+        return float(prixAchat+tpMultiplicator*row["atr"])
+    elif position=="short":
+        return float(prixAchat-row["atr"]*tpMultiplicator)
+    else :
+        raise UnknowPositionType
+
+# -- Fonction to get the stoploss price --
+def getStoploss(position, prixAchat, row, previousRow, dfList, indicators):
+    slMultiplicator=float(indicators['slMultiplicator'])
+    if position=="long" :
+        return prixAchat - (prixAchat / 2) * slMultiplicator
+    elif position=="short":
+        return prixAchat + (prixAchat / 2) * slMultiplicator
+    else :
+        raise UnknowPositionType
