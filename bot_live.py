@@ -390,11 +390,8 @@ def getCurrentPrice(perpSymbol):
 
 # Récupère le prix auquel a été fixé le stoploss sur une position ouverte
 def getSecureStopLossPrice(perpSymbol, position=None, price=None, levier=None):
-    global securePostionPercentage
     if price == None:
         price = getPrixAchat(perpSymbol)
-    else:
-        prixAchat = price
     if levier == None:
         levier = getLevier(perpSymbol)
     if (
@@ -402,13 +399,25 @@ def getSecureStopLossPrice(perpSymbol, position=None, price=None, levier=None):
         or getTypeOfPosition(perpSymbol) == "long"
         or getTypeOfPosition(perpSymbol) == "buy"
     ):
-        prixSL = prixAchat - (prixAchat / levier) * securePostionPercentage
+        prixSL = getStoploss(
+                    "long",
+                    price,
+                    dfList[perpSymbol].iloc[-2],
+                    dfList[perpSymbol].iloc[-3],
+                    dfList,
+                    indicators["params"])
     if (
         position == "short"
         or getTypeOfPosition(perpSymbol) == "short"
         or getTypeOfPosition(perpSymbol) == "sell"
     ):
-        prixSL = prixAchat + (prixAchat / levier) * securePostionPercentage
+        prixSL = getStoploss(
+            "short",
+            price,
+            dfList[perpSymbol].iloc[-2],
+            dfList[perpSymbol].iloc[-3],
+            dfList,
+            indicators["params"])
     print(f"Prix stop loss = {prixSL}")
     return prixSL
 
@@ -737,25 +746,18 @@ dfList = load_indicators(dfList, dfListSorted, indicators["params"])
 # Si on utilise un takeprofit ou non
 useTakeProfit = str(config["STRATEGIE"]["useTakeProfit"])
 
-# Par défaut, on utilise l'ATR + ce multiplicateur pour déterminer un prix de takeprofit
-atrMultiplicator = float(config["STRATEGIE"]["atrMultiplicator"])
-
 # Si on utilise un stoploss de sécurité pour éviter la liquidation
-useSecurityStopLoss = str(config["STRATEGIE"]["useSecurityStopLoss"])
-# Par défaut, on fixe le prix du stoploss à hauteur de {securePostionPercentage} entre le prix de liquidation et le prix d'achat (par exemple : 0.6 == 60% entre prix de liquidation et prix d'achat)
-securePostionPercentage = float(config["STRATEGIE"]["securePostionPercentage"])
+useStoploss = str(config["STRATEGIE"]["useStoploss"])
 
 # On notifie dans les logs l'utilisation du takeprofit et du stoploss :
 if useTakeProfit == "true":
     print(f"TakeProfit est activé.")
 else:
     print("TakeProfit n'est pas activé.")
-if useSecurityStopLoss == "true":
-    print(
-        f"SecurityStopLoss est activé : un stoploss sera mis en place pour chaque position pour la vendre si elle dépasse -{securePostionPercentage}% entre le prix d'achat et le prix de liquidation"
-    )
+if useStoploss == "true":
+    print("Stoploss est activé")
 else:
-    print("SecurityStopLoss n'est pas activé.")
+    print("Stoploss n'est pas activé.")
 
 # Variable permettant de savoir combien de changements ont eu lieu, on l'incrémente à chaque action.
 changement = 0
@@ -1636,8 +1638,13 @@ if openPositions < maxOpenPosition :
                             perpSymbol,
                         )
                     else:
-                        prixTakeProfit = price + atrMultiplicator * float(
-                            dfList[perpSymbol].iloc[-2]["atr"]
+                        prixTakeProfit = getTakeprofit(
+                            "long",
+                            price,
+                            dfList[perpSymbol].iloc[-2],
+                            dfList[perpSymbol].iloc[-3],
+                            dfList,
+                            indicators["params"]
                         )
                         # Créer une prise position long sur le marché pour cette crypto
                         ftx.cancel_all_open_order(symbol=perpSymbol)
@@ -1715,8 +1722,13 @@ if openPositions < maxOpenPosition :
                             perpSymbol,
                         )
                     else:
-                        prixTakeProfit = price - atrMultiplicator * float(
-                            dfList[perpSymbol].iloc[-2]["atr"]
+                        prixTakeProfit = getTakeprofit(
+                            "short",
+                            price,
+                            dfList[perpSymbol].iloc[-2],
+                            dfList[perpSymbol].iloc[-3],
+                            dfList,
+                            indicators["params"]
                         )
                         # Créer une prise position short sur le marché pour cette crypto
                         ftx.cancel_all_open_order(symbol=perpSymbol)
@@ -2323,7 +2335,7 @@ if useLimitOrderToOpen == "false":
         # Si le SecureStopLoss est activé :
         if (
             perpSymbol in pairs_long_ouvertes or perpSymbol in pairs_short_ouvertes
-        ) and useSecurityStopLoss == "true":
+        ) and useStoploss == "true":
             time.sleep(1)
             if perpSymbol in pairs_short_ouvertes:
                 pos = "SHORT"
@@ -2332,7 +2344,6 @@ if useLimitOrderToOpen == "false":
             prixAchat = getPrixAchat(perpSymbol)
             quantityMax = getQuantite(perpSymbol)
             levier = getLevier(perpSymbol)
-            # On fixe le prix du stoploss entre le prix de liquidation (perte totale) et le prix d'achat (aucune perte) pour obtenir une perte partielle de securePostionPercentage%
             if perpSymbol in pairs_short_ouvertes:
                 placeOrder(
                     "securityStopLoss",
@@ -2361,14 +2372,25 @@ if useLimitOrderToOpen == "false":
             if perpSymbol in pairs_long_ouvertes:
                 pos = "LONG"
             if pos == "LONG":
-                prixTakeProfit = getPrixAchat(perpSymbol) + atrMultiplicator * float(
-                    dfList[perpSymbol].iloc[-2]["atr"]
+                prixTakeProfit = getTakeprofit(
+                    "long",
+                    getPrixAchat(perpSymbol),
+                    dfList[perpSymbol].iloc[-2],
+                    dfList[perpSymbol].iloc[-3],
+                    dfList,
+                    indicators["params"]
                 )
             if pos == "SHORT":
-                prixTakeProfit = getPrixAchat(perpSymbol) * 0.35
+                prixTakeProfit = getTakeprofit(
+                    "short",
+                    getPrixAchat(perpSymbol),
+                    dfList[perpSymbol].iloc[-2],
+                    dfList[perpSymbol].iloc[-3],
+                    dfList,
+                    indicators["params"]
+                )
             quantityMax = getQuantite(perpSymbol)
             levier = getLevier(perpSymbol)
-            # On fixe le prix du stoploss entre le prix de liquidation (perte totale) et le prix d'achat (aucune perte) pour obtenir une perte partielle de securePostionPercentage%
             placeOrder(
                 "takeProfit",
                 perpSymbol,
@@ -2397,8 +2419,13 @@ if useLimitOrderToOpen != "false":
             for perpSymbol in ordresLong:
                 if perpSymbol in openPositionsList:
                     price = getPrixAchat(perpSymbol)
-                    prixTakeProfit = price + atrMultiplicator * float(
-                        dfList[perpSymbol].iloc[-2]["atr"]
+                    prixTakeProfit = getTakeprofit(
+                        "long",
+                        price,
+                        dfList[perpSymbol].iloc[-2],
+                        dfList[perpSymbol].iloc[-3],
+                        dfList,
+                        indicators["params"]
                     )
                     quantityMax = getQuantite(perpSymbol)
                     ftx.cancel_all_open_order(symbol=perpSymbol)
@@ -2441,8 +2468,13 @@ if useLimitOrderToOpen != "false":
             for perpSymbol in ordresShort:
                 if perpSymbol in openPositionsList:
                     price = getPrixAchat(perpSymbol)
-                    prixTakeProfit = price - atrMultiplicator * float(
-                        dfList[perpSymbol].iloc[-2]["atr"]
+                    prixTakeProfit = getTakeprofit(
+                        "short",
+                        price,
+                        dfList[perpSymbol].iloc[-2],
+                        dfList[perpSymbol].iloc[-3],
+                        dfList,
+                        indicators["params"]
                     )
                     quantityMax = getQuantite(perpSymbol)
                     ftx.cancel_all_open_order(symbol=perpSymbol)
