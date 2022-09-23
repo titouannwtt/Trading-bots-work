@@ -102,9 +102,19 @@ try:
 except KeyError:
     botname = creds['subAccountName']
 
+
+try:
+    strategy_version = str(config["CONFIGS"]["strategy_version"])
+except KeyError:
+    strategy_version = ""
+
+
+
 print(
-    f"========================\n{botname} v{version} - " + str(datetime.datetime.now())
+    f"========================\n{botname} sv{strategy_version} - tv{version}\n" + str(datetime.datetime.now())
 )
+#sv = Strategie Version
+#tv = Template Version
 
 print("Sections recupérées dans le fichier de configuration: " + str(config.sections()))
 
@@ -206,7 +216,8 @@ saveInvestisment = getInitialSoldeStatement()
 if saveInvestisment=="false" :
     print("Vous ne sauvegardez pas encore votre investissement initial.")
 if saveInvestisment=="true" :
-    print("Vous sauvegardez votre investissement initial.")
+    if debug == "true" :
+        print("Vous sauvegardez votre investissement initial.")
 
 # ================================
 #      CONFIGS PAR DEFAUT
@@ -241,11 +252,9 @@ nombreDeBougiesMinimum = int(
 classementminimum = int(config["STRATEGIE"]["classementminimum"])
 # Timeframe utilisée par le bot pour récupérer les données, vous devrez executé ce script sur la même période (par défaut : 1h)
 timeframe = str(config["STRATEGIE"]["timeframe"])
-# Liste de paires spécifiées dans un json, sera utilisée à la place des {classementminimum} premières paires de FTX si vous mettez usePairsListFile=true (par défaut : false)
-usePairsListFile = str(config["STRATEGIE"]["usePairsListFile"])
+# Liste de paires spécifiées dans un json, sera utilisée à la place des {classementminimum} premières paires de FTX si vous mettez useWhitelist=true (par défaut : false)
+useWhitelist = str(config["STRATEGIE"]["useWhitelist"])
 
-# Spécifie une liste de paires que le bot exclurera systématiquement de ses executions (par défaut : quelques stablecoins)
-neverUseThesePairs = json.loads(config.get("STRATEGIE", "neverUseThesePairs"))
 
 # =============================================
 #      FONCTIONS NECESSAIRES POUR L'ENVOIE
@@ -480,12 +489,12 @@ def getProfit(perpSymbol):
 # =================================================
 
 perpListBase = []
-if usePairsListFile == "true":
+if useWhitelist == "true":
     # On récupère les crytpos listées dans le fichier JSON
     f = open(path + "pair_list.json")
     pairJson = json.load(f)
     f.close()
-    perpListBase = pairJson["all"]
+    perpListBase = pairJson["whitelist"]
 else:
     # On récupère les paires avec le plus de volumes au cours des 24h dernières heures sur FTX et on les trie selon leurs volumes
     try:
@@ -515,22 +524,28 @@ else:
 if debug == True:
     print(f"{len(perpListBase)} paires sélectionnées :\n {perpListBase}")
 
-# On récupère la liste des cryptos à ne pas utiliser et on les supprime de notre liste si elles sont présentes
-noUse = ""
-for perpSymbol in neverUseThesePairs:
-    try:
-        del perpListBase[perpListBase.index(perpSymbol)]
-        if noUse == "":
-            noUse = perpSymbol
-        else:
-            noUse = noUse + ", " + perpSymbol
-    except:
-        # print(perpSymbol, "ne sera pas utilisée.")
-        pass
-if noUse != "":
-    print(
-        f"Les cryptos qu'on aurait dû utiliser mais qui appartiennent aux cryptos à ne pas utiliser d'après les configs sont : {noUse}"
-    )
+# Spécifie une liste de paires que le bot exclurera systématiquement de ses executions (par défaut : quelques stablecoins)
+if str(config["STRATEGIE"]["useBlacklist"])=="true" :
+    f = open(path + "pair_list.json")
+    pairJson = json.load(f)
+    f.close()
+    neverUseThesePairs = pairJson["blacklist"]
+    # On récupère la liste des cryptos à ne pas utiliser et on les supprime de notre liste si elles sont présentes
+    noUse = ""
+    for perpSymbol in neverUseThesePairs:
+        try:
+            del perpListBase[perpListBase.index(perpSymbol)]
+            if noUse == "":
+                noUse = perpSymbol
+            else:
+                noUse = noUse + ", " + perpSymbol
+        except:
+            # print(perpSymbol, "ne sera pas utilisée.")
+            pass
+    if noUse != "":
+        print(
+            f"Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : {noUse}"
+        )
 
 try :
     # On récupère les paires présentent dans des positions déja ouvertes pour les ajouter à la liste des cryptos que le bot va utiliser pour être en mesure de les vendre même si elles n'étaient pas dans la liste initialement.
@@ -709,7 +724,8 @@ heureComplète = str(separateDate[1])
 addMessageComponent(f"{date}\n{botname} v{version}")
 addMessageComponent("===================\n")
 
-maxOpenPosition = int(indicators["params"]["maxPositions"])
+maxOpenPosition = int(config["STRATEGIE"]["maxPositions"])
+maxPositions=maxOpenPosition
 
 # A ce stade du code, on a récupéré toutes les informations nécessaires nous permettant de traiter les données.
 # On connait l'état du bot : nombres positions ouvertes, date, solde, etc.
@@ -1559,20 +1575,14 @@ if openPositions > maxOpenPosition :
 # On vérifie si on peut ouvrir une nouvelle position
 if openPositions < maxOpenPosition :
     # Si la répartition des shorts et des longs est activé, cela signifie que l'on doit prendre autant de short que de long
-    if str(config["STRATEGIE"]["repartitionLongAndShort"]) == "true":
+    if str(config["STRATEGIE"]["repartitionLongAndShort"]) == "true" and config["STRATEGIE"]['useShort']=="true" and config["STRATEGIE"]['useLong']=="true":
         # Nombre de positions que l'on peut ouvrir
-        availablePos = maxOpenPosition - openPositions
-        # On réparti la moitié sur des longs et l'autre moitié sur des shorts, en prenant en compte les positions qu'on a déjà
-        longRestant = int(availablePos / 2) - nbLong + nbShort
-        shortRestant = int(availablePos / 2) + nbLong - nbShort
-        if longRestant + shortRestant < availablePos:
-            longRestant = maxOpenPosition - openPositions
-            shortRestant = maxOpenPosition - openPositions
-        else:
-            if shortRestant > nbOfShortPositionsAvailable:
-                longRestant + (shortRestant - nbOfShortPositionsAvailable)
-            if longRestant > nbOfLongPositionsAvailable:
-                shortRestant + (longRestant - nbOfLongPositionsAvailable)
+        longRestant = maxPositions/2 - nbLong
+        shortRestant = maxPositions/2 - nbShort
+        if shortRestant == 0 and longRestant == 0 and nbOfShortPositionsAvailable+nbOfLongPositionsAvailable>0 :
+            availablePos = maxOpenPosition - openPositions
+            shortRestant=shortRestant+1
+            longRestant=longRestant+1
     else:
         longRestant = maxOpenPosition - openPositions
         shortRestant = maxOpenPosition - openPositions
@@ -1580,7 +1590,7 @@ if openPositions < maxOpenPosition :
         currentCrypto = perpSymbol
         if (
             perpSymbol not in pairs_long_ouvertes
-            and str(indicators["params"]["useLong"]) == "true"
+            and str(config["STRATEGIE"]["useLong"]) == "true"
         ):
             if (
                 openLongCondition(
@@ -1661,7 +1671,7 @@ if openPositions < maxOpenPosition :
                     print("Aucune opportunité en LONG à prendre sur", perpSymbol)
         if (
             perpSymbol not in pairs_short_ouvertes
-            and str(indicators["params"]["useShort"]) == "true"
+            and str(config["STRATEGIE"]["useShort"]) == "true"
         ):
             # Si la crypto respecte une des conditions suivantes d'ouverture en bear ou en bull :
             if (
@@ -2370,8 +2380,8 @@ if useLimitOrderToOpen == "false":
 
 if useLimitOrderToOpen != "false":
     i = 0
-    maxCheck = 10
-    timeBetweenCheck = 30
+    maxCheck = 30
+    timeBetweenCheck = 10
     print("On attend que les ordres limites d'ouverture de positions se déclenchent...")
     closeOrders = len(ordresCloseShort) + len(ordresCloseLong)
     while (
