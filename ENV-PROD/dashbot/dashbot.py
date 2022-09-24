@@ -11,6 +11,8 @@ import numpy as np
 import pandas as pd
 from matplotlib.ticker import FormatStrFormatter, MultipleLocator
 
+dashBot_version = 2.01
+
 try:
     import telegram_send
 
@@ -19,13 +21,9 @@ except:
     useTg = False
     print("Les notifications telegrams ne seront pas utilisées")
 
-
 warnings.simplefilter("ignore")
 
-dashBot_version = 2.01
-
 message = " "
-
 
 def addMessageComponent(string):
     global message
@@ -90,21 +88,16 @@ def getData(symbol):
 
 
 initialInv = 0
-path = "/home/moutonneux/bots/dashbot/"
+path = os.path.dirname(os.path.abspath(__file__))+'/'
 figH = 20
 figL = 50
 
 # Mettre selon lequel vous voulez baser l'axe Y
-botPathList = [
-    "/home/moutonneux/bots/bot-miracle/",
-    "/home/moutonneux/bots/bot-miracle-mono/",
-    "/home/moutonneux/bots/bot-superreversal/",
-    "/home/moutonneux/bots/bot-superreversal-duo/",
-    "/home/moutonneux/bots/bot-vp1/",
-    "/home/moutonneux/bots/bot-trend-tracker/",
-    "/home/moutonneux/bots/bot-trix/",
-    "/home/moutonneux/bots/bot-template/",
-]
+
+f = open(path + "bots_list.json")
+botsJson = json.load(f)
+f.close()
+botPathList = botsJson["bots_list"]
 
 botList = {}
 # On créer un graphique du solde à partir de ce fichier, on génère le fichier au format PDF
@@ -120,57 +113,36 @@ for botPath in botPathList:
             del botname
         except:
             pass
-        files = os.listdir(botPath)
-        for file in files:
-            if ("bot_" in file or "bot" in file) and (
-                "config-bot.cfg" != file and "cBot_perp_ftx.py" != file
-            ):
-                bot_file_name = file
-                with open(botPath + bot_file_name, "r+") as f:
-                    for line in f:
-                        if "botname" in line:
-                            botname = str(line.split("=")[1].split('"')[1])
-                        if "version" in line:
-                            version = float(line.split("=")[1].split('"')[1])
-                            break
         config = configparser.ConfigParser()
         config.read(botPath + "config-bot.cfg")
         with open(botPath + "/data/" + "historiques-soldes.dat", "r") as f:
             data = f.readlines()[-1].split()
             solde = float(data[5])
         # On sauvegarde le chemin vers le repertoire du bot
-        try:
-            botDict["name"] = botname
-        except:
-            botDict["name"] = str(config["CONFIGS"]["botname"])
-            botname = botDict["name"]
-        botDict["version"] = version
-        try:
-            botDict["apiKey"] = str(config["FTX.AUTHENTIFICATION"]["apiKey"])
-        except:
-            botDict["apiKey"] = str(config["FTX.API"]["apiKey"])
+        botname = str(config["CONFIGS"]["botname"])
+        botDict["name"] = botname
+        botDict["strategy_version"] = str(config["CONFIGS"]["strategy_version"])
         botDict["paths"] = {
             "path": botPath,
             "solde_file": botPath + "data/" + "historiques-soldes.dat",
             "config_file": botPath + "config-bot.cfg",
-            "bot_file": botPath + bot_file_name,
         }
         performance = round(
-            (float(solde) - float(config["SOLDE"]["totalInvestment"]))
-            / float(config["SOLDE"]["totalInvestment"])
+            (float(solde) - float(config["STRATEGIE"]["totalInvestment"]))
+            / float(config["STRATEGIE"]["totalInvestment"])
             * 100,
             3,
         )
         if performance > 0.0:
             performance = float("+" + str(performance))
         botDict["solde"] = {
-            "totalInvestment": float(config["SOLDE"]["totalInvestment"]),
+            "totalInvestment": float(config["STRATEGIE"]["totalInvestment"]),
             "currentSolde": float(solde),
             "performance": performance,
         }
         botDict["timeframe"] = str(config["STRATEGIE"]["timeframe"])
         botDict["levier"] = str(config["STRATEGIE"]["defaultLeverage"])
-        initialInv = initialInv + float(config["SOLDE"]["totalInvestment"])
+        initialInv = initialInv + float(config["STRATEGIE"]["totalInvestment"])
         botList[botDict["name"]] = botDict
         print(f"{botname} traité.")
     except Exception as err:
