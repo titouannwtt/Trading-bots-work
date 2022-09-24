@@ -1,7 +1,7 @@
 # AUTHORS : MOUTONNEUX ( https://github.com/titouannwtt )
 # CE TEMPLATE EST ADAPTEE A DES TIMEFRAMES DE 1 heure ou moins
 # VERSION :
-version = "7.04"
+version = "7.06"
 # ====================================================================
 
 # Ce template de bot de trading vous est partagé gratuitement.
@@ -247,7 +247,7 @@ forceSell = str(config["STRATEGIE"]["forceSell"])
 # Par défaut : -351 signifie qu'on récupère les données il y a 2 semaines (351/24=~14 jours)
 nombreDeBougiesMinimum = int(
     config["STRATEGIE"]["nombreDeBougiesMinimum"]
-)
+)*-1
 
 # Nombre de pairs que l'on utilisera pour l'execution du bot
 classementminimum = int(config["STRATEGIE"]["classementminimum"])
@@ -648,22 +648,21 @@ for perpSymbol in perpListBase:
                     )
                     pass
 
-    if str(config["STRATEGIE"]["sortByRecentPerf"]) == "true":
-        # Vérifie si la crypto a assez de données historiques pour être utilisé avec les indicateurs (par défaut : au moins 14 jours de présence sur FTX sont nécesaires)
+    # Vérifie si la crypto a assez de données historiques pour être utilisé avec les indicateurs (par défaut : au moins 14 jours de présence sur FTX sont nécesaires)
+    try:
+        dfListSorted[perpSymbol] = (
+            dfList[perpSymbol].iloc[-2]["close"]
+            / dfList[perpSymbol].iloc[nombreDeBougiesMinimum]["close"]
+            - 1
+        ) * 100
+    # Si elle n'a pas assez de données, on l'enlève de la liste
+    except:
         try:
-            dfListSorted[perpSymbol] = (
-                dfList[perpSymbol].iloc[-2]["close"]
-                / dfList[perpSymbol].iloc[-1*nombreDeBougiesMinimum]["close"]
-                - 1
-            ) * 100
-        # Si elle n'a pas assez de données, on l'enlève de la liste
+            del dfList[perpSymbol]
+            perpListBase.remove(perpSymbol)
+            del perpListBase[perpListBase.index(perpSymbol)]
         except:
-            try:
-                del dfList[perpSymbol]
-                perpListBase.remove(perpSymbol)
-                del perpListBase[perpListBase.index(perpSymbol)]
-            except:
-                pass
+            pass
             print(perpSymbol, "ne sera pas utilisée : manque de données.")
 
 if str(config["STRATEGIE"]["sortByRecentPerf"]) == "true":
@@ -712,7 +711,11 @@ for i in Pnl.values():
 # Recupère le prix actuel de chaque crypto (en soit on a déjà la fonction getPrixAchat() qui nous permet de connaitre ce prix, mais ça nous permet d'éviter d'appeler régulièrement l'API)
 actualPrice = {}
 for perpSymbol in perpList:
-    actualPrice[perpSymbol] = dfList[perpSymbol].iloc[-2]["close"]
+    try :
+        actualPrice[perpSymbol] = dfList[perpSymbol].iloc[-2]["close"]
+    except :
+        perpList.remove(perpSymbol)
+        actualPrice[perpSymbol] = getCurrentPrice(perpSymbol)
 
 
 # ===================================
@@ -785,6 +788,8 @@ def placeOrder(order, perpSymbol, quantityMax, price, leverage, position):
     global amount
     global ordresLong
     global ordresShort
+    global useLimitOrderToOpen
+    global useLimitOrderToClose
 
     # En cas de prix négatif (parfois ça arrive, je ne sais pas pourquoi)
     if price < 0.0:
@@ -1546,7 +1551,7 @@ for perpSymbol in perpList:
 if openPositions > maxOpenPosition :
     print(f"Le nombre positions ouvertes dépasse le nombre de positions maximum autorisé ({openPositions}/{maxOpenPosition}), régulation des positions...")
     i=openPositions
-    for perpSymbol in perpList.reverse():
+    for perpSymbol in perpList :
         if perpSymbol in pairs_long_ouvertes or perpSymbol in pairs_short_ouvertes :
             if perpSymbol in pairs_long_ouvertes :
                 time.sleep(1)

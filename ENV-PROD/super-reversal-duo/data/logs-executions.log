@@ -1,0 +1,70 @@
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL sv2.04 - tv7.06
+2022-09-24 22:00:02.407218
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'DOGE-PERP', 'ATOM-PERP', 'ETC-PERP', 'BNB-PERP', 'CHZ-PERP', 'LINK-PERP', 'MATIC-PERP', 'APE-PERP', 'ALGO-PERP', 'ADA-PERP', 'LUNC-PERP', 'AVAX-PERP', 'AXS-PERP', 'RSR-PERP', 'DOT-PERP', 'CRV-PERP', 'EOS-PERP', 'LTC-PERP', 'SAND-PERP', 'BCH-PERP', 'XLM-PERP', 'FTT-PERP', 'KSHIB-PERP', 'NEAR-PERP', 'OP-PERP', 'FIL-PERP', 'AAVE-PERP', 'UNI-PERP', 'SHIB-PERP', 'LUNA2-PERP', 'GMT-PERP', 'SUSHI-PERP', 'REEF-PERP', 'FTM-PERP', 'COMP-PERP', 'CRO-PERP', 'KLUNC-PERP', 'LDO-PERP', 'TRX-PERP', 'USDT-PERP', 'CEL-PERP', 'HNT-PERP', 'CAKE-PERP', 'XTZ-PERP', 'ROSE-PERP', 'PEOPLE-PERP', 'RVN-PERP', 'SNX-PERP', 'GALA-PERP', 'MANA-PERP', 'VET-PERP', 'ENS-PERP', 'SRM-PERP', 'YFI-PERP', 'THETA-PERP', 'XMR-PERP', 'WAVES-PERP', '1INCH-PERP', 'DYDX-PERP', 'LOOKS-PERP', 'RUNE-PERP', 'ALT-PERP', 'USTC-PERP', 'KNC-PERP', 'GAL-PERP', 'HBAR-PERP', 'ZEC-PERP', 'FLOW-PERP', 'ICP-PERP', 'MKR-PERP', 'EGLD-PERP', 'CVX-PERP', 'SHIT-PERP', 'C98-PERP', 'RAY-PERP', 'YFII-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'ETH-PERP': 6.5532, 'XRP-PERP': 4.6759}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat LONG
+BNB-PERP est en position d'achat LONG
+APE-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+AXS-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+LTC-PERP est en position d'achat LONG
+SAND-PERP est en position d'achat LONG
+KSHIB-PERP est en position d'achat LONG
+NEAR-PERP est en position d'achat SHORT
+FIL-PERP est en position d'achat LONG
+AAVE-PERP est en position d'achat SHORT
+SHIB-PERP est en position d'achat LONG
+GMT-PERP est en position d'achat SHORT
+FTM-PERP est en position d'achat SHORT
+COMP-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+KLUNC-PERP est en position d'achat SHORT
+TRX-PERP est en position d'achat SHORT
+CEL-PERP est en position d'achat LONG
+HNT-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+XTZ-PERP est en position d'achat LONG
+ROSE-PERP est en position d'achat LONG
+GALA-PERP est en position d'achat SHORT
+MANA-PERP est en position d'achat SHORT
+VET-PERP est en position d'achat LONG
+YFI-PERP est en position d'achat SHORT
+THETA-PERP est en position d'achat LONG
+WAVES-PERP est en position d'achat SHORT
+1INCH-PERP est en position d'achat LONG
+DYDX-PERP est en position d'achat SHORT
+RUNE-PERP est en position d'achat SHORT
+ALT-PERP est en position d'achat LONG
+KNC-PERP est en position d'achat SHORT
+GAL-PERP est en position d'achat LONG
+HBAR-PERP est en position d'achat LONG
+MKR-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 135.8408046 $ dont 100.0$ d'investissement initial sécurisé
+WARNING : Le fichier data/historiques-soldes.dat est introuvable, il va être créé.
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.

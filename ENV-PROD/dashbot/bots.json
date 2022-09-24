@@ -1,0 +1,66 @@
+{
+    "SUPER-REVERSAL-DUO": {
+        "name": "SUPER-REVERSAL-DUO",
+        "strategy_version": "2.04",
+        "paths": {
+            "path": "/home/moutonneux/ENV-PROD/super-reversal-duo/",
+            "solde_file": "/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-soldes.dat",
+            "config_file": "/home/moutonneux/ENV-PROD/super-reversal-duo/config-bot.cfg"
+        },
+        "solde": {
+            "totalInvestment": 80.0,
+            "currentSolde": 135.77181607,
+            "performance": 69.715
+        },
+        "timeframe": "1h",
+        "levier": "1"
+    },
+    "SUPER-REVERSAL": {
+        "name": "SUPER-REVERSAL",
+        "strategy_version": "2.04",
+        "paths": {
+            "path": "/home/moutonneux/ENV-PROD/super-reversal/",
+            "solde_file": "/home/moutonneux/ENV-PROD/super-reversal/data/historiques-soldes.dat",
+            "config_file": "/home/moutonneux/ENV-PROD/super-reversal/config-bot.cfg"
+        },
+        "solde": {
+            "totalInvestment": 63.0,
+            "currentSolde": 76.93833501,
+            "performance": 22.124
+        },
+        "timeframe": "1h",
+        "levier": "2"
+    },
+    "MIRACLE": {
+        "name": "MIRACLE",
+        "strategy_version": "4.07",
+        "paths": {
+            "path": "/home/moutonneux/ENV-PROD/miracle/",
+            "solde_file": "/home/moutonneux/ENV-PROD/miracle/data/historiques-soldes.dat",
+            "config_file": "/home/moutonneux/ENV-PROD/miracle/config-bot.cfg"
+        },
+        "solde": {
+            "totalInvestment": 76.3,
+            "currentSolde": 69.55067716,
+            "performance": -8.846
+        },
+        "timeframe": "1h",
+        "levier": "2"
+    },
+    "MIRACLE-MONO": {
+        "name": "MIRACLE-MONO",
+        "strategy_version": "4.07",
+        "paths": {
+            "path": "/home/moutonneux/ENV-PROD/miracle-mono/",
+            "solde_file": "/home/moutonneux/ENV-PROD/miracle-mono/data/historiques-soldes.dat",
+            "config_file": "/home/moutonneux/ENV-PROD/miracle-mono/config-bot.cfg"
+        },
+        "solde": {
+            "totalInvestment": 104.6,
+            "currentSolde": 32.27608977,
+            "performance": -69.143
+        },
+        "timeframe": "1h",
+        "levier": "2"
+    }
+}

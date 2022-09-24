@@ -1,0 +1,253 @@
+import pandas as pd
+import pandas_ta as pda
+import ta
+
+
+# =======================================
+#        GENERATION DES INDICATEURS
+# =======================================
+def load_indicators(dfList, dfListSorted, indicators):
+    # On récupère les paramètres des indicateurs spécifiés dans le fichier parametres.cfg
+    trixLength = int(indicators['trixLength'])
+    trixSignal = int(indicators['trixSignal'])
+    RSI_WINDOWS = int(indicators['RSI_WINDOWS'])
+    BB_WINDOWS_BULL = int(indicators['BB_WINDOWS_BULL'])
+    BB_WINDOWS_DEV_BULL = float(indicators['BB_WINDOWS_DEV_BULL'])
+    BB_WINDOWS_BEAR = int(indicators['BB_WINDOWS_BEAR'])
+    BB_WINDOWS_DEV_BEAR = float(indicators['BB_WINDOWS_DEV_BEAR'])
+    parametrePVO_BEAR = int(indicators['parametrePVO_BEAR'])
+    parametrePVO_BULL = int(indicators['parametrePVO_BULL'])
+    parametrePERF_BULL = int(indicators['parametrePERF_BULL'])
+    parametrePERF_BEAR = int(indicators['parametrePERF_BEAR'])
+    parametrePVO2 = int(indicators['parametrePVO2'])
+    parametreADXV_BULL = float(indicators['parametreADXV_BULL'])
+    parametreADXV_BEAR = float(indicators['parametreADXV_BEAR'])
+    parametreTRIX_HISTO_BULL = float(indicators['parametreTRIX_HISTO_BULL'])
+    parametreTRIX_HISTO_BEAR = float(indicators['parametreTRIX_HISTO_BEAR'])
+    parametreSTOCH_RSI_BULL = float(indicators['parametreSTOCH_RSI_BULL'])
+    parametreSTOCH_RSI_BEAR = float(indicators['parametreSTOCH_RSI_BEAR'])
+    parametreSTOCH_RSI2_BULL = float(indicators['parametreSTOCH_RSI2_BULL'])
+    parametreSTOCH_RSI2_BEAR = float(indicators['parametreSTOCH_RSI2_BEAR'])
+    parametreTRIX_HISTO2_BULL = float(indicators['parametreTRIX_HISTO2_BULL'])
+    parametreTRIX_HISTO2_BEAR = float(indicators['parametreTRIX_HISTO2_BEAR'])
+
+    for perpSymbol in dfList:
+        try :
+            dfList[perpSymbol]['EMA10']=ta.trend.ema_indicator(close=dfList[perpSymbol]['close'], window=10)
+            dfList[perpSymbol]['EMA50']=ta.trend.ema_indicator(close=dfList[perpSymbol]['close'], window=50)
+            dfList[perpSymbol]['EMA45']=ta.trend.ema_indicator(close=dfList[perpSymbol]['close'], window=45)
+            #dfList[perpSymbol]['EMA10']=ta.trend.ema_indicator(close=dfList[perpSymbol]['close'], window=10)
+            #dfList[perpSymbol]['EMA22']=ta.trend.ema_indicator(close=dfList[perpSymbol]['close'], window=22)
+            dfList[perpSymbol]['EMA9D']=ta.trend.ema_indicator(close=dfList[perpSymbol]['close'], window=216)
+            dfList[perpSymbol]['EMA13D']=ta.trend.ema_indicator(close=dfList[perpSymbol]['close'], window=312)
+            dfList[perpSymbol]['EMA45D']=ta.trend.ema_indicator(close=dfList[perpSymbol]['close'], window=24*45)
+            dfList[perpSymbol]['EMA100']=ta.trend.ema_indicator(close=dfList[perpSymbol]['close'], window=100)
+            
+            #Plus bas prix atteint par la crypto depuis les 30 dernières bougies
+            dfList[perpSymbol]["ATL 30"] = dfList[perpSymbol]["low"].rolling(30).min()
+            dfList[perpSymbol]["ATL 72h"] = dfList[perpSymbol]["ATL 30"].rolling(72).agg(lambda rows: rows[0])
+            
+            dfList[perpSymbol]["Prix 24h"] = dfList[perpSymbol]["close"].rolling(24).agg(lambda rows: rows[0])
+            dfList[perpSymbol]["Prix 8h"] = dfList[perpSymbol]["close"].rolling(8).agg(lambda rows: rows[0])
+            
+            dfList[perpSymbol]['TRIX'] = ta.trend.ema_indicator(ta.trend.ema_indicator(ta.trend.ema_indicator(close=dfList[perpSymbol]['close'], window=trixLength), window=trixLength), window=trixLength)
+            dfList[perpSymbol]['TRIX_PCT'] = dfList[perpSymbol]["TRIX"].pct_change()*100
+            dfList[perpSymbol]['TRIX_SIGNAL'] = ta.trend.sma_indicator(dfList[perpSymbol]['TRIX_PCT'],trixSignal)
+            dfList[perpSymbol]['TRIX_HISTO'] = dfList[perpSymbol]['TRIX_PCT'] - dfList[perpSymbol]['TRIX_SIGNAL']
+            
+            kst = ta.trend.KSTIndicator(close=dfList[perpSymbol]['close'], roc1 = 10, roc2= 15, roc3 = 20, roc4 = 30, window1 = 10, window2 = 10, window3 = 10, window4 = 15, nsig = 9) 
+            dfList[perpSymbol]['kst'] = kst.kst_sig()
+            
+            #MACD
+            MACD = ta.trend.MACD(close=dfList[perpSymbol]['close'], window_fast=12, window_slow=26, window_sign=10)
+            MACD1 = ta.trend.MACD(close=dfList[perpSymbol]['close'], window_fast=120, window_slow=260, window_sign=20)
+            dfList[perpSymbol]['MACD_SIGNAL'] = MACD.macd_signal()
+            dfList[perpSymbol]['MACD_SIGNAL1'] = MACD1.macd_signal()
+            #dfList[perpSymbol]['MACD_DIFF'] = MACD.macd_diff() #Histogramme MACD
+            
+            # #Stochastic RSI
+            dfList[perpSymbol]['STOCH_RSI'] = ta.momentum.stochrsi(close=dfList[perpSymbol]['close'], window=RSI_WINDOWS, smooth1=3, smooth2=3) #Non moyenné 
+            dfList[perpSymbol]['STOCH_RSI_D'] = ta.momentum.stochrsi_d(close=dfList[perpSymbol]['close'], window=14, smooth1=3, smooth2=3) #Orange sur TradingView
+            dfList[perpSymbol]['STOCH_RSI_K'] =ta.momentum.stochrsi_k(close=dfList[perpSymbol]['close'], window=14, smooth1=3, smooth2=3) #Bleu sur TradingView
+            
+            #Bollinger Bands
+            BOL_BAND = ta.volatility.BollingerBands(close=dfList[perpSymbol]['close'], window=BB_WINDOWS_BEAR, window_dev=BB_WINDOWS_DEV_BEAR) 
+            dfList[perpSymbol]['BOL_H_BAND'] = BOL_BAND.bollinger_hband_indicator() #Bande Supérieur
+            dfList[perpSymbol]['BOL_L_BAND'] = BOL_BAND.bollinger_lband_indicator()
+            BOL_BAND1 = ta.volatility.BollingerBands(close=dfList[perpSymbol]['close'], window=BB_WINDOWS_BULL, window_dev=BB_WINDOWS_DEV_BULL)
+            
+            dfList[perpSymbol]['BOL_L_BAND1'] = BOL_BAND1.bollinger_lband_indicator()
+            
+            #dfList[perpSymbol]['perf'] = o1.daily_return(dfList[perpSymbol]['close'])
+            dfList[perpSymbol]['perf'] = dfListSorted[perpSymbol]
+            
+            Keltner = ta.volatility.KeltnerChannel(dfList[perpSymbol]['high'], dfList[perpSymbol]['low'], dfList[perpSymbol]['close'], window = 10, window_atr = 10)
+            dfList[perpSymbol]['Keltner'] = Keltner.keltner_channel_lband_indicator()
+            
+            Aroon = ta.trend.AroonIndicator(close=dfList[perpSymbol]['close'], window = 25)
+            dfList[perpSymbol]['Aroonindicateur'] = Aroon.aroon_indicator()
+            
+            CCI = ta.trend.CCIIndicator(dfList[perpSymbol]['high'], dfList[perpSymbol]['low'], dfList[perpSymbol]['close'], window = 45, constant = 0.015)
+            dfList[perpSymbol]['CCI'] = CCI.cci()
+            
+            #Average True Range (ATR)
+            dfList[perpSymbol]['ATR'] = ta.volatility.average_true_range(high=dfList[perpSymbol]['high'], low=dfList[perpSymbol]['low'], close=dfList[perpSymbol]['close'], window=14)
+
+            dfList[perpSymbol]['AWESOME_OSCILLATOR'] = ta.momentum.awesome_oscillator(high=dfList[perpSymbol]['high'], low=dfList[perpSymbol]['low'], window1=5, window2=34)
+            
+            pvo = ta.momentum.PercentageVolumeOscillator(dfList[perpSymbol]['volume'], window_slow = 26, window_fast = 12, window_sign = parametrePVO_BEAR)
+            dfList[perpSymbol]['pvo'] = pvo.pvo_hist()
+            pvo1 = ta.momentum.PercentageVolumeOscillator(dfList[perpSymbol]['volume'], window_slow = 26, window_fast = 12, window_sign = parametrePVO_BULL)
+            dfList[perpSymbol]['pvo1'] = pvo1.pvo_hist()
+            
+            #ADX
+            ADX = ta.trend.ADXIndicator(dfList[perpSymbol]['high'], dfList[perpSymbol]['low'], dfList[perpSymbol]['close'], window=20)
+            dfList[perpSymbol]['ADX'] = ADX.adx()
+            dfList[perpSymbol]['ADX_NEG'] = ADX.adx_neg()
+            dfList[perpSymbol]['ADX_POS'] = ADX.adx_pos()
+            dfList[perpSymbol]['ADXV'] = dfList[perpSymbol]['ADX_POS'] - dfList[perpSymbol]['ADX_NEG']
+        except Exception as err :
+            print(f"Impossible de charger la paire : {perpSymbol} : {err}")
+            pass
+    return dfList
+
+def btcOrETHisUP24h(dfList) :
+    if (dfList["BTC-PERP"].iloc[-2]['Prix 24h'] > dfList["BTC-PERP"].iloc[-2]['close']
+        and dfList["BTC-PERP"].iloc[-2]['ATL 72h'] > dfList["BTC-PERP"].iloc[-2]['close']):
+        return False
+    elif (dfList["ETH-PERP"].iloc[-2]['Prix 24h'] > dfList["ETH-PERP"].iloc[-2]['close']
+        and dfList["ETH-PERP"].iloc[-2]['ATL 72h'] > dfList["ETH-PERP"].iloc[-2]['close']):
+        return False
+    else:
+        return True
+
+def getEvolution(row, previousRow):
+    return float(row['close']-previousRow['close'])/previousRow['close']*100
+        
+
+def tendance(dfList):
+    if dfList["BTC-PERP"].iloc[-2]['EMA9D'] < dfList["BTC-PERP"].iloc[-2]['EMA13D']:
+        return True
+    else:
+        return False
+
+def openLongCondition(row, previousRow, dfList, indicators):
+    try:
+        if tendance(dfList)==True :
+            if (
+                row['TRIX_HISTO'] >= indicators['parametreTRIX_HISTO_BEAR']
+                and btcOrETHisUP24h(dfList)==True
+                and row['STOCH_RSI'] < indicators['parametreSTOCH_RSI_BEAR']
+                and row['ADXV'] > indicators['parametreADXV_BEAR']
+                and row['EMA9D'] > row['EMA13D']
+                and row['MACD_SIGNAL'] > previousRow['MACD_SIGNAL']
+                and row['EMA50'] < row['EMA10']
+                and row['EMA45'] < row['close']
+                and row['perf'] > indicators['parametrePERF_BEAR']
+                and row['Keltner'] < 1.0
+                and row['kst'] < 500.0
+            ):
+                return True
+            else:
+                return False
+        else :
+            if (
+                row['TRIX_HISTO'] >= indicators['parametreTRIX_HISTO_BULL']
+                and btcOrETHisUP24h(dfList)==True
+                and row['STOCH_RSI'] < indicators['parametreSTOCH_RSI_BULL']
+                and row['ADXV'] > indicators['parametreADXV_BULL']
+                and row['EMA9D'] > row['EMA13D']
+                and row['MACD_SIGNAL1'] > previousRow['MACD_SIGNAL1']
+                and row['EMA50'] < row['EMA10']
+                and row['EMA45'] < row['close']
+                and row['perf'] > indicators['parametrePERF_BULL']
+                and row['pvo1'] > indicators['parametrePVO2']
+                and row['Keltner'] < 1.0
+                and row['kst'] < 500.0 
+            ):
+                return True
+            else:
+                return False
+    except:
+        return False
+
+
+# -- Condition to close Market LONG --
+def closeLongCondition(row, previousRow, dfList, indicators):
+    try:
+        if tendance(dfList)==True :
+            if (
+                (row['TRIX_HISTO'] < indicators['parametreTRIX_HISTO2_BEAR']
+                and row['STOCH_RSI'] > indicators['parametreSTOCH_RSI2_BEAR'])
+                or row['BOL_L_BAND'] == 1
+                or (row['Aroonindicateur'] < -84.0 and row['CCI'] > -80.0)
+                or getEvolution(row, previousRow)<-10.0
+            ):
+                return True
+            else:
+                return False
+        else :
+            if (
+                (row['TRIX_HISTO'] < indicators['parametreTRIX_HISTO2_BULL']
+                and row['STOCH_RSI'] > indicators['parametreSTOCH_RSI2_BULL'])
+                or row['BOL_L_BAND1'] == 1
+                or (row['Aroonindicateur'] < -84.0 and row['CCI'] > -80.0)
+            ):
+                return True
+            else:
+                return False
+    except:
+        return False
+
+# -- Condition to open Market SHORT --
+def openShortCondition(row, previousRow, dfList, indicators):
+    try:
+        if (
+            row['TRIX_HISTO'] >= 0.0
+            and btcOrETHisUP24h(dfList)==True
+            and row['STOCH_RSI'] > 0.85
+            and row['ADXV'] < 0.5
+            and row['EMA9D'] < row['EMA13D']
+            and row['MACD_SIGNAL'] < previousRow['MACD_SIGNAL']
+            and row['EMA50'] > row['EMA10']
+            and row['EMA45'] > row['close']
+        ):
+            return True
+        else:
+            return False
+    except:
+        return False
+
+
+# -- Condition to close Market SHORT --
+def closeShortCondition(row, previousRow, dfList, indicators):
+    try:
+        if (
+            (row['TRIX_HISTO'] > indicators['parametreTRIX_HISTO2_BEAR']
+            and row['STOCH_RSI'] < indicators['parametreSTOCH_RSI2_BEAR'])
+        ):
+            return True
+        else:
+            return False
+    except:
+        return False
+
+# -- Fonction to get the takeprofit price --
+def getTakeprofit(position, prixAchat, row, previousRow, dfList, indicators):
+    tpMultiplicator=float(indicators['tpMultiplicator'])
+    if position=="long" :
+        return float(prixAchat+tpMultiplicator*row["atr"])
+    elif position=="short":
+        return float(prixAchat-row["atr"]*tpMultiplicator)
+    else :
+        raise UnknowPositionType
+
+# -- Fonction to get the stoploss price --
+def getStoploss(position, prixAchat, row, previousRow, dfList, indicators):
+    slMultiplicator=float(indicators['slMultiplicator'])
+    if position=="long" :
+        return prixAchat - (prixAchat / 2) * slMultiplicator
+    elif position=="short":
+        return prixAchat + (prixAchat / 2) * slMultiplicator
+    else :
+        raise UnknowPositionType
