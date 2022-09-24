@@ -1,5 +1,8 @@
 # ENVIRONNEMENT DE PRODUCTION :
+
+
 #Comment mettre en live une stratégie ?
+
 
 Execute la commande:  python3 ENV-PROD/bot_live.py bot-template/
 
@@ -7,7 +10,10 @@ Des exemples de stratégies sont déjà paramétrées : miracle, super-reversal,
 
 Pour lancer la stratégie super-reversal par exemple, utilise la commande : ```python3 ENV-PROD/bot_live.py super-reversal```
 
+
 #Si tu veux faire ta propre stratégie :
+
+
 Créer un dossier copie de bot-template que tu nommeras "strategie1" pour chaque stratégie.
 Au sein du dossier "strategie1" tu trouveras un fichier credentials.json où tu devras mettre tes clés API.
 Tu n'as pas à modifier le fichier bot_live.py, toute ta stratégie est modifiable directement grâce aux fichiers : config.cfg, parametres.cfg, strategy.py et pair_list.json
