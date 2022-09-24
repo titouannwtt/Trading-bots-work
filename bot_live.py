@@ -1,16 +1,16 @@
 # AUTHORS : MOUTONNEUX ( https://github.com/titouannwtt )
 # CE TEMPLATE EST ADAPTEE A DES TIMEFRAMES DE 1 heure ou moins
 # VERSION :
-version = "7.01"
+version = "7.04"
 # ====================================================================
 
 # Ce template de bot de trading vous est partagé gratuitement.
 # Son développement représente des centaines d'heures de travail et tout a été commenté pour vous faciliter sa compréhension.
 # Vous pouvez me soutenir en utilisant mon lien d'affiliation FTX ( https://ftx.com/eu/profile#a=titouannwtt ),
 # Ou en me faisant des dons en crypto-monnaie :
-# Adresse BTC : 3GYhBgZMfgzqjYhVhc2w53oMcvZb4jfGfL
-# Adresse ETH (Réseau ERC20) : 0x43fC6F9B8b1CfBd83b52a1FD1de510effe0A49a7
-# (Même une petite somme me soutient énormement moralement :D)
+#           Adresse BTC :                     3GYhBgZMfgzqjYhVhc2w53oMcvZb4jfGfL
+#           Adresse ETH (Réseau ERC20) :      0x43fC6F9B8b1CfBd83b52a1FD1de510effe0A49a7
+#           (Même une petite somme me soutient énormement moralement :D)
 
 # Vous êtes autorisé à modifier ce code pour un usage personnel uniquement.
 # Vous êtes autorisé à partager ce code ou un extrait de ce code dans un cadre privé uniquement, à condition de me créditez en tant qu'auteur de façon explicite.
@@ -47,8 +47,8 @@ from cBot_perp_ftx import cBot_perp_ftx
 try :
     if len(sys.argv) == 2:
         folder_name = str(sys.argv[1]).split("/")[0]
-        sys.path.append(sys.argv[1])
         path = os.path.dirname(os.path.abspath(__file__)) + "/" + folder_name
+        sys.path.append(path)
     elif len(sys.argv) == 1 :
         path = os.path.dirname(os.path.abspath(__file__))
     else:
@@ -67,6 +67,7 @@ if os.path.exists(path) == False:
     print(f"Utilisez : python3 {sys.argv[0]} <dossier-strategie>")
     exit(2)
 
+os.makedirs(path+"data", exist_ok=True)
 try:
     from strategie import *
 except Exception as err:
@@ -2065,6 +2066,7 @@ try:
         else:
             soldeLastExec = usdAmount
 except:
+    heure=int(datetime.datetime.now().strftime('%H'))
     print(
         f"WARNING : Le fichier {str(config['FICHIER.HISTORIQUE']['soldeFile'])} est introuvable, il va être créé."
     )
