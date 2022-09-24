@@ -1039,11 +1039,11 @@ def placeOrder(order, perpSymbol, quantityMax, price, leverage, position):
                         f"Une erreur est survenue lors de la mise en place d'un ordre limite de fermeture de position : {quantityMax} {perpSymbol}, au prix de {price} $ unité : {err}"
                     )
                     print("Détails :", err)
-                    telegram_send.send(
-                        messages=[
-                            f"{botname} : Une erreur est survenue lors de la mise en place d'un ordre limite de fermeture de position LONG de {quantityMax} {perpSymbol}, au prix de {price} $ unité\nDétails : {err}"
-                        ]
-                    )
+                    useLimitOrderToClose = "false"
+                    price = ftx.get_bid_ask_price(symbol=perpSymbol)["ask"]
+                    placeOrder("close", perpSymbol, quantityMax, price, leverage, position)
+                    useLimitOrderToClose = "true"
+                    
         # Pour mettre un takeprofit
         elif order == "takeProfit":
             try:
@@ -1315,11 +1315,10 @@ def placeOrder(order, perpSymbol, quantityMax, price, leverage, position):
                         f"Une erreur est survenue lors de la mise en place d'un ordre limite de fermeture de position : {quantityMax} {perpSymbol}, au prix de {price} $ unité : {err}"
                     )
                     print("Détails :", err)
-                    telegram_send.send(
-                        messages=[
-                            f"{botname} : Une erreur est survenue lors de la mise en place d'un ordre limite de fermeture de position SHORT de {quantityMax} {perpSymbol}, au prix de {price} $ unité\nDétails : {err}"
-                        ]
-                    )
+                    useLimitOrderToClose = "false"
+                    price = ftx.get_bid_ask_price(symbol=perpSymbol)["ask"]
+                    placeOrder("close", perpSymbol, quantityMax, price, leverage, position)
+                    useLimitOrderToClose = "true"
         # Si on souhaite placer un takeprofit
         elif order == "takeProfit":
             try:
