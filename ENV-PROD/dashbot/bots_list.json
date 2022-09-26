@@ -1,8 +1,8 @@
 {
 	"bots_list": [
-        "/home/moutonneux/ENV-PROD/super-reversal-duo/",
-        "/home/moutonneux/ENV-PROD/super-reversal/",
         "/home/moutonneux/ENV-PROD/miracle/",
-        "/home/moutonneux/ENV-PROD/miracle-mono/"
+        "/home/moutonneux/ENV-PROD/miracle-mono/",
+        "/home/moutonneux/ENV-PROD/super-reversal-duo/",
+        "/home/moutonneux/ENV-PROD/super-reversal/"
     ]
 }

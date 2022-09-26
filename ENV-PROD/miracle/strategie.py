@@ -6,7 +6,7 @@ import ta
 # =======================================
 #        GENERATION DES INDICATEURS
 # =======================================
-def load_indicators(dfList, dfListSorted, indicators):
+def load_indicators(dfList, dfListSorted, indicators, showLog=False):
     # On récupère les paramètres des indicateurs spécifiés dans le fichier parametres.cfg
     trixLength = int(indicators['trixLength'])
     trixSignal = int(indicators['trixSignal'])
@@ -79,7 +79,7 @@ def load_indicators(dfList, dfListSorted, indicators):
             dfList[perpSymbol]['BOL_L_BAND1'] = BOL_BAND1.bollinger_lband_indicator()
             
             #dfList[perpSymbol]['perf'] = o1.daily_return(dfList[perpSymbol]['close'])
-            dfList[perpSymbol]['perf'] = dfListSorted[perpSymbol]
+            #dfList[perpSymbol]['perf'] = dfListSorted[perpSymbol]
             
             Keltner = ta.volatility.KeltnerChannel(dfList[perpSymbol]['high'], dfList[perpSymbol]['low'], dfList[perpSymbol]['close'], window = 10, window_atr = 10)
             dfList[perpSymbol]['Keltner'] = Keltner.keltner_channel_lband_indicator()
@@ -91,7 +91,7 @@ def load_indicators(dfList, dfListSorted, indicators):
             dfList[perpSymbol]['CCI'] = CCI.cci()
             
             #Average True Range (ATR)
-            dfList[perpSymbol]['ATR'] = ta.volatility.average_true_range(high=dfList[perpSymbol]['high'], low=dfList[perpSymbol]['low'], close=dfList[perpSymbol]['close'], window=14)
+            dfList[perpSymbol]['atr'] = ta.volatility.average_true_range(high=dfList[perpSymbol]['high'], low=dfList[perpSymbol]['low'], close=dfList[perpSymbol]['close'], window=14)
 
             dfList[perpSymbol]['AWESOME_OSCILLATOR'] = ta.momentum.awesome_oscillator(high=dfList[perpSymbol]['high'], low=dfList[perpSymbol]['low'], window1=5, window2=34)
             
@@ -111,92 +111,45 @@ def load_indicators(dfList, dfListSorted, indicators):
             pass
     return dfList
 
-def btcOrETHisUP24h(dfList) :
-    if (dfList["BTC-PERP"].iloc[-2]['Prix 24h'] > dfList["BTC-PERP"].iloc[-2]['close']
-        and dfList["BTC-PERP"].iloc[-2]['ATL 72h'] > dfList["BTC-PERP"].iloc[-2]['close']):
-        return False
-    elif (dfList["ETH-PERP"].iloc[-2]['Prix 24h'] > dfList["ETH-PERP"].iloc[-2]['close']
-        and dfList["ETH-PERP"].iloc[-2]['ATL 72h'] > dfList["ETH-PERP"].iloc[-2]['close']):
-        return False
-    else:
-        return True
-
 def getEvolution(row, previousRow):
     return float(row['close']-previousRow['close'])/previousRow['close']*100
-        
-
-def tendance(dfList):
-    if dfList["BTC-PERP"].iloc[-2]['EMA9D'] < dfList["BTC-PERP"].iloc[-2]['EMA13D']:
-        return True
-    else:
-        return False
 
 def openLongCondition(row, previousRow, dfList, indicators):
     try:
-        if tendance(dfList)==True :
-            if (
-                row['TRIX_HISTO'] >= indicators['parametreTRIX_HISTO_BEAR']
-                and btcOrETHisUP24h(dfList)==True
-                and row['STOCH_RSI'] < indicators['parametreSTOCH_RSI_BEAR']
-                and row['ADXV'] > indicators['parametreADXV_BEAR']
-                and row['EMA9D'] > row['EMA13D']
-                and row['MACD_SIGNAL'] > previousRow['MACD_SIGNAL']
-                and row['EMA50'] < row['EMA10']
-                and row['EMA45'] < row['close']
-                and row['perf'] > indicators['parametrePERF_BEAR']
-                and row['Keltner'] < 1.0
-                and row['kst'] < 500.0
-            ):
-                return True
-            else:
-                return False
-        else :
-            if (
-                row['TRIX_HISTO'] >= indicators['parametreTRIX_HISTO_BULL']
-                and btcOrETHisUP24h(dfList)==True
-                and row['STOCH_RSI'] < indicators['parametreSTOCH_RSI_BULL']
-                and row['ADXV'] > indicators['parametreADXV_BULL']
-                and row['EMA9D'] > row['EMA13D']
-                and row['MACD_SIGNAL1'] > previousRow['MACD_SIGNAL1']
-                and row['EMA50'] < row['EMA10']
-                and row['EMA45'] < row['close']
-                and row['perf'] > indicators['parametrePERF_BULL']
-                and row['pvo1'] > indicators['parametrePVO2']
-                and row['Keltner'] < 1.0
-                and row['kst'] < 500.0 
-            ):
-                return True
-            else:
-                return False
-    except:
+        if (
+            row['TRIX_HISTO'] >= float(indicators['parametreTRIX_HISTO_BEAR'])
+            and row['STOCH_RSI'] < float(indicators['parametreSTOCH_RSI_BEAR'])
+            and row['ADXV'] > float(indicators['parametreADXV_BEAR'])
+            and row['EMA9D'] > row['EMA13D']
+            and row['MACD_SIGNAL'] > previousRow['MACD_SIGNAL']
+            and row['EMA50'] < row['EMA10']
+            and row['EMA45'] < row['close']
+            and row['Keltner'] < 1.0
+            and row['kst'] < 500.0
+        ):
+            return True
+        else:
+            return False
+    except Exception as err:
+        print(err)
         return False
 
 
 # -- Condition to close Market LONG --
 def closeLongCondition(row, previousRow, dfList, indicators):
     try:
-        if tendance(dfList)==True :
-            if (
-                (row['TRIX_HISTO'] < indicators['parametreTRIX_HISTO2_BEAR']
-                and row['STOCH_RSI'] > indicators['parametreSTOCH_RSI2_BEAR'])
-                or row['BOL_L_BAND'] == 1
-                or (row['Aroonindicateur'] < -84.0 and row['CCI'] > -80.0)
-                or getEvolution(row, previousRow)<-10.0
-            ):
-                return True
-            else:
-                return False
-        else :
-            if (
-                (row['TRIX_HISTO'] < indicators['parametreTRIX_HISTO2_BULL']
-                and row['STOCH_RSI'] > indicators['parametreSTOCH_RSI2_BULL'])
-                or row['BOL_L_BAND1'] == 1
-                or (row['Aroonindicateur'] < -84.0 and row['CCI'] > -80.0)
-            ):
-                return True
-            else:
-                return False
-    except:
+        if (
+            (row['TRIX_HISTO'] < float(indicators['parametreTRIX_HISTO2_BEAR'])
+            and row['STOCH_RSI'] > float(indicators['parametreSTOCH_RSI2_BEAR']))
+            or row['BOL_L_BAND'] == 1
+            or (row['Aroonindicateur'] < -84.0 and row['CCI'] > -80.0)
+            or getEvolution(row, previousRow)<-10.0
+        ):
+            return True
+        else:
+            return False
+    except Exception as err:
+        print(err)
         return False
 
 # -- Condition to open Market SHORT --
@@ -204,7 +157,6 @@ def openShortCondition(row, previousRow, dfList, indicators):
     try:
         if (
             row['TRIX_HISTO'] >= 0.0
-            and btcOrETHisUP24h(dfList)==True
             and row['STOCH_RSI'] > 0.85
             and row['ADXV'] < 0.5
             and row['EMA9D'] < row['EMA13D']
