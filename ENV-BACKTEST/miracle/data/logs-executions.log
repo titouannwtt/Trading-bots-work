@@ -1,0 +1,48 @@
+No handles with labels found to put in legend.
+========================
+MIRACLE sv4.07 - tv7.06
+2022-09-24 21:00:02.967753
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Vous ne sauvegardez pas encore votre investissement initial.
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+70 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'DOGE-PERP', 'ATOM-PERP', 'ETC-PERP', 'BNB-PERP', 'CHZ-PERP', 'MATIC-PERP', 'LINK-PERP', 'ADA-PERP', 'APE-PERP', 'ALGO-PERP', 'LUNC-PERP', 'AVAX-PERP', 'AXS-PERP', 'LTC-PERP', 'DOT-PERP', 'CRV-PERP', 'EOS-PERP', 'RSR-PERP', 'SAND-PERP', 'BCH-PERP', 'XLM-PERP', 'FTT-PERP', 'KSHIB-PERP', 'NEAR-PERP', 'OP-PERP', 'FIL-PERP', 'AAVE-PERP', 'UNI-PERP', 'GMT-PERP', 'LUNA2-PERP', 'SUSHI-PERP', 'SHIB-PERP', 'FTM-PERP', 'COMP-PERP', 'CRO-PERP', 'KLUNC-PERP', 'LDO-PERP', 'TRX-PERP', 'USDT-PERP', 'CEL-PERP', 'CAKE-PERP', 'HNT-PERP', 'XTZ-PERP', 'ROSE-PERP', 'REEF-PERP', 'PEOPLE-PERP', 'GALA-PERP', 'SNX-PERP', 'MANA-PERP', 'RVN-PERP', 'VET-PERP', 'ENS-PERP', 'SRM-PERP', 'YFI-PERP', 'THETA-PERP', 'WAVES-PERP', 'XMR-PERP', 'DYDX-PERP', '1INCH-PERP', 'LOOKS-PERP', 'RUNE-PERP', 'ALT-PERP', 'GAL-PERP', 'HBAR-PERP', 'USTC-PERP', 'ZEC-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 3000 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{}
+[]
+TakeProfit est activé.
+Stoploss est activé
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/miracle/data/historiques-positions.dat'
+Solde du compte => 69.55067716 $
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+MIRACLE sv4.07 - tv7.06
+2022-09-24 22:00:02.262721
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Vous ne sauvegardez pas encore votre investissement initial.
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+70 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'DOGE-PERP', 'ATOM-PERP', 'ETC-PERP', 'BNB-PERP', 'CHZ-PERP', 'LINK-PERP', 'MATIC-PERP', 'APE-PERP', 'ALGO-PERP', 'ADA-PERP', 'LUNC-PERP', 'AVAX-PERP', 'AXS-PERP', 'RSR-PERP', 'DOT-PERP', 'CRV-PERP', 'EOS-PERP', 'LTC-PERP', 'SAND-PERP', 'BCH-PERP', 'XLM-PERP', 'FTT-PERP', 'KSHIB-PERP', 'NEAR-PERP', 'OP-PERP', 'FIL-PERP', 'AAVE-PERP', 'UNI-PERP', 'SHIB-PERP', 'LUNA2-PERP', 'GMT-PERP', 'SUSHI-PERP', 'REEF-PERP', 'FTM-PERP', 'COMP-PERP', 'CRO-PERP', 'KLUNC-PERP', 'LDO-PERP', 'TRX-PERP', 'USDT-PERP', 'CEL-PERP', 'HNT-PERP', 'CAKE-PERP', 'XTZ-PERP', 'ROSE-PERP', 'PEOPLE-PERP', 'RVN-PERP', 'SNX-PERP', 'GALA-PERP', 'MANA-PERP', 'VET-PERP', 'ENS-PERP', 'SRM-PERP', 'YFI-PERP', 'THETA-PERP', 'XMR-PERP', 'WAVES-PERP', '1INCH-PERP', 'DYDX-PERP', 'LOOKS-PERP', 'RUNE-PERP', 'ALT-PERP', 'USTC-PERP', 'KNC-PERP', 'GAL-PERP', 'HBAR-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 3000 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{}
+[]
+TakeProfit est activé.
+Stoploss est activé
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/miracle/data/historiques-positions.dat'
+Solde du compte => 69.55067716 $
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.

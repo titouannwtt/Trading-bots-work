@@ -68,3 +68,3153 @@ WARNING : Le fichier data/historiques-soldes.dat est introuvable, il va être cr
 Aucun changement de données, aucune information n'a été envoyé à Telegram
 On attend que les ordres limites d'ouverture de positions se déclenchent...
 Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-24 23:00:02.573743
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'DOGE-PERP', 'ATOM-PERP', 'ETC-PERP', 'BNB-PERP', 'CHZ-PERP', 'LINK-PERP', 'ALGO-PERP', 'LUNC-PERP', 'MATIC-PERP', 'APE-PERP', 'ADA-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'AXS-PERP', 'CRV-PERP', 'EOS-PERP', 'LTC-PERP', 'BCH-PERP', 'KSHIB-PERP', 'SAND-PERP', 'XLM-PERP', 'NEAR-PERP', 'FTT-PERP', 'REEF-PERP', 'FIL-PERP', 'OP-PERP', 'SHIB-PERP', 'LUNA2-PERP', 'UNI-PERP', 'AAVE-PERP', 'SUSHI-PERP', 'KLUNC-PERP', 'GMT-PERP', 'CRO-PERP', 'FTM-PERP', 'COMP-PERP', 'USDT-PERP', 'CEL-PERP', 'TRX-PERP', 'LDO-PERP', 'CAKE-PERP', 'HNT-PERP', 'XTZ-PERP', 'ROSE-PERP', 'RVN-PERP', 'SNX-PERP', 'GALA-PERP', 'PEOPLE-PERP', 'VET-PERP', 'SRM-PERP', 'XMR-PERP', 'MANA-PERP', 'YFI-PERP', 'THETA-PERP', 'LOOKS-PERP', 'ENS-PERP', 'WAVES-PERP', '1INCH-PERP', 'DYDX-PERP', 'ALT-PERP', 'USTC-PERP', 'HBAR-PERP', 'RUNE-PERP', 'KNC-PERP', 'GAL-PERP', 'ZEC-PERP', 'FLOW-PERP', 'CVX-PERP', 'MKR-PERP', 'SHIT-PERP', 'ICP-PERP', 'RAY-PERP', 'C98-PERP', 'GRT-PERP', 'YFII-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 5.8315, 'ETH-PERP': 6.5618}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat LONG
+ATOM-PERP est en position d'achat SHORT
+BNB-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+APE-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+AXS-PERP est en position d'achat LONG
+CRV-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+LTC-PERP est en position d'achat LONG
+BCH-PERP est en position d'achat LONG
+KSHIB-PERP est en position d'achat LONG
+SAND-PERP est en position d'achat LONG
+NEAR-PERP est en position d'achat SHORT
+FIL-PERP est en position d'achat LONG
+OP-PERP est en position d'achat SHORT
+SHIB-PERP est en position d'achat LONG
+UNI-PERP est en position d'achat LONG
+AAVE-PERP est en position d'achat SHORT
+KLUNC-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+FTM-PERP est en position d'achat SHORT
+COMP-PERP est en position d'achat LONG
+CEL-PERP est en position d'achat LONG
+TRX-PERP est en position d'achat SHORT
+CAKE-PERP est en position d'achat LONG
+HNT-PERP est en position d'achat LONG
+XTZ-PERP est en position d'achat LONG
+ROSE-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+VET-PERP est en position d'achat LONG
+YFI-PERP est en position d'achat SHORT
+THETA-PERP est en position d'achat LONG
+1INCH-PERP est en position d'achat LONG
+DYDX-PERP est en position d'achat SHORT
+ALT-PERP est en position d'achat LONG
+HBAR-PERP est en position d'achat LONG
+GAL-PERP est en position d'achat LONG
+MKR-PERP est en position d'achat LONG
+SHIT-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 137.25232829 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 00:00:02.461339
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'DOGE-PERP', 'ATOM-PERP', 'ETC-PERP', 'BNB-PERP', 'CHZ-PERP', 'LINK-PERP', 'LUNC-PERP', 'ALGO-PERP', 'ADA-PERP', 'MATIC-PERP', 'APE-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'CRV-PERP', 'EOS-PERP', 'AXS-PERP', 'LTC-PERP', 'BCH-PERP', 'KSHIB-PERP', 'SAND-PERP', 'XLM-PERP', 'NEAR-PERP', 'FTT-PERP', 'REEF-PERP', 'FIL-PERP', 'LUNA2-PERP', 'SHIB-PERP', 'OP-PERP', 'AAVE-PERP', 'UNI-PERP', 'KLUNC-PERP', 'SUSHI-PERP', 'GMT-PERP', 'CRO-PERP', 'FTM-PERP', 'COMP-PERP', 'USDT-PERP', 'CEL-PERP', 'LDO-PERP', 'CAKE-PERP', 'TRX-PERP', 'HNT-PERP', 'XTZ-PERP', 'RVN-PERP', 'ROSE-PERP', 'SNX-PERP', 'VET-PERP', 'GALA-PERP', 'PEOPLE-PERP', 'SRM-PERP', 'MANA-PERP', 'XMR-PERP', 'THETA-PERP', 'LOOKS-PERP', 'WAVES-PERP', '1INCH-PERP', 'ENS-PERP', 'YFI-PERP', 'DYDX-PERP', 'USTC-PERP', 'GAL-PERP', 'HBAR-PERP', 'RUNE-PERP', 'ZEC-PERP', 'KNC-PERP', 'FLOW-PERP', 'CVX-PERP', 'ICP-PERP', 'MKR-PERP', 'SHIT-PERP', 'RAY-PERP', 'GRT-PERP', 'C98-PERP', 'EGLD-PERP', 'YFII-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 3.317, 'ETH-PERP': 7.4992}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat LONG
+ATOM-PERP est en position d'achat SHORT
+ETC-PERP est en position d'achat SHORT
+BNB-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+ALGO-PERP est en position d'achat LONG
+APE-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+CRV-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+AXS-PERP est en position d'achat LONG
+BCH-PERP est en position d'achat LONG
+KSHIB-PERP est en position d'achat LONG
+SAND-PERP est en position d'achat LONG
+NEAR-PERP est en position d'achat SHORT
+SHIB-PERP est en position d'achat LONG
+OP-PERP est en position d'achat SHORT
+AAVE-PERP est en position d'achat SHORT
+UNI-PERP est en position d'achat LONG
+KLUNC-PERP est en position d'achat SHORT
+GMT-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+FTM-PERP est en position d'achat SHORT
+COMP-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+TRX-PERP est en position d'achat SHORT
+GALA-PERP est en position d'achat SHORT
+PEOPLE-PERP est en position d'achat LONG
+SRM-PERP est en position d'achat SHORT
+MANA-PERP est en position d'achat SHORT
+THETA-PERP est en position d'achat LONG
+LOOKS-PERP est en position d'achat SHORT
+WAVES-PERP est en position d'achat SHORT
+1INCH-PERP est en position d'achat LONG
+YFI-PERP est en position d'achat SHORT
+DYDX-PERP est en position d'achat SHORT
+GAL-PERP est en position d'achat LONG
+HBAR-PERP est en position d'achat LONG
+RUNE-PERP est en position d'achat SHORT
+ZEC-PERP est en position d'achat SHORT
+KNC-PERP est en position d'achat SHORT
+FLOW-PERP est en position d'achat SHORT
+CVX-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+C98-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 135.5432474 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 01:00:02.836202
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'DOGE-PERP', 'ATOM-PERP', 'ETC-PERP', 'BNB-PERP', 'CHZ-PERP', 'LINK-PERP', 'LUNC-PERP', 'ADA-PERP', 'APE-PERP', 'MATIC-PERP', 'ALGO-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'LTC-PERP', 'EOS-PERP', 'AXS-PERP', 'BCH-PERP', 'KSHIB-PERP', 'CRV-PERP', 'SAND-PERP', 'XLM-PERP', 'NEAR-PERP', 'REEF-PERP', 'FTT-PERP', 'LUNA2-PERP', 'FIL-PERP', 'OP-PERP', 'SHIB-PERP', 'UNI-PERP', 'AAVE-PERP', 'KLUNC-PERP', 'SUSHI-PERP', 'GMT-PERP', 'CRO-PERP', 'FTM-PERP', 'COMP-PERP', 'CEL-PERP', 'USDT-PERP', 'LDO-PERP', 'CAKE-PERP', 'TRX-PERP', 'RVN-PERP', 'XTZ-PERP', 'HNT-PERP', 'SNX-PERP', 'VET-PERP', 'GALA-PERP', 'ROSE-PERP', 'PEOPLE-PERP', 'MANA-PERP', 'SRM-PERP', 'WAVES-PERP', 'XMR-PERP', 'LOOKS-PERP', '1INCH-PERP', 'THETA-PERP', 'ENS-PERP', 'YFI-PERP', 'RUNE-PERP', 'USTC-PERP', 'HBAR-PERP', 'GAL-PERP', 'DYDX-PERP', 'KNC-PERP', 'ZEC-PERP', 'FLOW-PERP', 'MKR-PERP', 'ICP-PERP', 'CVX-PERP', 'GRT-PERP', 'EGLD-PERP', 'RAY-PERP', 'C98-PERP', 'YFII-PERP', 'BRZ-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 1.96345, 'ETH-PERP': 7.912}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat LONG
+ATOM-PERP est en position d'achat SHORT
+ETC-PERP est en position d'achat SHORT
+BNB-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+APE-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+AXS-PERP est en position d'achat LONG
+BCH-PERP est en position d'achat LONG
+KSHIB-PERP est en position d'achat LONG
+CRV-PERP est en position d'achat SHORT
+SAND-PERP est en position d'achat LONG
+NEAR-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+OP-PERP est en position d'achat SHORT
+SHIB-PERP est en position d'achat LONG
+UNI-PERP est en position d'achat LONG
+AAVE-PERP est en position d'achat SHORT
+KLUNC-PERP est en position d'achat SHORT
+GMT-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+FTM-PERP est en position d'achat SHORT
+COMP-PERP est en position d'achat LONG
+LDO-PERP est en position d'achat SHORT
+CAKE-PERP est en position d'achat LONG
+TRX-PERP est en position d'achat SHORT
+GALA-PERP est en position d'achat SHORT
+ROSE-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+MANA-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+WAVES-PERP est en position d'achat SHORT
+LOOKS-PERP est en position d'achat SHORT
+1INCH-PERP est en position d'achat LONG
+THETA-PERP est en position d'achat LONG
+YFI-PERP est en position d'achat SHORT
+RUNE-PERP est en position d'achat SHORT
+HBAR-PERP est en position d'achat LONG
+GAL-PERP est en position d'achat LONG
+DYDX-PERP est en position d'achat SHORT
+KNC-PERP est en position d'achat SHORT
+ZEC-PERP est en position d'achat SHORT
+FLOW-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+CVX-PERP est en position d'achat SHORT
+EGLD-PERP est en position d'achat SHORT
+C98-PERP est en position d'achat SHORT
+BRZ-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 134.94001107 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 02:00:03.165578
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'DOGE-PERP', 'ATOM-PERP', 'BNB-PERP', 'ETC-PERP', 'CHZ-PERP', 'LINK-PERP', 'LUNC-PERP', 'ADA-PERP', 'APE-PERP', 'MATIC-PERP', 'ALGO-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'LTC-PERP', 'EOS-PERP', 'AXS-PERP', 'KSHIB-PERP', 'SAND-PERP', 'BCH-PERP', 'CRV-PERP', 'NEAR-PERP', 'XLM-PERP', 'REEF-PERP', 'FTT-PERP', 'LUNA2-PERP', 'FIL-PERP', 'SHIB-PERP', 'OP-PERP', 'UNI-PERP', 'KLUNC-PERP', 'AAVE-PERP', 'SUSHI-PERP', 'GMT-PERP', 'CRO-PERP', 'FTM-PERP', 'COMP-PERP', 'CEL-PERP', 'USDT-PERP', 'CAKE-PERP', 'TRX-PERP', 'LDO-PERP', 'RVN-PERP', 'XTZ-PERP', 'SNX-PERP', 'HNT-PERP', 'VET-PERP', 'GALA-PERP', 'ROSE-PERP', 'PEOPLE-PERP', 'MANA-PERP', 'SRM-PERP', 'WAVES-PERP', 'LOOKS-PERP', 'XMR-PERP', '1INCH-PERP', 'YFI-PERP', 'THETA-PERP', 'ENS-PERP', 'USTC-PERP', 'RUNE-PERP', 'GAL-PERP', 'HBAR-PERP', 'DYDX-PERP', 'KNC-PERP', 'FLOW-PERP', 'ZEC-PERP', 'MKR-PERP', 'ICP-PERP', 'CVX-PERP', 'GRT-PERP', 'EGLD-PERP', 'RAY-PERP', 'C98-PERP', 'BRZ-PERP', 'AGLD-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 2.25235, 'ETH-PERP': 7.6282}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat LONG
+ATOM-PERP est en position d'achat SHORT
+BNB-PERP est en position d'achat LONG
+ETC-PERP est en position d'achat SHORT
+CHZ-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+AXS-PERP est en position d'achat LONG
+KSHIB-PERP est en position d'achat LONG
+SAND-PERP est en position d'achat LONG
+BCH-PERP est en position d'achat LONG
+CRV-PERP est en position d'achat SHORT
+NEAR-PERP est en position d'achat SHORT
+SHIB-PERP est en position d'achat LONG
+OP-PERP est en position d'achat SHORT
+UNI-PERP est en position d'achat LONG
+KLUNC-PERP est en position d'achat SHORT
+AAVE-PERP est en position d'achat SHORT
+GMT-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+FTM-PERP est en position d'achat SHORT
+COMP-PERP est en position d'achat LONG
+CEL-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+TRX-PERP est en position d'achat SHORT
+LDO-PERP est en position d'achat SHORT
+GALA-PERP est en position d'achat SHORT
+ROSE-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+MANA-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+WAVES-PERP est en position d'achat SHORT
+LOOKS-PERP est en position d'achat SHORT
+1INCH-PERP est en position d'achat LONG
+YFI-PERP est en position d'achat SHORT
+THETA-PERP est en position d'achat LONG
+RUNE-PERP est en position d'achat SHORT
+GAL-PERP est en position d'achat LONG
+HBAR-PERP est en position d'achat LONG
+DYDX-PERP est en position d'achat SHORT
+KNC-PERP est en position d'achat SHORT
+FLOW-PERP est en position d'achat SHORT
+ZEC-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+CVX-PERP est en position d'achat SHORT
+EGLD-PERP est en position d'achat SHORT
+C98-PERP est en position d'achat SHORT
+BRZ-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 134.67321301 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 03:00:02.417983
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'DOGE-PERP', 'BNB-PERP', 'ETC-PERP', 'CHZ-PERP', 'ATOM-PERP', 'LINK-PERP', 'LUNC-PERP', 'ADA-PERP', 'APE-PERP', 'ALGO-PERP', 'MATIC-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'LTC-PERP', 'EOS-PERP', 'KSHIB-PERP', 'BCH-PERP', 'SAND-PERP', 'AXS-PERP', 'CRV-PERP', 'REEF-PERP', 'NEAR-PERP', 'XLM-PERP', 'FTT-PERP', 'LUNA2-PERP', 'FIL-PERP', 'SHIB-PERP', 'OP-PERP', 'KLUNC-PERP', 'UNI-PERP', 'SUSHI-PERP', 'AAVE-PERP', 'GMT-PERP', 'CAKE-PERP', 'FTM-PERP', 'CEL-PERP', 'USDT-PERP', 'COMP-PERP', 'LDO-PERP', 'TRX-PERP', 'CRO-PERP', 'RVN-PERP', 'XTZ-PERP', 'SNX-PERP', 'VET-PERP', 'HNT-PERP', 'GALA-PERP', 'ROSE-PERP', 'PEOPLE-PERP', 'MANA-PERP', 'SRM-PERP', 'WAVES-PERP', 'XMR-PERP', 'LOOKS-PERP', 'YFI-PERP', 'ENS-PERP', '1INCH-PERP', 'THETA-PERP', 'USTC-PERP', 'RUNE-PERP', 'HBAR-PERP', 'DYDX-PERP', 'GAL-PERP', 'ZEC-PERP', 'KNC-PERP', 'FLOW-PERP', 'MKR-PERP', 'ICP-PERP', 'STG-PERP', 'CVX-PERP', 'EGLD-PERP', 'RAY-PERP', 'C98-PERP', 'GRT-PERP', 'ALT-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 1.5943, 'ETH-PERP': 7.4562}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat LONG
+BNB-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+KSHIB-PERP est en position d'achat LONG
+BCH-PERP est en position d'achat LONG
+SAND-PERP est en position d'achat LONG
+REEF-PERP est en position d'achat LONG
+SHIB-PERP est en position d'achat LONG
+UNI-PERP est en position d'achat LONG
+AAVE-PERP est en position d'achat SHORT
+CAKE-PERP est en position d'achat LONG
+FTM-PERP est en position d'achat SHORT
+CEL-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+LDO-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+GALA-PERP est en position d'achat SHORT
+ROSE-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+MANA-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+WAVES-PERP est en position d'achat SHORT
+LOOKS-PERP est en position d'achat SHORT
+YFI-PERP est en position d'achat SHORT
+1INCH-PERP est en position d'achat LONG
+THETA-PERP est en position d'achat LONG
+RUNE-PERP est en position d'achat SHORT
+HBAR-PERP est en position d'achat LONG
+GAL-PERP est en position d'achat LONG
+ZEC-PERP est en position d'achat SHORT
+KNC-PERP est en position d'achat SHORT
+FLOW-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+CVX-PERP est en position d'achat SHORT
+EGLD-PERP est en position d'achat SHORT
+C98-PERP est en position d'achat SHORT
+ALT-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 133.45726169 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 04:00:02.347479
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'DOGE-PERP', 'BNB-PERP', 'ETC-PERP', 'CHZ-PERP', 'ATOM-PERP', 'LINK-PERP', 'LUNC-PERP', 'ADA-PERP', 'ALGO-PERP', 'APE-PERP', 'MATIC-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'LTC-PERP', 'EOS-PERP', 'BCH-PERP', 'KSHIB-PERP', 'SAND-PERP', 'CRV-PERP', 'REEF-PERP', 'AXS-PERP', 'NEAR-PERP', 'XLM-PERP', 'FTT-PERP', 'LUNA2-PERP', 'FIL-PERP', 'SHIB-PERP', 'KLUNC-PERP', 'OP-PERP', 'UNI-PERP', 'SUSHI-PERP', 'AAVE-PERP', 'GMT-PERP', 'USDT-PERP', 'FTM-PERP', 'CAKE-PERP', 'COMP-PERP', 'CEL-PERP', 'LDO-PERP', 'TRX-PERP', 'RVN-PERP', 'CRO-PERP', 'SNX-PERP', 'XTZ-PERP', 'VET-PERP', 'HNT-PERP', 'ROSE-PERP', 'PEOPLE-PERP', 'GALA-PERP', 'WAVES-PERP', 'SRM-PERP', 'LOOKS-PERP', 'MANA-PERP', 'YFI-PERP', 'XMR-PERP', 'ENS-PERP', '1INCH-PERP', 'THETA-PERP', 'USTC-PERP', 'RUNE-PERP', 'HBAR-PERP', 'DYDX-PERP', 'GAL-PERP', 'ZEC-PERP', 'KNC-PERP', 'STG-PERP', 'MKR-PERP', 'ICP-PERP', 'FLOW-PERP', 'EGLD-PERP', 'CVX-PERP', 'GRT-PERP', 'ALT-PERP', 'C98-PERP', 'PERP-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'ETH-PERP': 7.4304, 'XRP-PERP': 0.86135}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat LONG
+BNB-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+BCH-PERP est en position d'achat LONG
+KSHIB-PERP est en position d'achat LONG
+SAND-PERP est en position d'achat LONG
+CRV-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+SHIB-PERP est en position d'achat LONG
+UNI-PERP est en position d'achat LONG
+AAVE-PERP est en position d'achat SHORT
+GMT-PERP est en position d'achat SHORT
+FTM-PERP est en position d'achat SHORT
+CAKE-PERP est en position d'achat LONG
+CEL-PERP est en position d'achat LONG
+LDO-PERP est en position d'achat SHORT
+ROSE-PERP est en position d'achat LONG
+GALA-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+LOOKS-PERP est en position d'achat SHORT
+MANA-PERP est en position d'achat SHORT
+YFI-PERP est en position d'achat SHORT
+THETA-PERP est en position d'achat LONG
+RUNE-PERP est en position d'achat SHORT
+HBAR-PERP est en position d'achat LONG
+GAL-PERP est en position d'achat LONG
+ZEC-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+FLOW-PERP est en position d'achat SHORT
+EGLD-PERP est en position d'achat SHORT
+CVX-PERP est en position d'achat SHORT
+ALT-PERP est en position d'achat LONG
+C98-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 132.93431057 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 05:00:03.000513
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'DOGE-PERP', 'BNB-PERP', 'ETC-PERP', 'CHZ-PERP', 'ATOM-PERP', 'LINK-PERP', 'LUNC-PERP', 'ALGO-PERP', 'ADA-PERP', 'APE-PERP', 'MATIC-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'LTC-PERP', 'EOS-PERP', 'BCH-PERP', 'KSHIB-PERP', 'REEF-PERP', 'SAND-PERP', 'CRV-PERP', 'AXS-PERP', 'NEAR-PERP', 'XLM-PERP', 'FTT-PERP', 'LUNA2-PERP', 'KLUNC-PERP', 'FIL-PERP', 'SHIB-PERP', 'OP-PERP', 'UNI-PERP', 'SUSHI-PERP', 'AAVE-PERP', 'GMT-PERP', 'USDT-PERP', 'CAKE-PERP', 'FTM-PERP', 'COMP-PERP', 'RVN-PERP', 'LDO-PERP', 'CEL-PERP', 'TRX-PERP', 'CRO-PERP', 'SNX-PERP', 'XTZ-PERP', 'VET-PERP', 'HNT-PERP', 'PEOPLE-PERP', 'GALA-PERP', 'ROSE-PERP', 'WAVES-PERP', 'SRM-PERP', 'LOOKS-PERP', 'MANA-PERP', 'YFI-PERP', 'XMR-PERP', '1INCH-PERP', 'ENS-PERP', 'THETA-PERP', 'USTC-PERP', 'RUNE-PERP', 'HBAR-PERP', 'DYDX-PERP', 'GAL-PERP', 'STG-PERP', 'ZEC-PERP', 'KNC-PERP', 'MKR-PERP', 'ICP-PERP', 'EGLD-PERP', 'FLOW-PERP', 'CVX-PERP', 'GRT-PERP', 'ALT-PERP', 'AGLD-PERP', 'LRC-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 0.61525, 'ETH-PERP': 7.4648}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat LONG
+BNB-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+BCH-PERP est en position d'achat LONG
+KSHIB-PERP est en position d'achat LONG
+REEF-PERP est en position d'achat LONG
+SAND-PERP est en position d'achat LONG
+CRV-PERP est en position d'achat SHORT
+NEAR-PERP est en position d'achat SHORT
+SHIB-PERP est en position d'achat LONG
+OP-PERP est en position d'achat SHORT
+UNI-PERP est en position d'achat LONG
+AAVE-PERP est en position d'achat SHORT
+GMT-PERP est en position d'achat SHORT
+CAKE-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+CEL-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+GALA-PERP est en position d'achat SHORT
+ROSE-PERP est en position d'achat LONG
+SRM-PERP est en position d'achat SHORT
+LOOKS-PERP est en position d'achat SHORT
+THETA-PERP est en position d'achat LONG
+RUNE-PERP est en position d'achat SHORT
+HBAR-PERP est en position d'achat LONG
+DYDX-PERP est en position d'achat SHORT
+GAL-PERP est en position d'achat LONG
+ZEC-PERP est en position d'achat SHORT
+EGLD-PERP est en position d'achat SHORT
+FLOW-PERP est en position d'achat SHORT
+ALT-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 132.66862779 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 06:00:02.227903
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'BNB-PERP', 'ETC-PERP', 'CHZ-PERP', 'DOGE-PERP', 'ATOM-PERP', 'LINK-PERP', 'LUNC-PERP', 'ALGO-PERP', 'ADA-PERP', 'MATIC-PERP', 'APE-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'LTC-PERP', 'EOS-PERP', 'BCH-PERP', 'KSHIB-PERP', 'REEF-PERP', 'CRV-PERP', 'SAND-PERP', 'AXS-PERP', 'NEAR-PERP', 'XLM-PERP', 'FTT-PERP', 'LUNA2-PERP', 'KLUNC-PERP', 'FIL-PERP', 'SHIB-PERP', 'OP-PERP', 'UNI-PERP', 'SUSHI-PERP', 'AAVE-PERP', 'USDT-PERP', 'GMT-PERP', 'FTM-PERP', 'COMP-PERP', 'CAKE-PERP', 'RVN-PERP', 'LDO-PERP', 'CEL-PERP', 'TRX-PERP', 'SNX-PERP', 'CRO-PERP', 'XTZ-PERP', 'VET-PERP', 'PEOPLE-PERP', 'HNT-PERP', 'GALA-PERP', 'WAVES-PERP', 'ROSE-PERP', 'LOOKS-PERP', 'MANA-PERP', 'SRM-PERP', 'YFI-PERP', 'THETA-PERP', '1INCH-PERP', 'RUNE-PERP', 'XMR-PERP', 'USTC-PERP', 'HBAR-PERP', 'STG-PERP', 'ENS-PERP', 'GAL-PERP', 'DYDX-PERP', 'KNC-PERP', 'ZEC-PERP', 'MKR-PERP', 'EGLD-PERP', 'ICP-PERP', 'CVX-PERP', 'FLOW-PERP', 'ALT-PERP', 'LRC-PERP', 'GRT-PERP', 'AGLD-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 1.6157, 'ETH-PERP': 7.095}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+BNB-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+BCH-PERP est en position d'achat LONG
+KSHIB-PERP est en position d'achat LONG
+REEF-PERP est en position d'achat LONG
+CRV-PERP est en position d'achat SHORT
+SAND-PERP est en position d'achat LONG
+SHIB-PERP est en position d'achat LONG
+UNI-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+CEL-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+ROSE-PERP est en position d'achat LONG
+THETA-PERP est en position d'achat LONG
+1INCH-PERP est en position d'achat LONG
+HBAR-PERP est en position d'achat LONG
+GAL-PERP est en position d'achat LONG
+MKR-PERP est en position d'achat LONG
+ALT-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 133.38732103 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 07:00:03.247804
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'CHZ-PERP', 'ETC-PERP', 'BNB-PERP', 'DOGE-PERP', 'ATOM-PERP', 'LINK-PERP', 'LUNC-PERP', 'ALGO-PERP', 'ADA-PERP', 'MATIC-PERP', 'APE-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'LTC-PERP', 'EOS-PERP', 'BCH-PERP', 'KSHIB-PERP', 'REEF-PERP', 'SAND-PERP', 'CRV-PERP', 'AXS-PERP', 'NEAR-PERP', 'FTT-PERP', 'XLM-PERP', 'LUNA2-PERP', 'KLUNC-PERP', 'FIL-PERP', 'SHIB-PERP', 'OP-PERP', 'UNI-PERP', 'SUSHI-PERP', 'AAVE-PERP', 'USDT-PERP', 'FTM-PERP', 'RVN-PERP', 'COMP-PERP', 'LDO-PERP', 'CAKE-PERP', 'GMT-PERP', 'CEL-PERP', 'TRX-PERP', 'SNX-PERP', 'XTZ-PERP', 'CRO-PERP', 'VET-PERP', 'PEOPLE-PERP', 'HNT-PERP', 'GALA-PERP', 'LOOKS-PERP', 'MANA-PERP', 'ROSE-PERP', 'WAVES-PERP', 'YFI-PERP', 'SRM-PERP', 'THETA-PERP', '1INCH-PERP', 'RUNE-PERP', 'XMR-PERP', 'USTC-PERP', 'STG-PERP', 'ENS-PERP', 'HBAR-PERP', 'GAL-PERP', 'DYDX-PERP', 'ZEC-PERP', 'KNC-PERP', 'MKR-PERP', 'EGLD-PERP', 'ICP-PERP', 'GRT-PERP', 'CVX-PERP', 'FLOW-PERP', 'LRC-PERP', 'ALT-PERP', 'AGLD-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 2.2898, 'ETH-PERP': 7.1767}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+ETC-PERP est en position d'achat SHORT
+BNB-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+BCH-PERP est en position d'achat LONG
+KSHIB-PERP est en position d'achat LONG
+REEF-PERP est en position d'achat LONG
+CRV-PERP est en position d'achat SHORT
+SHIB-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+CEL-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+ROSE-PERP est en position d'achat LONG
+THETA-PERP est en position d'achat LONG
+MKR-PERP est en position d'achat LONG
+ALT-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 134.12636717 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 08:00:02.912606
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'CHZ-PERP', 'ETC-PERP', 'DOGE-PERP', 'ATOM-PERP', 'BNB-PERP', 'LINK-PERP', 'LUNC-PERP', 'ALGO-PERP', 'ADA-PERP', 'MATIC-PERP', 'APE-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'LTC-PERP', 'EOS-PERP', 'BCH-PERP', 'KSHIB-PERP', 'REEF-PERP', 'SAND-PERP', 'CRV-PERP', 'AXS-PERP', 'NEAR-PERP', 'FTT-PERP', 'XLM-PERP', 'LUNA2-PERP', 'KLUNC-PERP', 'FIL-PERP', 'SHIB-PERP', 'OP-PERP', 'UNI-PERP', 'AAVE-PERP', 'SUSHI-PERP', 'USDT-PERP', 'FTM-PERP', 'RVN-PERP', 'COMP-PERP', 'LDO-PERP', 'GMT-PERP', 'CEL-PERP', 'TRX-PERP', 'CAKE-PERP', 'SNX-PERP', 'XTZ-PERP', 'CRO-PERP', 'PEOPLE-PERP', 'VET-PERP', 'HNT-PERP', 'GALA-PERP', 'MANA-PERP', 'LOOKS-PERP', 'WAVES-PERP', 'YFI-PERP', 'ROSE-PERP', 'THETA-PERP', 'SRM-PERP', '1INCH-PERP', 'XMR-PERP', 'STG-PERP', 'RUNE-PERP', 'USTC-PERP', 'ENS-PERP', 'GAL-PERP', 'DYDX-PERP', 'HBAR-PERP', 'KNC-PERP', 'ZEC-PERP', 'GRT-PERP', 'ICP-PERP', 'EGLD-PERP', 'MKR-PERP', 'FLOW-PERP', 'CVX-PERP', 'LRC-PERP', 'ALT-PERP', 'AGLD-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 1.8939, 'ETH-PERP': 7.3831}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat LONG
+BNB-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+KSHIB-PERP est en position d'achat LONG
+REEF-PERP est en position d'achat LONG
+SAND-PERP est en position d'achat LONG
+CRV-PERP est en position d'achat SHORT
+NEAR-PERP est en position d'achat SHORT
+KLUNC-PERP est en position d'achat SHORT
+SHIB-PERP est en position d'achat LONG
+OP-PERP est en position d'achat SHORT
+UNI-PERP est en position d'achat LONG
+GMT-PERP est en position d'achat SHORT
+CEL-PERP est en position d'achat LONG
+TRX-PERP est en position d'achat SHORT
+CAKE-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+GALA-PERP est en position d'achat SHORT
+MANA-PERP est en position d'achat SHORT
+LOOKS-PERP est en position d'achat SHORT
+WAVES-PERP est en position d'achat SHORT
+ROSE-PERP est en position d'achat LONG
+THETA-PERP est en position d'achat LONG
+1INCH-PERP est en position d'achat LONG
+STG-PERP est en position d'achat LONG
+RUNE-PERP est en position d'achat SHORT
+GAL-PERP est en position d'achat LONG
+DYDX-PERP est en position d'achat SHORT
+HBAR-PERP est en position d'achat LONG
+KNC-PERP est en position d'achat SHORT
+ZEC-PERP est en position d'achat SHORT
+GRT-PERP est en position d'achat LONG
+EGLD-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+FLOW-PERP est en position d'achat SHORT
+CVX-PERP est en position d'achat SHORT
+ALT-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 133.50267643 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 09:00:02.570117
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'CHZ-PERP', 'ETC-PERP', 'ATOM-PERP', 'DOGE-PERP', 'BNB-PERP', 'LINK-PERP', 'LUNC-PERP', 'ADA-PERP', 'ALGO-PERP', 'MATIC-PERP', 'APE-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'LTC-PERP', 'EOS-PERP', 'BCH-PERP', 'KSHIB-PERP', 'REEF-PERP', 'CRV-PERP', 'SAND-PERP', 'AXS-PERP', 'NEAR-PERP', 'FTT-PERP', 'LUNA2-PERP', 'XLM-PERP', 'KLUNC-PERP', 'SHIB-PERP', 'FIL-PERP', 'OP-PERP', 'UNI-PERP', 'AAVE-PERP', 'SUSHI-PERP', 'USDT-PERP', 'RVN-PERP', 'FTM-PERP', 'COMP-PERP', 'LDO-PERP', 'GMT-PERP', 'CEL-PERP', 'SNX-PERP', 'CAKE-PERP', 'TRX-PERP', 'XTZ-PERP', 'CRO-PERP', 'PEOPLE-PERP', 'VET-PERP', 'HNT-PERP', 'STG-PERP', 'GALA-PERP', 'LOOKS-PERP', 'WAVES-PERP', 'MANA-PERP', 'YFI-PERP', 'THETA-PERP', 'XMR-PERP', 'SRM-PERP', 'ROSE-PERP', '1INCH-PERP', 'ENS-PERP', 'GAL-PERP', 'USTC-PERP', 'RUNE-PERP', 'DYDX-PERP', 'GRT-PERP', 'HBAR-PERP', 'KNC-PERP', 'ZEC-PERP', 'EGLD-PERP', 'ICP-PERP', 'MKR-PERP', 'FLOW-PERP', 'CVX-PERP', 'LRC-PERP', 'AGLD-PERP', 'ALT-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'ETH-PERP': 7.2541, 'XRP-PERP': 1.5408}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+ATOM-PERP est en position d'achat SHORT
+DOGE-PERP est en position d'achat LONG
+BNB-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+KSHIB-PERP est en position d'achat LONG
+REEF-PERP est en position d'achat LONG
+SAND-PERP est en position d'achat LONG
+NEAR-PERP est en position d'achat SHORT
+KLUNC-PERP est en position d'achat SHORT
+SHIB-PERP est en position d'achat LONG
+UNI-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+GMT-PERP est en position d'achat SHORT
+CEL-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+TRX-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+STG-PERP est en position d'achat LONG
+LOOKS-PERP est en position d'achat SHORT
+MANA-PERP est en position d'achat SHORT
+THETA-PERP est en position d'achat LONG
+ROSE-PERP est en position d'achat LONG
+GAL-PERP est en position d'achat LONG
+DYDX-PERP est en position d'achat SHORT
+HBAR-PERP est en position d'achat LONG
+KNC-PERP est en position d'achat SHORT
+ZEC-PERP est en position d'achat SHORT
+EGLD-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+ALT-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 133.16611648 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 10:00:02.935154
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'CHZ-PERP', 'ETC-PERP', 'ATOM-PERP', 'DOGE-PERP', 'BNB-PERP', 'LINK-PERP', 'LUNC-PERP', 'ADA-PERP', 'ALGO-PERP', 'MATIC-PERP', 'APE-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'EOS-PERP', 'BCH-PERP', 'LTC-PERP', 'KSHIB-PERP', 'REEF-PERP', 'CRV-PERP', 'SAND-PERP', 'AXS-PERP', 'NEAR-PERP', 'FTT-PERP', 'LUNA2-PERP', 'KLUNC-PERP', 'XLM-PERP', 'SHIB-PERP', 'FIL-PERP', 'OP-PERP', 'UNI-PERP', 'AAVE-PERP', 'SUSHI-PERP', 'USDT-PERP', 'RVN-PERP', 'LDO-PERP', 'COMP-PERP', 'FTM-PERP', 'GMT-PERP', 'SNX-PERP', 'CEL-PERP', 'XTZ-PERP', 'TRX-PERP', 'CRO-PERP', 'CAKE-PERP', 'PEOPLE-PERP', 'VET-PERP', 'HNT-PERP', 'STG-PERP', 'GALA-PERP', 'LOOKS-PERP', 'WAVES-PERP', 'YFI-PERP', 'MANA-PERP', 'XMR-PERP', 'THETA-PERP', 'ENS-PERP', 'SRM-PERP', '1INCH-PERP', 'GAL-PERP', 'USTC-PERP', 'RUNE-PERP', 'GRT-PERP', 'DYDX-PERP', 'ROSE-PERP', 'ZEC-PERP', 'HBAR-PERP', 'EGLD-PERP', 'MKR-PERP', 'KNC-PERP', 'ICP-PERP', 'FLOW-PERP', 'CVX-PERP', 'LRC-PERP', 'ALT-PERP', 'C98-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 3.0602, 'ETH-PERP': 6.9445}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat LONG
+BNB-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+BCH-PERP est en position d'achat LONG
+KSHIB-PERP est en position d'achat LONG
+REEF-PERP est en position d'achat LONG
+SAND-PERP est en position d'achat LONG
+KLUNC-PERP est en position d'achat SHORT
+SHIB-PERP est en position d'achat LONG
+UNI-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+CEL-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+STG-PERP est en position d'achat LONG
+MANA-PERP est en position d'achat SHORT
+THETA-PERP est en position d'achat LONG
+ENS-PERP est en position d'achat LONG
+1INCH-PERP est en position d'achat LONG
+GAL-PERP est en position d'achat LONG
+GRT-PERP est en position d'achat LONG
+ROSE-PERP est en position d'achat LONG
+ZEC-PERP est en position d'achat SHORT
+HBAR-PERP est en position d'achat LONG
+MKR-PERP est en position d'achat LONG
+ALT-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 134.5516076 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 11:00:02.411468
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'CHZ-PERP', 'ETC-PERP', 'ATOM-PERP', 'LINK-PERP', 'BNB-PERP', 'DOGE-PERP', 'LUNC-PERP', 'ADA-PERP', 'ALGO-PERP', 'MATIC-PERP', 'APE-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'EOS-PERP', 'REEF-PERP', 'BCH-PERP', 'LTC-PERP', 'KSHIB-PERP', 'CRV-PERP', 'SAND-PERP', 'AXS-PERP', 'NEAR-PERP', 'FTT-PERP', 'KLUNC-PERP', 'LUNA2-PERP', 'XLM-PERP', 'SHIB-PERP', 'FIL-PERP', 'OP-PERP', 'UNI-PERP', 'AAVE-PERP', 'SUSHI-PERP', 'USDT-PERP', 'RVN-PERP', 'LDO-PERP', 'COMP-PERP', 'FTM-PERP', 'SNX-PERP', 'GMT-PERP', 'CEL-PERP', 'XTZ-PERP', 'CRO-PERP', 'TRX-PERP', 'CAKE-PERP', 'PEOPLE-PERP', 'STG-PERP', 'VET-PERP', 'HNT-PERP', 'LOOKS-PERP', 'ENS-PERP', 'XMR-PERP', 'WAVES-PERP', 'GALA-PERP', 'GAL-PERP', 'MANA-PERP', 'YFI-PERP', 'THETA-PERP', 'GRT-PERP', 'SRM-PERP', 'USTC-PERP', '1INCH-PERP', 'RUNE-PERP', 'DYDX-PERP', 'ROSE-PERP', 'ZEC-PERP', 'EGLD-PERP', 'KNC-PERP', 'HBAR-PERP', 'MKR-PERP', 'ICP-PERP', 'FLOW-PERP', 'LRC-PERP', 'CVX-PERP', 'C98-PERP', 'ALT-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'ETH-PERP': 7.052, 'XRP-PERP': 2.3219}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+ATOM-PERP est en position d'achat SHORT
+DOGE-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+RSR-PERP est en position d'achat LONG
+REEF-PERP est en position d'achat LONG
+BCH-PERP est en position d'achat LONG
+KSHIB-PERP est en position d'achat LONG
+CRV-PERP est en position d'achat SHORT
+SAND-PERP est en position d'achat LONG
+NEAR-PERP est en position d'achat SHORT
+KLUNC-PERP est en position d'achat SHORT
+SHIB-PERP est en position d'achat LONG
+UNI-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+FTM-PERP est en position d'achat SHORT
+GMT-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+STG-PERP est en position d'achat LONG
+GAL-PERP est en position d'achat LONG
+MANA-PERP est en position d'achat SHORT
+GRT-PERP est en position d'achat LONG
+1INCH-PERP est en position d'achat LONG
+ROSE-PERP est en position d'achat LONG
+ZEC-PERP est en position d'achat SHORT
+HBAR-PERP est en position d'achat LONG
+FLOW-PERP est en position d'achat SHORT
+CVX-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 134.14913441 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 12:00:02.402706
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'CHZ-PERP', 'ETC-PERP', 'ATOM-PERP', 'LINK-PERP', 'BNB-PERP', 'DOGE-PERP', 'LUNC-PERP', 'ADA-PERP', 'ALGO-PERP', 'MATIC-PERP', 'APE-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'REEF-PERP', 'LTC-PERP', 'KSHIB-PERP', 'EOS-PERP', 'BCH-PERP', 'CRV-PERP', 'SAND-PERP', 'AXS-PERP', 'NEAR-PERP', 'FTT-PERP', 'KLUNC-PERP', 'LUNA2-PERP', 'XLM-PERP', 'SHIB-PERP', 'FIL-PERP', 'OP-PERP', 'UNI-PERP', 'AAVE-PERP', 'USDT-PERP', 'SUSHI-PERP', 'RVN-PERP', 'LDO-PERP', 'SNX-PERP', 'COMP-PERP', 'FTM-PERP', 'CEL-PERP', 'GMT-PERP', 'XTZ-PERP', 'CRO-PERP', 'TRX-PERP', 'STG-PERP', 'CAKE-PERP', 'GRT-PERP', 'ENS-PERP', 'PEOPLE-PERP', 'VET-PERP', 'HNT-PERP', 'LOOKS-PERP', 'WAVES-PERP', 'XMR-PERP', 'GAL-PERP', 'GALA-PERP', 'MANA-PERP', 'USTC-PERP', 'YFI-PERP', 'SRM-PERP', 'THETA-PERP', '1INCH-PERP', 'RUNE-PERP', 'DYDX-PERP', 'ROSE-PERP', 'ZEC-PERP', 'KNC-PERP', 'HBAR-PERP', 'EGLD-PERP', 'ICP-PERP', 'MKR-PERP', 'LRC-PERP', 'FLOW-PERP', 'CVX-PERP', 'C98-PERP', 'ALT-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'ETH-PERP': 7.3831, 'XRP-PERP': 2.4182}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+ETC-PERP est en position d'achat SHORT
+BNB-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+KSHIB-PERP est en position d'achat LONG
+EOS-PERP est en position d'achat SHORT
+BCH-PERP est en position d'achat LONG
+CRV-PERP est en position d'achat SHORT
+SAND-PERP est en position d'achat LONG
+KLUNC-PERP est en position d'achat SHORT
+SHIB-PERP est en position d'achat LONG
+UNI-PERP est en position d'achat LONG
+AAVE-PERP est en position d'achat SHORT
+COMP-PERP est en position d'achat LONG
+FTM-PERP est en position d'achat SHORT
+GMT-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+TRX-PERP est en position d'achat SHORT
+STG-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+GRT-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+LOOKS-PERP est en position d'achat SHORT
+WAVES-PERP est en position d'achat SHORT
+GAL-PERP est en position d'achat LONG
+GALA-PERP est en position d'achat SHORT
+MANA-PERP est en position d'achat SHORT
+YFI-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+THETA-PERP est en position d'achat LONG
+1INCH-PERP est en position d'achat LONG
+RUNE-PERP est en position d'achat SHORT
+DYDX-PERP est en position d'achat SHORT
+ROSE-PERP est en position d'achat LONG
+ZEC-PERP est en position d'achat SHORT
+HBAR-PERP est en position d'achat LONG
+EGLD-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+FLOW-PERP est en position d'achat SHORT
+CVX-PERP est en position d'achat SHORT
+C98-PERP est en position d'achat SHORT
+ALT-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 134.36672203 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 13:00:02.476956
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'CHZ-PERP', 'ETC-PERP', 'ATOM-PERP', 'LINK-PERP', 'BNB-PERP', 'LUNC-PERP', 'DOGE-PERP', 'ADA-PERP', 'ALGO-PERP', 'MATIC-PERP', 'APE-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'REEF-PERP', 'LTC-PERP', 'KSHIB-PERP', 'EOS-PERP', 'BCH-PERP', 'CRV-PERP', 'SAND-PERP', 'AXS-PERP', 'KLUNC-PERP', 'FTT-PERP', 'NEAR-PERP', 'LUNA2-PERP', 'XLM-PERP', 'SHIB-PERP', 'FIL-PERP', 'OP-PERP', 'UNI-PERP', 'AAVE-PERP', 'USDT-PERP', 'SUSHI-PERP', 'LDO-PERP', 'RVN-PERP', 'FTM-PERP', 'SNX-PERP', 'COMP-PERP', 'CEL-PERP', 'GRT-PERP', 'GMT-PERP', 'STG-PERP', 'XTZ-PERP', 'CRO-PERP', 'ENS-PERP', 'TRX-PERP', 'CAKE-PERP', 'PEOPLE-PERP', 'VET-PERP', 'HNT-PERP', 'WAVES-PERP', 'LOOKS-PERP', 'XMR-PERP', 'GAL-PERP', 'YFI-PERP', 'THETA-PERP', 'USTC-PERP', 'MANA-PERP', 'SRM-PERP', 'GALA-PERP', '1INCH-PERP', 'RUNE-PERP', 'DYDX-PERP', 'ROSE-PERP', 'ZEC-PERP', 'KNC-PERP', 'MKR-PERP', 'HBAR-PERP', 'ICP-PERP', 'EGLD-PERP', 'LRC-PERP', 'FLOW-PERP', 'CVX-PERP', 'ALT-PERP', 'C98-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'ETH-PERP': 7.2283, 'XRP-PERP': 2.31655}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+ETC-PERP est en position d'achat SHORT
+LINK-PERP est en position d'achat LONG
+BNB-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+REEF-PERP est en position d'achat LONG
+KSHIB-PERP est en position d'achat LONG
+EOS-PERP est en position d'achat SHORT
+BCH-PERP est en position d'achat LONG
+SAND-PERP est en position d'achat LONG
+NEAR-PERP est en position d'achat SHORT
+SHIB-PERP est en position d'achat LONG
+UNI-PERP est en position d'achat LONG
+AAVE-PERP est en position d'achat SHORT
+COMP-PERP est en position d'achat LONG
+GMT-PERP est en position d'achat SHORT
+STG-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+LOOKS-PERP est en position d'achat SHORT
+GAL-PERP est en position d'achat LONG
+THETA-PERP est en position d'achat LONG
+MANA-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+1INCH-PERP est en position d'achat LONG
+RUNE-PERP est en position d'achat SHORT
+DYDX-PERP est en position d'achat SHORT
+ROSE-PERP est en position d'achat LONG
+MKR-PERP est en position d'achat LONG
+HBAR-PERP est en position d'achat LONG
+EGLD-PERP est en position d'achat SHORT
+CVX-PERP est en position d'achat SHORT
+ALT-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 133.95218258 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 14:00:03.006571
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'CHZ-PERP', 'ETC-PERP', 'ATOM-PERP', 'LINK-PERP', 'BNB-PERP', 'LUNC-PERP', 'DOGE-PERP', 'ADA-PERP', 'ALGO-PERP', 'MATIC-PERP', 'APE-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'REEF-PERP', 'EOS-PERP', 'LTC-PERP', 'KSHIB-PERP', 'BCH-PERP', 'CRV-PERP', 'SAND-PERP', 'AXS-PERP', 'KLUNC-PERP', 'FTT-PERP', 'NEAR-PERP', 'LUNA2-PERP', 'XLM-PERP', 'SHIB-PERP', 'OP-PERP', 'FIL-PERP', 'AAVE-PERP', 'UNI-PERP', 'USDT-PERP', 'SUSHI-PERP', 'LDO-PERP', 'RVN-PERP', 'STG-PERP', 'SNX-PERP', 'FTM-PERP', 'GRT-PERP', 'COMP-PERP', 'CEL-PERP', 'GMT-PERP', 'XTZ-PERP', 'CRO-PERP', 'ENS-PERP', 'TRX-PERP', 'PEOPLE-PERP', 'VET-PERP', 'CAKE-PERP', 'HNT-PERP', 'WAVES-PERP', 'LOOKS-PERP', 'XMR-PERP', 'THETA-PERP', 'GAL-PERP', 'YFI-PERP', 'MANA-PERP', 'USTC-PERP', 'GALA-PERP', 'SRM-PERP', 'RUNE-PERP', '1INCH-PERP', 'DYDX-PERP', 'ROSE-PERP', 'ZEC-PERP', 'MKR-PERP', 'KNC-PERP', 'EGLD-PERP', 'ICP-PERP', 'LRC-PERP', 'FLOW-PERP', 'ALT-PERP', 'CVX-PERP', 'GLMR-PERP', 'HBAR-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'ETH-PERP': 7.0778, 'XRP-PERP': 5.4035}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+BNB-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+DOGE-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+REEF-PERP est en position d'achat LONG
+KSHIB-PERP est en position d'achat LONG
+BCH-PERP est en position d'achat LONG
+SAND-PERP est en position d'achat LONG
+KLUNC-PERP est en position d'achat SHORT
+SHIB-PERP est en position d'achat LONG
+UNI-PERP est en position d'achat LONG
+GRT-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+ENS-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+THETA-PERP est en position d'achat LONG
+GAL-PERP est en position d'achat LONG
+1INCH-PERP est en position d'achat LONG
+ROSE-PERP est en position d'achat LONG
+ALT-PERP est en position d'achat LONG
+HBAR-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 137.79416974 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 15:00:02.577757
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'CHZ-PERP', 'ETC-PERP', 'ATOM-PERP', 'LINK-PERP', 'BNB-PERP', 'LUNC-PERP', 'DOGE-PERP', 'ADA-PERP', 'ALGO-PERP', 'MATIC-PERP', 'APE-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'REEF-PERP', 'LTC-PERP', 'KSHIB-PERP', 'EOS-PERP', 'BCH-PERP', 'CRV-PERP', 'SAND-PERP', 'AXS-PERP', 'XLM-PERP', 'KLUNC-PERP', 'NEAR-PERP', 'FTT-PERP', 'LUNA2-PERP', 'SHIB-PERP', 'OP-PERP', 'FIL-PERP', 'AAVE-PERP', 'UNI-PERP', 'USDT-PERP', 'LDO-PERP', 'SUSHI-PERP', 'STG-PERP', 'RVN-PERP', 'GRT-PERP', 'FTM-PERP', 'SNX-PERP', 'COMP-PERP', 'CEL-PERP', 'GMT-PERP', 'XTZ-PERP', 'ENS-PERP', 'TRX-PERP', 'CRO-PERP', 'CAKE-PERP', 'PEOPLE-PERP', 'HNT-PERP', 'VET-PERP', 'WAVES-PERP', 'GAL-PERP', 'THETA-PERP', 'LOOKS-PERP', 'XMR-PERP', 'YFI-PERP', 'MANA-PERP', 'MKR-PERP', 'GALA-PERP', 'SRM-PERP', '1INCH-PERP', 'DYDX-PERP', 'RUNE-PERP', 'ZEC-PERP', 'USTC-PERP', 'ROSE-PERP', 'KNC-PERP', 'ICP-PERP', 'EGLD-PERP', 'LRC-PERP', 'ALT-PERP', 'FLOW-PERP', 'CVX-PERP', 'GLMR-PERP', 'C98-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 7.3616, 'ETH-PERP': 7.3874}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+SOL-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+ETC-PERP est en position d'achat SHORT
+LINK-PERP est en position d'achat LONG
+BNB-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+DOGE-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+REEF-PERP est en position d'achat LONG
+KSHIB-PERP est en position d'achat LONG
+EOS-PERP est en position d'achat SHORT
+CRV-PERP est en position d'achat SHORT
+SAND-PERP est en position d'achat LONG
+KLUNC-PERP est en position d'achat SHORT
+NEAR-PERP est en position d'achat SHORT
+SHIB-PERP est en position d'achat LONG
+OP-PERP est en position d'achat SHORT
+UNI-PERP est en position d'achat LONG
+LDO-PERP est en position d'achat SHORT
+STG-PERP est en position d'achat LONG
+FTM-PERP est en position d'achat SHORT
+COMP-PERP est en position d'achat LONG
+GMT-PERP est en position d'achat SHORT
+ENS-PERP est en position d'achat LONG
+TRX-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+WAVES-PERP est en position d'achat SHORT
+GAL-PERP est en position d'achat LONG
+THETA-PERP est en position d'achat LONG
+MANA-PERP est en position d'achat SHORT
+GALA-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+1INCH-PERP est en position d'achat LONG
+DYDX-PERP est en position d'achat SHORT
+RUNE-PERP est en position d'achat SHORT
+ROSE-PERP est en position d'achat LONG
+KNC-PERP est en position d'achat SHORT
+FLOW-PERP est en position d'achat SHORT
+CVX-PERP est en position d'achat SHORT
+C98-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 139.57117346 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 16:00:02.664731
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'CHZ-PERP', 'ETC-PERP', 'LINK-PERP', 'ATOM-PERP', 'BNB-PERP', 'LUNC-PERP', 'DOGE-PERP', 'ADA-PERP', 'ALGO-PERP', 'MATIC-PERP', 'APE-PERP', 'RSR-PERP', 'AVAX-PERP', 'DOT-PERP', 'REEF-PERP', 'LTC-PERP', 'EOS-PERP', 'BCH-PERP', 'KSHIB-PERP', 'CRV-PERP', 'SAND-PERP', 'AXS-PERP', 'XLM-PERP', 'KLUNC-PERP', 'LUNA2-PERP', 'NEAR-PERP', 'FTT-PERP', 'OP-PERP', 'FIL-PERP', 'SHIB-PERP', 'AAVE-PERP', 'USDT-PERP', 'STG-PERP', 'UNI-PERP', 'SUSHI-PERP', 'LDO-PERP', 'COMP-PERP', 'RVN-PERP', 'GRT-PERP', 'SNX-PERP', 'FTM-PERP', 'CEL-PERP', 'GMT-PERP', 'ENS-PERP', 'XTZ-PERP', 'TRX-PERP', 'CRO-PERP', 'CAKE-PERP', 'PEOPLE-PERP', 'VET-PERP', 'HNT-PERP', 'WAVES-PERP', 'LOOKS-PERP', 'XMR-PERP', 'GAL-PERP', 'THETA-PERP', 'MKR-PERP', 'YFI-PERP', 'MANA-PERP', 'GALA-PERP', 'SRM-PERP', '1INCH-PERP', 'DYDX-PERP', 'RUNE-PERP', 'ICP-PERP', 'ZEC-PERP', 'KNC-PERP', 'ROSE-PERP', 'EGLD-PERP', 'USTC-PERP', 'ALT-PERP', 'LRC-PERP', 'CVX-PERP', 'GLMR-PERP', 'FLOW-PERP', 'C98-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 3.4882, 'ETH-PERP': 8.1915}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+ETC-PERP est en position d'achat SHORT
+LINK-PERP est en position d'achat LONG
+BNB-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+EOS-PERP est en position d'achat SHORT
+KSHIB-PERP est en position d'achat LONG
+CRV-PERP est en position d'achat SHORT
+SAND-PERP est en position d'achat LONG
+NEAR-PERP est en position d'achat SHORT
+OP-PERP est en position d'achat SHORT
+SHIB-PERP est en position d'achat LONG
+AAVE-PERP est en position d'achat SHORT
+STG-PERP est en position d'achat LONG
+UNI-PERP est en position d'achat LONG
+LDO-PERP est en position d'achat SHORT
+COMP-PERP est en position d'achat LONG
+FTM-PERP est en position d'achat SHORT
+GMT-PERP est en position d'achat SHORT
+ENS-PERP est en position d'achat LONG
+TRX-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+WAVES-PERP est en position d'achat SHORT
+LOOKS-PERP est en position d'achat SHORT
+GAL-PERP est en position d'achat LONG
+THETA-PERP est en position d'achat LONG
+MKR-PERP est en position d'achat LONG
+YFI-PERP est en position d'achat SHORT
+MANA-PERP est en position d'achat SHORT
+GALA-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+1INCH-PERP est en position d'achat LONG
+DYDX-PERP est en position d'achat SHORT
+RUNE-PERP est en position d'achat SHORT
+ZEC-PERP est en position d'achat SHORT
+KNC-PERP est en position d'achat SHORT
+ROSE-PERP est en position d'achat LONG
+EGLD-PERP est en position d'achat SHORT
+ALT-PERP est en position d'achat LONG
+CVX-PERP est en position d'achat SHORT
+GLMR-PERP est en position d'achat SHORT
+FLOW-PERP est en position d'achat SHORT
+C98-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 135.97122738 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 17:00:03.010720
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'CHZ-PERP', 'ETC-PERP', 'LINK-PERP', 'ATOM-PERP', 'LUNC-PERP', 'BNB-PERP', 'DOGE-PERP', 'ADA-PERP', 'ALGO-PERP', 'MATIC-PERP', 'APE-PERP', 'RSR-PERP', 'AVAX-PERP', 'DOT-PERP', 'REEF-PERP', 'LTC-PERP', 'BCH-PERP', 'EOS-PERP', 'CRV-PERP', 'SAND-PERP', 'AXS-PERP', 'KSHIB-PERP', 'KLUNC-PERP', 'LUNA2-PERP', 'XLM-PERP', 'NEAR-PERP', 'FTT-PERP', 'OP-PERP', 'FIL-PERP', 'AAVE-PERP', 'STG-PERP', 'USDT-PERP', 'SHIB-PERP', 'GRT-PERP', 'SUSHI-PERP', 'RVN-PERP', 'COMP-PERP', 'LDO-PERP', 'UNI-PERP', 'GMT-PERP', 'FTM-PERP', 'SNX-PERP', 'CEL-PERP', 'ENS-PERP', 'XTZ-PERP', 'TRX-PERP', 'CRO-PERP', 'PEOPLE-PERP', 'VET-PERP', 'HNT-PERP', 'CAKE-PERP', 'LOOKS-PERP', 'WAVES-PERP', 'GAL-PERP', 'XMR-PERP', 'YFI-PERP', 'THETA-PERP', 'MKR-PERP', 'GALA-PERP', 'MANA-PERP', '1INCH-PERP', 'SRM-PERP', 'DYDX-PERP', 'RUNE-PERP', 'ZEC-PERP', 'ICP-PERP', 'EGLD-PERP', 'KNC-PERP', 'ROSE-PERP', 'LRC-PERP', 'ALT-PERP', 'GLMR-PERP', 'CVX-PERP', 'FLOW-PERP', 'USTC-PERP', 'RAY-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'ETH-PERP': 8.1313, 'XRP-PERP': 3.1993}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+ETC-PERP est en position d'achat SHORT
+LINK-PERP est en position d'achat LONG
+BNB-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+EOS-PERP est en position d'achat SHORT
+CRV-PERP est en position d'achat SHORT
+NEAR-PERP est en position d'achat SHORT
+OP-PERP est en position d'achat SHORT
+AAVE-PERP est en position d'achat SHORT
+STG-PERP est en position d'achat LONG
+GRT-PERP est en position d'achat LONG
+LDO-PERP est en position d'achat SHORT
+UNI-PERP est en position d'achat LONG
+GMT-PERP est en position d'achat SHORT
+FTM-PERP est en position d'achat SHORT
+ENS-PERP est en position d'achat LONG
+TRX-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+LOOKS-PERP est en position d'achat SHORT
+WAVES-PERP est en position d'achat SHORT
+GAL-PERP est en position d'achat LONG
+YFI-PERP est en position d'achat SHORT
+THETA-PERP est en position d'achat LONG
+MKR-PERP est en position d'achat LONG
+GALA-PERP est en position d'achat SHORT
+MANA-PERP est en position d'achat SHORT
+1INCH-PERP est en position d'achat LONG
+SRM-PERP est en position d'achat SHORT
+DYDX-PERP est en position d'achat SHORT
+RUNE-PERP est en position d'achat SHORT
+ZEC-PERP est en position d'achat SHORT
+EGLD-PERP est en position d'achat SHORT
+KNC-PERP est en position d'achat SHORT
+ROSE-PERP est en position d'achat LONG
+ALT-PERP est en position d'achat LONG
+CVX-PERP est en position d'achat SHORT
+FLOW-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 136.16346608 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 18:00:02.217403
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'CHZ-PERP', 'ETC-PERP', 'LINK-PERP', 'BNB-PERP', 'LUNC-PERP', 'ADA-PERP', 'DOGE-PERP', 'ALGO-PERP', 'MATIC-PERP', 'APE-PERP', 'RSR-PERP', 'AVAX-PERP', 'DOT-PERP', 'REEF-PERP', 'LTC-PERP', 'BCH-PERP', 'CRV-PERP', 'EOS-PERP', 'SAND-PERP', 'LUNA2-PERP', 'KLUNC-PERP', 'KSHIB-PERP', 'AXS-PERP', 'XLM-PERP', 'NEAR-PERP', 'FTT-PERP', 'OP-PERP', 'AAVE-PERP', 'FIL-PERP', 'STG-PERP', 'GRT-PERP', 'SUSHI-PERP', 'SHIB-PERP', 'RVN-PERP', 'COMP-PERP', 'UNI-PERP', 'GMT-PERP', 'LDO-PERP', 'FTM-PERP', 'SNX-PERP', 'USDT-PERP', 'ENS-PERP', 'XTZ-PERP', 'CEL-PERP', 'TRX-PERP', 'CRO-PERP', 'PEOPLE-PERP', 'LOOKS-PERP', 'HNT-PERP', 'VET-PERP', 'WAVES-PERP', 'CAKE-PERP', 'GAL-PERP', 'YFI-PERP', 'THETA-PERP', 'GALA-PERP', 'MKR-PERP', 'XMR-PERP', 'MANA-PERP', '1INCH-PERP', 'SRM-PERP', 'DYDX-PERP', 'ICP-PERP', 'ZEC-PERP', 'RUNE-PERP', 'KNC-PERP', 'EGLD-PERP', 'LRC-PERP', 'ALT-PERP', 'ROSE-PERP', 'GLMR-PERP', 'FLOW-PERP', 'CVX-PERP', 'BAND-PERP', 'RAY-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 5.99735, 'ETH-PERP': 7.8604}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+ETC-PERP est en position d'achat SHORT
+LINK-PERP est en position d'achat LONG
+BNB-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+DOGE-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+CRV-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+KLUNC-PERP est en position d'achat SHORT
+NEAR-PERP est en position d'achat SHORT
+OP-PERP est en position d'achat SHORT
+AAVE-PERP est en position d'achat SHORT
+STG-PERP est en position d'achat LONG
+GRT-PERP est en position d'achat LONG
+UNI-PERP est en position d'achat LONG
+GMT-PERP est en position d'achat SHORT
+LDO-PERP est en position d'achat SHORT
+FTM-PERP est en position d'achat SHORT
+ENS-PERP est en position d'achat LONG
+TRX-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+LOOKS-PERP est en position d'achat SHORT
+WAVES-PERP est en position d'achat SHORT
+CAKE-PERP est en position d'achat LONG
+GAL-PERP est en position d'achat LONG
+YFI-PERP est en position d'achat SHORT
+THETA-PERP est en position d'achat LONG
+GALA-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+MANA-PERP est en position d'achat SHORT
+1INCH-PERP est en position d'achat LONG
+SRM-PERP est en position d'achat SHORT
+DYDX-PERP est en position d'achat SHORT
+RUNE-PERP est en position d'achat SHORT
+KNC-PERP est en position d'achat SHORT
+EGLD-PERP est en position d'achat SHORT
+ALT-PERP est en position d'achat LONG
+ROSE-PERP est en position d'achat LONG
+GLMR-PERP est en position d'achat SHORT
+FLOW-PERP est en position d'achat SHORT
+CVX-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 138.46078236 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 19:00:02.591179
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'CHZ-PERP', 'ETC-PERP', 'LINK-PERP', 'LUNC-PERP', 'BNB-PERP', 'ADA-PERP', 'DOGE-PERP', 'ALGO-PERP', 'MATIC-PERP', 'APE-PERP', 'RSR-PERP', 'AVAX-PERP', 'DOT-PERP', 'REEF-PERP', 'LTC-PERP', 'BCH-PERP', 'CRV-PERP', 'EOS-PERP', 'SAND-PERP', 'LUNA2-PERP', 'AXS-PERP', 'KLUNC-PERP', 'XLM-PERP', 'NEAR-PERP', 'KSHIB-PERP', 'FTT-PERP', 'OP-PERP', 'AAVE-PERP', 'STG-PERP', 'FIL-PERP', 'GRT-PERP', 'COMP-PERP', 'RVN-PERP', 'SUSHI-PERP', 'SHIB-PERP', 'LDO-PERP', 'GMT-PERP', 'UNI-PERP', 'FTM-PERP', 'SNX-PERP', 'ENS-PERP', 'USDT-PERP', 'XTZ-PERP', 'TRX-PERP', 'CRO-PERP', 'CEL-PERP', 'YFI-PERP', 'PEOPLE-PERP', 'HNT-PERP', 'VET-PERP', 'WAVES-PERP', 'LOOKS-PERP', 'MKR-PERP', 'GAL-PERP', 'CAKE-PERP', 'THETA-PERP', 'GALA-PERP', '1INCH-PERP', 'MANA-PERP', 'XMR-PERP', 'SRM-PERP', 'DYDX-PERP', 'ICP-PERP', 'ZEC-PERP', 'KNC-PERP', 'RUNE-PERP', 'EGLD-PERP', 'LRC-PERP', 'ALT-PERP', 'GLMR-PERP', 'ROSE-PERP', 'CVX-PERP', 'FLOW-PERP', 'RAY-PERP', 'C98-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 3.8948, 'ETH-PERP': 8.256}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+ETC-PERP est en position d'achat SHORT
+LINK-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+BNB-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+APE-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+CRV-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+KLUNC-PERP est en position d'achat SHORT
+NEAR-PERP est en position d'achat SHORT
+OP-PERP est en position d'achat SHORT
+AAVE-PERP est en position d'achat SHORT
+STG-PERP est en position d'achat LONG
+GRT-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+LDO-PERP est en position d'achat SHORT
+GMT-PERP est en position d'achat SHORT
+FTM-PERP est en position d'achat SHORT
+TRX-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+WAVES-PERP est en position d'achat SHORT
+LOOKS-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+GAL-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+THETA-PERP est en position d'achat LONG
+GALA-PERP est en position d'achat SHORT
+1INCH-PERP est en position d'achat LONG
+MANA-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+DYDX-PERP est en position d'achat SHORT
+KNC-PERP est en position d'achat SHORT
+RUNE-PERP est en position d'achat SHORT
+EGLD-PERP est en position d'achat SHORT
+ALT-PERP est en position d'achat LONG
+GLMR-PERP est en position d'achat SHORT
+ROSE-PERP est en position d'achat LONG
+CVX-PERP est en position d'achat SHORT
+FLOW-PERP est en position d'achat SHORT
+C98-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 136.35312208 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 20:00:02.717741
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'CHZ-PERP', 'ETC-PERP', 'LINK-PERP', 'LUNC-PERP', 'BNB-PERP', 'ADA-PERP', 'DOGE-PERP', 'ALGO-PERP', 'APE-PERP', 'MATIC-PERP', 'RSR-PERP', 'AVAX-PERP', 'DOT-PERP', 'REEF-PERP', 'LTC-PERP', 'BCH-PERP', 'EOS-PERP', 'CRV-PERP', 'LUNA2-PERP', 'SAND-PERP', 'KLUNC-PERP', 'AXS-PERP', 'NEAR-PERP', 'XLM-PERP', 'KSHIB-PERP', 'OP-PERP', 'FTT-PERP', 'AAVE-PERP', 'STG-PERP', 'FIL-PERP', 'GRT-PERP', 'COMP-PERP', 'SUSHI-PERP', 'RVN-PERP', 'GMT-PERP', 'SNX-PERP', 'LDO-PERP', 'UNI-PERP', 'FTM-PERP', 'SHIB-PERP', 'YFI-PERP', 'CEL-PERP', 'ENS-PERP', 'XTZ-PERP', 'USDT-PERP', 'CRO-PERP', 'TRX-PERP', 'HNT-PERP', 'WAVES-PERP', 'VET-PERP', 'PEOPLE-PERP', 'GALA-PERP', 'GAL-PERP', 'MKR-PERP', 'THETA-PERP', 'LOOKS-PERP', '1INCH-PERP', 'CAKE-PERP', 'MANA-PERP', 'XMR-PERP', 'SRM-PERP', 'DYDX-PERP', 'ICP-PERP', 'ZEC-PERP', 'KNC-PERP', 'RUNE-PERP', 'LRC-PERP', 'ALT-PERP', 'EGLD-PERP', 'GLMR-PERP', 'CVX-PERP', 'RAY-PERP', 'FLOW-PERP', 'ROSE-PERP', 'REN-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'ETH-PERP': 8.5097, 'XRP-PERP': 5.6068}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+BNB-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+APE-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+EOS-PERP est en position d'achat SHORT
+CRV-PERP est en position d'achat SHORT
+KLUNC-PERP est en position d'achat SHORT
+NEAR-PERP est en position d'achat SHORT
+OP-PERP est en position d'achat SHORT
+AAVE-PERP est en position d'achat SHORT
+STG-PERP est en position d'achat LONG
+GRT-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+LDO-PERP est en position d'achat SHORT
+FTM-PERP est en position d'achat SHORT
+YFI-PERP est en position d'achat SHORT
+ENS-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+GAL-PERP est en position d'achat LONG
+MKR-PERP est en position d'achat LONG
+THETA-PERP est en position d'achat LONG
+1INCH-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+MANA-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+DYDX-PERP est en position d'achat SHORT
+KNC-PERP est en position d'achat SHORT
+RUNE-PERP est en position d'achat SHORT
+ALT-PERP est en position d'achat LONG
+EGLD-PERP est en position d'achat SHORT
+CVX-PERP est en position d'achat SHORT
+FLOW-PERP est en position d'achat SHORT
+ROSE-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 138.68407981 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 21:00:02.386057
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'CHZ-PERP', 'ETC-PERP', 'LINK-PERP', 'LUNC-PERP', 'ADA-PERP', 'BNB-PERP', 'DOGE-PERP', 'ALGO-PERP', 'APE-PERP', 'MATIC-PERP', 'RSR-PERP', 'AVAX-PERP', 'DOT-PERP', 'LTC-PERP', 'BCH-PERP', 'REEF-PERP', 'CRV-PERP', 'LUNA2-PERP', 'EOS-PERP', 'SAND-PERP', 'AXS-PERP', 'KLUNC-PERP', 'NEAR-PERP', 'XLM-PERP', 'AAVE-PERP', 'OP-PERP', 'FIL-PERP', 'FTT-PERP', 'KSHIB-PERP', 'STG-PERP', 'GRT-PERP', 'COMP-PERP', 'SUSHI-PERP', 'RVN-PERP', 'GMT-PERP', 'SNX-PERP', 'UNI-PERP', 'FTM-PERP', 'LDO-PERP', 'YFI-PERP', 'CEL-PERP', 'ENS-PERP', 'SHIB-PERP', 'USDT-PERP', 'CRO-PERP', 'XTZ-PERP', 'TRX-PERP', 'HNT-PERP', 'WAVES-PERP', 'PEOPLE-PERP', 'VET-PERP', 'GALA-PERP', 'THETA-PERP', 'MKR-PERP', 'GAL-PERP', '1INCH-PERP', 'CAKE-PERP', 'MANA-PERP', 'XMR-PERP', 'LOOKS-PERP', 'SRM-PERP', 'DYDX-PERP', 'ICP-PERP', 'ZEC-PERP', 'KNC-PERP', 'LRC-PERP', 'RUNE-PERP', 'ALT-PERP', 'GLMR-PERP', 'BAL-PERP', 'CVX-PERP', 'EGLD-PERP', 'KSM-PERP', 'RAY-PERP', 'FLOW-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 5.3607, 'ETH-PERP': 8.5312}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+BNB-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+CRV-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+KLUNC-PERP est en position d'achat SHORT
+AAVE-PERP est en position d'achat SHORT
+OP-PERP est en position d'achat SHORT
+FIL-PERP est en position d'achat LONG
+STG-PERP est en position d'achat LONG
+GRT-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+FTM-PERP est en position d'achat SHORT
+LDO-PERP est en position d'achat SHORT
+YFI-PERP est en position d'achat SHORT
+ENS-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+GALA-PERP est en position d'achat SHORT
+THETA-PERP est en position d'achat LONG
+MKR-PERP est en position d'achat LONG
+GAL-PERP est en position d'achat LONG
+1INCH-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+SRM-PERP est en position d'achat SHORT
+DYDX-PERP est en position d'achat SHORT
+RUNE-PERP est en position d'achat SHORT
+BAL-PERP est en position d'achat SHORT
+CVX-PERP est en position d'achat SHORT
+EGLD-PERP est en position d'achat SHORT
+FLOW-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 138.6447948 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 22:00:02.112057
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'CHZ-PERP', 'ETC-PERP', 'LINK-PERP', 'LUNC-PERP', 'ADA-PERP', 'BNB-PERP', 'ALGO-PERP', 'APE-PERP', 'DOGE-PERP', 'MATIC-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'LTC-PERP', 'BCH-PERP', 'EOS-PERP', 'LUNA2-PERP', 'CRV-PERP', 'REEF-PERP', 'SAND-PERP', 'KLUNC-PERP', 'AXS-PERP', 'NEAR-PERP', 'XLM-PERP', 'FIL-PERP', 'AAVE-PERP', 'OP-PERP', 'FTT-PERP', 'STG-PERP', 'KSHIB-PERP', 'GRT-PERP', 'COMP-PERP', 'SUSHI-PERP', 'GMT-PERP', 'SNX-PERP', 'UNI-PERP', 'RVN-PERP', 'FTM-PERP', 'LDO-PERP', 'YFI-PERP', 'CEL-PERP', 'ENS-PERP', 'USDT-PERP', 'XTZ-PERP', 'TRX-PERP', 'CRO-PERP', 'SHIB-PERP', 'PEOPLE-PERP', 'HNT-PERP', 'WAVES-PERP', 'THETA-PERP', 'GALA-PERP', 'VET-PERP', 'MKR-PERP', 'CAKE-PERP', 'GAL-PERP', '1INCH-PERP', 'MANA-PERP', 'ICP-PERP', 'XMR-PERP', 'LOOKS-PERP', 'ZEC-PERP', 'DYDX-PERP', 'SRM-PERP', 'KNC-PERP', 'LRC-PERP', 'ALT-PERP', 'RUNE-PERP', 'CVX-PERP', 'GLMR-PERP', 'KSM-PERP', 'RAY-PERP', 'BAND-PERP', 'EGLD-PERP', 'FLOW-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 5.3821, 'ETH-PERP': 8.3979}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+ETC-PERP est en position d'achat SHORT
+LINK-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+BNB-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+APE-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+CRV-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+KLUNC-PERP est en position d'achat SHORT
+NEAR-PERP est en position d'achat SHORT
+AAVE-PERP est en position d'achat SHORT
+OP-PERP est en position d'achat SHORT
+STG-PERP est en position d'achat LONG
+GRT-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+GMT-PERP est en position d'achat SHORT
+LDO-PERP est en position d'achat SHORT
+YFI-PERP est en position d'achat SHORT
+TRX-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+WAVES-PERP est en position d'achat SHORT
+GALA-PERP est en position d'achat SHORT
+CAKE-PERP est en position d'achat LONG
+GAL-PERP est en position d'achat LONG
+1INCH-PERP est en position d'achat LONG
+MANA-PERP est en position d'achat SHORT
+LOOKS-PERP est en position d'achat SHORT
+DYDX-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+KNC-PERP est en position d'achat SHORT
+RUNE-PERP est en position d'achat SHORT
+CVX-PERP est en position d'achat SHORT
+GLMR-PERP est en position d'achat SHORT
+BAND-PERP est en position d'achat LONG
+EGLD-PERP est en position d'achat SHORT
+FLOW-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 138.65002789 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-25 23:00:02.907806
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'CHZ-PERP', 'ETC-PERP', 'LINK-PERP', 'LUNC-PERP', 'ADA-PERP', 'BNB-PERP', 'ALGO-PERP', 'APE-PERP', 'DOGE-PERP', 'MATIC-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'LTC-PERP', 'BCH-PERP', 'LUNA2-PERP', 'EOS-PERP', 'CRV-PERP', 'SAND-PERP', 'AXS-PERP', 'KLUNC-PERP', 'NEAR-PERP', 'REEF-PERP', 'XLM-PERP', 'FIL-PERP', 'AAVE-PERP', 'OP-PERP', 'FTT-PERP', 'STG-PERP', 'COMP-PERP', 'KSHIB-PERP', 'SUSHI-PERP', 'GRT-PERP', 'GMT-PERP', 'LDO-PERP', 'UNI-PERP', 'SNX-PERP', 'FTM-PERP', 'RVN-PERP', 'YFI-PERP', 'ENS-PERP', 'CEL-PERP', 'XTZ-PERP', 'USDT-PERP', 'PEOPLE-PERP', 'TRX-PERP', 'CRO-PERP', 'THETA-PERP', 'WAVES-PERP', 'HNT-PERP', 'SHIB-PERP', 'GALA-PERP', 'VET-PERP', 'MKR-PERP', 'CAKE-PERP', '1INCH-PERP', 'GAL-PERP', 'MANA-PERP', 'ZEC-PERP', 'XMR-PERP', 'ICP-PERP', 'DYDX-PERP', 'LOOKS-PERP', 'SRM-PERP', 'LRC-PERP', 'ALT-PERP', 'BAND-PERP', 'KNC-PERP', 'RUNE-PERP', 'CVX-PERP', 'GLMR-PERP', 'KSM-PERP', 'EGLD-PERP', 'RAY-PERP', 'FLOW-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 4.85245, 'ETH-PERP': 8.686}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+ATOM-PERP est en position d'achat SHORT
+CHZ-PERP est en position d'achat LONG
+ETC-PERP est en position d'achat SHORT
+LINK-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+BNB-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+APE-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+CRV-PERP est en position d'achat SHORT
+KLUNC-PERP est en position d'achat SHORT
+NEAR-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+FIL-PERP est en position d'achat LONG
+AAVE-PERP est en position d'achat SHORT
+OP-PERP est en position d'achat SHORT
+STG-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+GMT-PERP est en position d'achat SHORT
+LDO-PERP est en position d'achat SHORT
+FTM-PERP est en position d'achat SHORT
+PEOPLE-PERP est en position d'achat LONG
+TRX-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+WAVES-PERP est en position d'achat SHORT
+GALA-PERP est en position d'achat SHORT
+1INCH-PERP est en position d'achat LONG
+GAL-PERP est en position d'achat LONG
+MANA-PERP est en position d'achat SHORT
+ZEC-PERP est en position d'achat SHORT
+DYDX-PERP est en position d'achat SHORT
+LOOKS-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+BAND-PERP est en position d'achat LONG
+KNC-PERP est en position d'achat SHORT
+RUNE-PERP est en position d'achat SHORT
+CVX-PERP est en position d'achat SHORT
+GLMR-PERP est en position d'achat SHORT
+EGLD-PERP est en position d'achat SHORT
+FLOW-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 138.11160553 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 00:00:02.993743
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'CHZ-PERP', 'ETC-PERP', 'LINK-PERP', 'LUNC-PERP', 'BNB-PERP', 'ADA-PERP', 'APE-PERP', 'ALGO-PERP', 'DOGE-PERP', 'MATIC-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'LTC-PERP', 'BCH-PERP', 'LUNA2-PERP', 'EOS-PERP', 'KLUNC-PERP', 'CRV-PERP', 'AXS-PERP', 'NEAR-PERP', 'SAND-PERP', 'REEF-PERP', 'FIL-PERP', 'AAVE-PERP', 'XLM-PERP', 'OP-PERP', 'FTT-PERP', 'STG-PERP', 'COMP-PERP', 'SUSHI-PERP', 'KSHIB-PERP', 'GMT-PERP', 'GRT-PERP', 'LDO-PERP', 'FTM-PERP', 'UNI-PERP', 'SNX-PERP', 'TRX-PERP', 'YFI-PERP', 'RVN-PERP', 'CEL-PERP', 'ENS-PERP', 'USDT-PERP', 'PEOPLE-PERP', 'XTZ-PERP', 'THETA-PERP', 'CRO-PERP', 'WAVES-PERP', 'MKR-PERP', 'HNT-PERP', 'SHIB-PERP', 'GALA-PERP', 'CAKE-PERP', 'VET-PERP', '1INCH-PERP', 'GAL-PERP', 'MANA-PERP', 'ICP-PERP', 'ZEC-PERP', 'XMR-PERP', 'DYDX-PERP', 'SRM-PERP', 'LOOKS-PERP', 'LRC-PERP', 'ALT-PERP', 'KNC-PERP', 'ETHW-PERP', 'BAND-PERP', 'RUNE-PERP', 'GLMR-PERP', 'CVX-PERP', 'RAY-PERP', 'EGLD-PERP', 'KSM-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+ETHW-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 3.64335, 'ETH-PERP': 9.0859}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+ATOM-PERP est en position d'achat SHORT
+CHZ-PERP est en position d'achat LONG
+ETC-PERP est en position d'achat SHORT
+LINK-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+APE-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+BCH-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+KLUNC-PERP est en position d'achat SHORT
+CRV-PERP est en position d'achat SHORT
+NEAR-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+FIL-PERP est en position d'achat LONG
+AAVE-PERP est en position d'achat SHORT
+OP-PERP est en position d'achat SHORT
+STG-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+GMT-PERP est en position d'achat SHORT
+LDO-PERP est en position d'achat SHORT
+FTM-PERP est en position d'achat SHORT
+SNX-PERP est en position d'achat SHORT
+TRX-PERP est en position d'achat SHORT
+YFI-PERP est en position d'achat SHORT
+PEOPLE-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+WAVES-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+GALA-PERP est en position d'achat SHORT
+CAKE-PERP est en position d'achat LONG
+VET-PERP est en position d'achat SHORT
+GAL-PERP est en position d'achat LONG
+MANA-PERP est en position d'achat SHORT
+ZEC-PERP est en position d'achat SHORT
+DYDX-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+LOOKS-PERP est en position d'achat SHORT
+KNC-PERP est en position d'achat SHORT
+RUNE-PERP est en position d'achat SHORT
+GLMR-PERP est en position d'achat SHORT
+CVX-PERP est en position d'achat SHORT
+RAY-PERP est en position d'achat SHORT
+EGLD-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 136.63888562 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 01:00:02.855541
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'CHZ-PERP', 'LUNC-PERP', 'ETC-PERP', 'LINK-PERP', 'APE-PERP', 'BNB-PERP', 'ADA-PERP', 'ALGO-PERP', 'MATIC-PERP', 'DOGE-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'LTC-PERP', 'KLUNC-PERP', 'BCH-PERP', 'EOS-PERP', 'LUNA2-PERP', 'CRV-PERP', 'AXS-PERP', 'NEAR-PERP', 'FIL-PERP', 'AAVE-PERP', 'SAND-PERP', 'XLM-PERP', 'OP-PERP', 'REEF-PERP', 'FTT-PERP', 'STG-PERP', 'LDO-PERP', 'GMT-PERP', 'COMP-PERP', 'SUSHI-PERP', 'GRT-PERP', 'KSHIB-PERP', 'FTM-PERP', 'UNI-PERP', 'YFI-PERP', 'TRX-PERP', 'SNX-PERP', 'ENS-PERP', 'CEL-PERP', 'RVN-PERP', 'USDT-PERP', 'PEOPLE-PERP', 'THETA-PERP', 'XTZ-PERP', 'WAVES-PERP', 'CRO-PERP', 'MKR-PERP', 'HNT-PERP', 'GALA-PERP', 'SHIB-PERP', 'VET-PERP', '1INCH-PERP', 'CAKE-PERP', 'GAL-PERP', 'MANA-PERP', 'SRM-PERP', 'ZEC-PERP', 'ICP-PERP', 'XMR-PERP', 'DYDX-PERP', 'ETHW-PERP', 'LOOKS-PERP', 'ALT-PERP', 'KNC-PERP', 'LRC-PERP', 'BAND-PERP', 'RUNE-PERP', 'RAY-PERP', 'GLMR-PERP', 'KSM-PERP', 'CVX-PERP', 'EGLD-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+ETHW-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 2.43425, 'ETH-PERP': 8.7806}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+ATOM-PERP est en position d'achat SHORT
+CHZ-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+ETC-PERP est en position d'achat SHORT
+LINK-PERP est en position d'achat LONG
+APE-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+KLUNC-PERP est en position d'achat SHORT
+BCH-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+CRV-PERP est en position d'achat SHORT
+NEAR-PERP est en position d'achat SHORT
+FIL-PERP est en position d'achat LONG
+AAVE-PERP est en position d'achat SHORT
+OP-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+LDO-PERP est en position d'achat SHORT
+GMT-PERP est en position d'achat SHORT
+COMP-PERP est en position d'achat LONG
+FTM-PERP est en position d'achat SHORT
+YFI-PERP est en position d'achat SHORT
+TRX-PERP est en position d'achat SHORT
+SNX-PERP est en position d'achat SHORT
+WAVES-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+MKR-PERP est en position d'achat LONG
+GALA-PERP est en position d'achat SHORT
+VET-PERP est en position d'achat SHORT
+CAKE-PERP est en position d'achat LONG
+GAL-PERP est en position d'achat LONG
+MANA-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+ZEC-PERP est en position d'achat SHORT
+DYDX-PERP est en position d'achat SHORT
+KNC-PERP est en position d'achat SHORT
+BAND-PERP est en position d'achat LONG
+RUNE-PERP est en position d'achat SHORT
+RAY-PERP est en position d'achat SHORT
+GLMR-PERP est en position d'achat SHORT
+CVX-PERP est en position d'achat SHORT
+EGLD-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 135.83722144 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 02:00:03.047203
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'CHZ-PERP', 'LUNC-PERP', 'ETC-PERP', 'LINK-PERP', 'APE-PERP', 'BNB-PERP', 'ADA-PERP', 'ALGO-PERP', 'MATIC-PERP', 'DOGE-PERP', 'AVAX-PERP', 'RSR-PERP', 'DOT-PERP', 'LTC-PERP', 'KLUNC-PERP', 'BCH-PERP', 'EOS-PERP', 'LUNA2-PERP', 'CRV-PERP', 'AXS-PERP', 'FIL-PERP', 'NEAR-PERP', 'AAVE-PERP', 'XLM-PERP', 'SAND-PERP', 'OP-PERP', 'LDO-PERP', 'FTT-PERP', 'STG-PERP', 'REEF-PERP', 'GMT-PERP', 'SUSHI-PERP', 'COMP-PERP', 'GRT-PERP', 'FTM-PERP', 'UNI-PERP', 'KSHIB-PERP', 'YFI-PERP', 'SNX-PERP', 'TRX-PERP', 'ENS-PERP', 'CEL-PERP', 'RVN-PERP', 'PEOPLE-PERP', 'USDT-PERP', 'MKR-PERP', 'THETA-PERP', 'WAVES-PERP', 'XTZ-PERP', 'CRO-PERP', 'HNT-PERP', 'GALA-PERP', 'CAKE-PERP', '1INCH-PERP', 'SHIB-PERP', 'VET-PERP', 'ETHW-PERP', 'GAL-PERP', 'MANA-PERP', 'SRM-PERP', 'ZEC-PERP', 'LOOKS-PERP', 'ICP-PERP', 'XMR-PERP', 'DYDX-PERP', 'ALT-PERP', 'KNC-PERP', 'BAND-PERP', 'RAY-PERP', 'LRC-PERP', 'RUNE-PERP', 'KSM-PERP', 'GLMR-PERP', 'CVX-PERP', 'EGLD-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+RVN-PERP ne sera pas utilisée : manque de données.
+ETHW-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 3.2421, 'ETH-PERP': 8.557}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+XRP-PERP est en position d'achat LONG
+ATOM-PERP est en position d'achat SHORT
+CHZ-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+ETC-PERP est en position d'achat SHORT
+LINK-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+KLUNC-PERP est en position d'achat SHORT
+BCH-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+CRV-PERP est en position d'achat SHORT
+FIL-PERP est en position d'achat LONG
+NEAR-PERP est en position d'achat SHORT
+AAVE-PERP est en position d'achat SHORT
+OP-PERP est en position d'achat SHORT
+LDO-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+GMT-PERP est en position d'achat SHORT
+COMP-PERP est en position d'achat LONG
+FTM-PERP est en position d'achat SHORT
+YFI-PERP est en position d'achat SHORT
+SNX-PERP est en position d'achat SHORT
+TRX-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+WAVES-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+GALA-PERP est en position d'achat SHORT
+CAKE-PERP est en position d'achat LONG
+VET-PERP est en position d'achat SHORT
+MANA-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+ZEC-PERP est en position d'achat SHORT
+LOOKS-PERP est en position d'achat SHORT
+DYDX-PERP est en position d'achat SHORT
+KNC-PERP est en position d'achat SHORT
+BAND-PERP est en position d'achat LONG
+RAY-PERP est en position d'achat SHORT
+RUNE-PERP est en position d'achat SHORT
+GLMR-PERP est en position d'achat SHORT
+CVX-PERP est en position d'achat SHORT
+EGLD-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 136.01903646 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 03:00:02.973473
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'LUNC-PERP', 'CHZ-PERP', 'ETC-PERP', 'LINK-PERP', 'APE-PERP', 'BNB-PERP', 'ADA-PERP', 'ALGO-PERP', 'MATIC-PERP', 'DOGE-PERP', 'AVAX-PERP', 'DOT-PERP', 'RSR-PERP', 'KLUNC-PERP', 'LTC-PERP', 'BCH-PERP', 'LUNA2-PERP', 'EOS-PERP', 'CRV-PERP', 'AXS-PERP', 'FIL-PERP', 'NEAR-PERP', 'OP-PERP', 'AAVE-PERP', 'SAND-PERP', 'XLM-PERP', 'FTT-PERP', 'LDO-PERP', 'STG-PERP', 'REEF-PERP', 'SUSHI-PERP', 'GMT-PERP', 'COMP-PERP', 'GRT-PERP', 'UNI-PERP', 'FTM-PERP', 'TRX-PERP', 'YFI-PERP', 'SNX-PERP', 'KSHIB-PERP', 'CEL-PERP', 'MKR-PERP', 'ENS-PERP', 'USDT-PERP', 'ETHW-PERP', 'RVN-PERP', 'PEOPLE-PERP', 'WAVES-PERP', 'THETA-PERP', 'CRO-PERP', 'GALA-PERP', 'XTZ-PERP', 'HNT-PERP', 'VET-PERP', '1INCH-PERP', 'MANA-PERP', 'GAL-PERP', 'SRM-PERP', 'CAKE-PERP', 'SHIB-PERP', 'LOOKS-PERP', 'XMR-PERP', 'ICP-PERP', 'ZEC-PERP', 'DYDX-PERP', 'KNC-PERP', 'ALT-PERP', 'RAY-PERP', 'BAND-PERP', 'KSM-PERP', 'RUNE-PERP', 'CVX-PERP', 'GLMR-PERP', 'LRC-PERP', 'AR-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+ETHW-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 3.14045, 'ETH-PERP': 8.6043}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+ETC-PERP est en position d'achat SHORT
+LINK-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat SHORT
+RSR-PERP est en position d'achat LONG
+BCH-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+CRV-PERP est en position d'achat SHORT
+FIL-PERP est en position d'achat LONG
+NEAR-PERP est en position d'achat SHORT
+OP-PERP est en position d'achat SHORT
+AAVE-PERP est en position d'achat SHORT
+LDO-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+SUSHI-PERP est en position d'achat SHORT
+GMT-PERP est en position d'achat SHORT
+COMP-PERP est en position d'achat LONG
+UNI-PERP est en position d'achat SHORT
+FTM-PERP est en position d'achat SHORT
+TRX-PERP est en position d'achat SHORT
+YFI-PERP est en position d'achat SHORT
+SNX-PERP est en position d'achat SHORT
+CEL-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+WAVES-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+GALA-PERP est en position d'achat SHORT
+VET-PERP est en position d'achat SHORT
+MANA-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+LOOKS-PERP est en position d'achat SHORT
+ZEC-PERP est en position d'achat SHORT
+DYDX-PERP est en position d'achat SHORT
+KNC-PERP est en position d'achat SHORT
+RAY-PERP est en position d'achat SHORT
+BAND-PERP est en position d'achat LONG
+RUNE-PERP est en position d'achat SHORT
+CVX-PERP est en position d'achat SHORT
+GLMR-PERP est en position d'achat SHORT
+LRC-PERP est en position d'achat SHORT
+AR-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 136.1901893 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 04:00:03.264958
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'LUNC-PERP', 'CHZ-PERP', 'ETC-PERP', 'LINK-PERP', 'APE-PERP', 'ADA-PERP', 'BNB-PERP', 'MATIC-PERP', 'ALGO-PERP', 'DOGE-PERP', 'AVAX-PERP', 'DOT-PERP', 'RSR-PERP', 'LTC-PERP', 'LUNA2-PERP', 'KLUNC-PERP', 'EOS-PERP', 'CRV-PERP', 'BCH-PERP', 'AXS-PERP', 'FIL-PERP', 'NEAR-PERP', 'OP-PERP', 'AAVE-PERP', 'LDO-PERP', 'SAND-PERP', 'XLM-PERP', 'FTT-PERP', 'STG-PERP', 'SUSHI-PERP', 'GMT-PERP', 'REEF-PERP', 'GRT-PERP', 'COMP-PERP', 'UNI-PERP', 'FTM-PERP', 'SNX-PERP', 'TRX-PERP', 'MKR-PERP', 'YFI-PERP', 'CEL-PERP', 'KSHIB-PERP', 'ETHW-PERP', 'ENS-PERP', 'RVN-PERP', 'PEOPLE-PERP', 'USDT-PERP', 'THETA-PERP', 'WAVES-PERP', 'CRO-PERP', 'GALA-PERP', 'HNT-PERP', 'XTZ-PERP', 'VET-PERP', 'MANA-PERP', '1INCH-PERP', 'SRM-PERP', 'XMR-PERP', 'GAL-PERP', 'CAKE-PERP', 'LOOKS-PERP', 'SHIB-PERP', 'ICP-PERP', 'ZEC-PERP', 'KNC-PERP', 'DYDX-PERP', 'ALT-PERP', 'RAY-PERP', 'KSM-PERP', 'RUNE-PERP', 'BAND-PERP', 'CVX-PERP', 'GLMR-PERP', 'LRC-PERP', 'REN-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+ETHW-PERP ne sera pas utilisée : manque de données.
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 3.12975, 'ETH-PERP': 8.3678}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+XRP-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+CHZ-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+APE-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+KLUNC-PERP est en position d'achat SHORT
+FIL-PERP est en position d'achat LONG
+LDO-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+TRX-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+BAND-PERP est en position d'achat LONG
+GLMR-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 135.79416706 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 05:00:02.471246
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'LUNC-PERP', 'CHZ-PERP', 'ETC-PERP', 'LINK-PERP', 'APE-PERP', 'ADA-PERP', 'BNB-PERP', 'MATIC-PERP', 'DOGE-PERP', 'ALGO-PERP', 'AVAX-PERP', 'DOT-PERP', 'RSR-PERP', 'LUNA2-PERP', 'LTC-PERP', 'KLUNC-PERP', 'EOS-PERP', 'CRV-PERP', 'BCH-PERP', 'AXS-PERP', 'NEAR-PERP', 'FIL-PERP', 'OP-PERP', 'AAVE-PERP', 'FTT-PERP', 'LDO-PERP', 'XLM-PERP', 'SAND-PERP', 'STG-PERP', 'SUSHI-PERP', 'GMT-PERP', 'GRT-PERP', 'REEF-PERP', 'COMP-PERP', 'UNI-PERP', 'ETHW-PERP', 'TRX-PERP', 'FTM-PERP', 'SNX-PERP', 'MKR-PERP', 'YFI-PERP', 'CEL-PERP', 'KSHIB-PERP', 'ENS-PERP', 'USDT-PERP', 'PEOPLE-PERP', 'THETA-PERP', 'WAVES-PERP', 'RVN-PERP', 'CRO-PERP', 'GALA-PERP', 'HNT-PERP', 'XTZ-PERP', 'VET-PERP', 'MANA-PERP', '1INCH-PERP', 'SRM-PERP', 'XMR-PERP', 'GAL-PERP', 'LOOKS-PERP', 'CAKE-PERP', 'SHIB-PERP', 'ICP-PERP', 'ZEC-PERP', 'KNC-PERP', 'DYDX-PERP', 'RAY-PERP', 'ALT-PERP', 'KSM-PERP', 'CVX-PERP', 'BAND-PERP', 'RUNE-PERP', 'GLMR-PERP', 'REN-PERP', 'AR-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+ETHW-PERP ne sera pas utilisée : manque de données.
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 1.05395, 'ETH-PERP': 8.1786}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+XRP-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat SHORT
+CHZ-PERP est en position d'achat LONG
+ETC-PERP est en position d'achat SHORT
+LINK-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+KLUNC-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+CRV-PERP est en position d'achat SHORT
+NEAR-PERP est en position d'achat SHORT
+FIL-PERP est en position d'achat LONG
+LDO-PERP est en position d'achat SHORT
+SUSHI-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+FTM-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+WAVES-PERP est en position d'achat SHORT
+GALA-PERP est en position d'achat SHORT
+VET-PERP est en position d'achat SHORT
+MANA-PERP est en position d'achat SHORT
+LOOKS-PERP est en position d'achat SHORT
+CAKE-PERP est en position d'achat LONG
+KNC-PERP est en position d'achat SHORT
+DYDX-PERP est en position d'achat SHORT
+RAY-PERP est en position d'achat SHORT
+BAND-PERP est en position d'achat LONG
+RUNE-PERP est en position d'achat SHORT
+GLMR-PERP est en position d'achat SHORT
+AR-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 133.55995267 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 06:00:02.079203
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'LUNC-PERP', 'CHZ-PERP', 'ETC-PERP', 'LINK-PERP', 'APE-PERP', 'ADA-PERP', 'BNB-PERP', 'MATIC-PERP', 'DOGE-PERP', 'ALGO-PERP', 'DOT-PERP', 'AVAX-PERP', 'RSR-PERP', 'LUNA2-PERP', 'LTC-PERP', 'KLUNC-PERP', 'EOS-PERP', 'CRV-PERP', 'BCH-PERP', 'AXS-PERP', 'FIL-PERP', 'NEAR-PERP', 'AAVE-PERP', 'OP-PERP', 'FTT-PERP', 'LDO-PERP', 'XLM-PERP', 'SAND-PERP', 'SUSHI-PERP', 'STG-PERP', 'GMT-PERP', 'USDT-PERP', 'GRT-PERP', 'ETHW-PERP', 'COMP-PERP', 'UNI-PERP', 'REEF-PERP', 'TRX-PERP', 'FTM-PERP', 'MKR-PERP', 'SNX-PERP', 'CEL-PERP', 'YFI-PERP', 'ENS-PERP', 'KSHIB-PERP', 'THETA-PERP', 'WAVES-PERP', 'PEOPLE-PERP', 'CRO-PERP', 'RVN-PERP', 'HNT-PERP', 'GALA-PERP', 'XTZ-PERP', 'MANA-PERP', 'VET-PERP', '1INCH-PERP', 'SRM-PERP', 'XMR-PERP', 'CAKE-PERP', 'LOOKS-PERP', 'GAL-PERP', 'ICP-PERP', 'ZEC-PERP', 'SHIB-PERP', 'KNC-PERP', 'DYDX-PERP', 'RAY-PERP', 'ALT-PERP', 'IOTA-PERP', 'KSM-PERP', 'CVX-PERP', 'REN-PERP', 'BAND-PERP', 'GLMR-PERP', 'RUNE-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+ETHW-PERP ne sera pas utilisée : manque de données.
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 1.0914, 'ETH-PERP': 8.2173}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+XRP-PERP est en position d'achat LONG
+ATOM-PERP est en position d'achat SHORT
+LUNC-PERP est en position d'achat SHORT
+CHZ-PERP est en position d'achat LONG
+ETC-PERP est en position d'achat SHORT
+LINK-PERP est en position d'achat LONG
+APE-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+KLUNC-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+CRV-PERP est en position d'achat SHORT
+FIL-PERP est en position d'achat LONG
+NEAR-PERP est en position d'achat SHORT
+OP-PERP est en position d'achat SHORT
+LDO-PERP est en position d'achat SHORT
+SUSHI-PERP est en position d'achat SHORT
+GMT-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+TRX-PERP est en position d'achat SHORT
+FTM-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+SNX-PERP est en position d'achat SHORT
+CEL-PERP est en position d'achat SHORT
+YFI-PERP est en position d'achat SHORT
+WAVES-PERP est en position d'achat SHORT
+PEOPLE-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+GALA-PERP est en position d'achat SHORT
+MANA-PERP est en position d'achat SHORT
+VET-PERP est en position d'achat SHORT
+CAKE-PERP est en position d'achat LONG
+LOOKS-PERP est en position d'achat SHORT
+KNC-PERP est en position d'achat SHORT
+RAY-PERP est en position d'achat SHORT
+IOTA-PERP est en position d'achat LONG
+BAND-PERP est en position d'achat LONG
+GLMR-PERP est en position d'achat SHORT
+RUNE-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 134.10039807 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 07:00:02.390935
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'LUNC-PERP', 'CHZ-PERP', 'ETC-PERP', 'LINK-PERP', 'APE-PERP', 'ADA-PERP', 'BNB-PERP', 'MATIC-PERP', 'ALGO-PERP', 'DOT-PERP', 'DOGE-PERP', 'AVAX-PERP', 'RSR-PERP', 'LUNA2-PERP', 'KLUNC-PERP', 'LTC-PERP', 'EOS-PERP', 'CRV-PERP', 'BCH-PERP', 'AXS-PERP', 'FIL-PERP', 'NEAR-PERP', 'AAVE-PERP', 'OP-PERP', 'FTT-PERP', 'LDO-PERP', 'XLM-PERP', 'SAND-PERP', 'SUSHI-PERP', 'STG-PERP', 'GMT-PERP', 'ETHW-PERP', 'USDT-PERP', 'COMP-PERP', 'UNI-PERP', 'GRT-PERP', 'REEF-PERP', 'TRX-PERP', 'MKR-PERP', 'SNX-PERP', 'FTM-PERP', 'CEL-PERP', 'YFI-PERP', 'ENS-PERP', 'KSHIB-PERP', 'THETA-PERP', 'WAVES-PERP', 'CRO-PERP', 'HNT-PERP', 'PEOPLE-PERP', 'ICP-PERP', 'GALA-PERP', 'IOTA-PERP', '1INCH-PERP', 'RVN-PERP', 'XTZ-PERP', 'VET-PERP', 'MANA-PERP', 'SRM-PERP', 'CAKE-PERP', 'LOOKS-PERP', 'GAL-PERP', 'XMR-PERP', 'ZEC-PERP', 'KNC-PERP', 'RAY-PERP', 'DYDX-PERP', 'SHIB-PERP', 'ALT-PERP', 'KSM-PERP', 'CVX-PERP', 'REN-PERP', 'GLMR-PERP', 'AR-PERP', 'BAND-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+ETHW-PERP ne sera pas utilisée : manque de données.
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 0.67945, 'ETH-PERP': 8.5785}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+ATOM-PERP est en position d'achat SHORT
+LUNC-PERP est en position d'achat SHORT
+CHZ-PERP est en position d'achat LONG
+ETC-PERP est en position d'achat SHORT
+LINK-PERP est en position d'achat LONG
+APE-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+RSR-PERP est en position d'achat LONG
+KLUNC-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+CRV-PERP est en position d'achat SHORT
+BCH-PERP est en position d'achat SHORT
+FIL-PERP est en position d'achat LONG
+NEAR-PERP est en position d'achat SHORT
+AAVE-PERP est en position d'achat SHORT
+OP-PERP est en position d'achat SHORT
+LDO-PERP est en position d'achat SHORT
+SUSHI-PERP est en position d'achat SHORT
+GMT-PERP est en position d'achat SHORT
+UNI-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+TRX-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+SNX-PERP est en position d'achat SHORT
+FTM-PERP est en position d'achat SHORT
+CEL-PERP est en position d'achat SHORT
+YFI-PERP est en position d'achat SHORT
+WAVES-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+GALA-PERP est en position d'achat SHORT
+VET-PERP est en position d'achat SHORT
+MANA-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+CAKE-PERP est en position d'achat LONG
+LOOKS-PERP est en position d'achat SHORT
+KNC-PERP est en position d'achat SHORT
+RAY-PERP est en position d'achat SHORT
+DYDX-PERP est en position d'achat SHORT
+CVX-PERP est en position d'achat SHORT
+GLMR-PERP est en position d'achat SHORT
+AR-PERP est en position d'achat SHORT
+BAND-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 134.02196132 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 08:00:02.999512
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'LUNC-PERP', 'CHZ-PERP', 'ETC-PERP', 'LINK-PERP', 'APE-PERP', 'ADA-PERP', 'BNB-PERP', 'MATIC-PERP', 'ALGO-PERP', 'DOT-PERP', 'DOGE-PERP', 'AVAX-PERP', 'RSR-PERP', 'LUNA2-PERP', 'KLUNC-PERP', 'LTC-PERP', 'CRV-PERP', 'EOS-PERP', 'BCH-PERP', 'AXS-PERP', 'NEAR-PERP', 'FIL-PERP', 'AAVE-PERP', 'OP-PERP', 'FTT-PERP', 'LDO-PERP', 'XLM-PERP', 'SAND-PERP', 'SUSHI-PERP', 'ETHW-PERP', 'STG-PERP', 'USDT-PERP', 'GMT-PERP', 'COMP-PERP', 'UNI-PERP', 'TRX-PERP', 'GRT-PERP', 'REEF-PERP', 'MKR-PERP', 'FTM-PERP', 'SNX-PERP', 'CEL-PERP', 'IOTA-PERP', 'YFI-PERP', 'ENS-PERP', 'KSHIB-PERP', 'THETA-PERP', 'WAVES-PERP', 'HNT-PERP', 'CRO-PERP', 'GALA-PERP', '1INCH-PERP', 'PEOPLE-PERP', 'ICP-PERP', 'RVN-PERP', 'MANA-PERP', 'VET-PERP', 'XTZ-PERP', 'SRM-PERP', 'ZEC-PERP', 'LOOKS-PERP', 'KSM-PERP', 'CAKE-PERP', 'GAL-PERP', 'RAY-PERP', 'XMR-PERP', 'KNC-PERP', 'DYDX-PERP', 'SHIB-PERP', 'ALT-PERP', 'CVX-PERP', 'REN-PERP', 'BSV-PERP', 'AR-PERP', 'GLMR-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+ETHW-PERP ne sera pas utilisée : manque de données.
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': -1.92065, 'ETH-PERP': 8.7204}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+ATOM-PERP est en position d'achat SHORT
+LUNC-PERP est en position d'achat SHORT
+CHZ-PERP est en position d'achat LONG
+ETC-PERP est en position d'achat SHORT
+LINK-PERP est en position d'achat LONG
+APE-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+DOT-PERP est en position d'achat SHORT
+DOGE-PERP est en position d'achat SHORT
+RSR-PERP est en position d'achat LONG
+KLUNC-PERP est en position d'achat SHORT
+CRV-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+NEAR-PERP est en position d'achat SHORT
+FIL-PERP est en position d'achat LONG
+AAVE-PERP est en position d'achat SHORT
+OP-PERP est en position d'achat SHORT
+LDO-PERP est en position d'achat SHORT
+SAND-PERP est en position d'achat SHORT
+SUSHI-PERP est en position d'achat SHORT
+GMT-PERP est en position d'achat SHORT
+COMP-PERP est en position d'achat LONG
+UNI-PERP est en position d'achat SHORT
+GRT-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+MKR-PERP est en position d'achat LONG
+FTM-PERP est en position d'achat SHORT
+SNX-PERP est en position d'achat SHORT
+CEL-PERP est en position d'achat SHORT
+YFI-PERP est en position d'achat SHORT
+WAVES-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+GALA-PERP est en position d'achat SHORT
+PEOPLE-PERP est en position d'achat LONG
+VET-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+LOOKS-PERP est en position d'achat SHORT
+CAKE-PERP est en position d'achat LONG
+RAY-PERP est en position d'achat SHORT
+KNC-PERP est en position d'achat SHORT
+CVX-PERP est en position d'achat SHORT
+AR-PERP est en position d'achat SHORT
+GLMR-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 131.72922625 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 09:00:02.518319
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'LUNC-PERP', 'ETC-PERP', 'CHZ-PERP', 'LINK-PERP', 'APE-PERP', 'ADA-PERP', 'MATIC-PERP', 'BNB-PERP', 'DOT-PERP', 'DOGE-PERP', 'ALGO-PERP', 'AVAX-PERP', 'LUNA2-PERP', 'RSR-PERP', 'KLUNC-PERP', 'LTC-PERP', 'CRV-PERP', 'EOS-PERP', 'BCH-PERP', 'AXS-PERP', 'NEAR-PERP', 'FIL-PERP', 'AAVE-PERP', 'FTT-PERP', 'OP-PERP', 'LDO-PERP', 'XLM-PERP', 'SAND-PERP', 'SUSHI-PERP', 'ETHW-PERP', 'GMT-PERP', 'USDT-PERP', 'STG-PERP', 'COMP-PERP', 'IOTA-PERP', 'UNI-PERP', 'TRX-PERP', 'GRT-PERP', 'FTM-PERP', 'REEF-PERP', 'MKR-PERP', 'SNX-PERP', 'CEL-PERP', 'YFI-PERP', 'ENS-PERP', 'THETA-PERP', 'WAVES-PERP', 'HNT-PERP', '1INCH-PERP', 'CRO-PERP', 'KSHIB-PERP', 'GALA-PERP', 'MANA-PERP', 'VET-PERP', 'PEOPLE-PERP', 'ICP-PERP', 'RVN-PERP', 'XTZ-PERP', 'ZEC-PERP', 'SRM-PERP', 'LOOKS-PERP', 'KSM-PERP', 'RAY-PERP', 'KNC-PERP', 'CAKE-PERP', 'GAL-PERP', 'DYDX-PERP', 'BSV-PERP', 'XMR-PERP', 'SHIB-PERP', 'ALT-PERP', 'REN-PERP', 'CVX-PERP', 'RUNE-PERP', 'ROSE-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+ETHW-PERP ne sera pas utilisée : manque de données.
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': -2.54125, 'ETH-PERP': 9.1934}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+ATOM-PERP est en position d'achat SHORT
+LUNC-PERP est en position d'achat SHORT
+ETC-PERP est en position d'achat SHORT
+CHZ-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+APE-PERP est en position d'achat LONG
+ADA-PERP est en position d'achat SHORT
+DOT-PERP est en position d'achat SHORT
+DOGE-PERP est en position d'achat SHORT
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+KLUNC-PERP est en position d'achat SHORT
+CRV-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+BCH-PERP est en position d'achat SHORT
+AXS-PERP est en position d'achat SHORT
+NEAR-PERP est en position d'achat SHORT
+AAVE-PERP est en position d'achat SHORT
+OP-PERP est en position d'achat SHORT
+LDO-PERP est en position d'achat SHORT
+XLM-PERP est en position d'achat SHORT
+SAND-PERP est en position d'achat SHORT
+SUSHI-PERP est en position d'achat SHORT
+STG-PERP est en position d'achat SHORT
+COMP-PERP est en position d'achat LONG
+UNI-PERP est en position d'achat SHORT
+TRX-PERP est en position d'achat SHORT
+GRT-PERP est en position d'achat SHORT
+FTM-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+MKR-PERP est en position d'achat LONG
+SNX-PERP est en position d'achat SHORT
+CEL-PERP est en position d'achat SHORT
+YFI-PERP est en position d'achat SHORT
+THETA-PERP est en position d'achat SHORT
+WAVES-PERP est en position d'achat SHORT
+GALA-PERP est en position d'achat SHORT
+MANA-PERP est en position d'achat SHORT
+VET-PERP est en position d'achat SHORT
+PEOPLE-PERP est en position d'achat LONG
+ICP-PERP est en position d'achat SHORT
+ZEC-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+LOOKS-PERP est en position d'achat SHORT
+RAY-PERP est en position d'achat SHORT
+KNC-PERP est en position d'achat SHORT
+CAKE-PERP est en position d'achat LONG
+DYDX-PERP est en position d'achat SHORT
+BSV-PERP est en position d'achat SHORT
+CVX-PERP est en position d'achat SHORT
+RUNE-PERP est en position d'achat SHORT
+ROSE-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 131.70261252 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 10:00:03.069652
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'LUNC-PERP', 'ETC-PERP', 'CHZ-PERP', 'LINK-PERP', 'APE-PERP', 'ADA-PERP', 'MATIC-PERP', 'BNB-PERP', 'DOT-PERP', 'DOGE-PERP', 'AVAX-PERP', 'ALGO-PERP', 'LUNA2-PERP', 'KLUNC-PERP', 'RSR-PERP', 'LTC-PERP', 'CRV-PERP', 'EOS-PERP', 'BCH-PERP', 'AXS-PERP', 'NEAR-PERP', 'FTT-PERP', 'FIL-PERP', 'AAVE-PERP', 'OP-PERP', 'LDO-PERP', 'ETHW-PERP', 'XLM-PERP', 'SUSHI-PERP', 'SAND-PERP', 'IOTA-PERP', 'GMT-PERP', 'COMP-PERP', 'USDT-PERP', 'STG-PERP', 'UNI-PERP', 'TRX-PERP', 'FTM-PERP', 'GRT-PERP', 'MKR-PERP', 'SNX-PERP', 'REEF-PERP', 'CEL-PERP', 'YFI-PERP', 'THETA-PERP', 'WAVES-PERP', 'ENS-PERP', 'HNT-PERP', '1INCH-PERP', 'GALA-PERP', 'CRO-PERP', 'VET-PERP', 'KSHIB-PERP', 'MANA-PERP', 'PEOPLE-PERP', 'ICP-PERP', 'RVN-PERP', 'ZEC-PERP', 'XTZ-PERP', 'SRM-PERP', 'LOOKS-PERP', 'KSM-PERP', 'RAY-PERP', 'KNC-PERP', 'DYDX-PERP', 'BSV-PERP', 'CAKE-PERP', 'GAL-PERP', 'XMR-PERP', 'SHIB-PERP', 'ALT-PERP', 'REN-PERP', 'CVX-PERP', 'RUNE-PERP', 'ROSE-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+ETHW-PERP ne sera pas utilisée : manque de données.
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': -0.87205, 'ETH-PERP': 8.5441}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+XRP-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+APE-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+STG-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+SNX-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+HNT-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+LOOKS-PERP est en position d'achat SHORT
+KNC-PERP est en position d'achat SHORT
+CAKE-PERP est en position d'achat LONG
+ROSE-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 132.04449177 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 11:00:02.636655
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'LUNC-PERP', 'ETC-PERP', 'CHZ-PERP', 'LINK-PERP', 'APE-PERP', 'MATIC-PERP', 'ADA-PERP', 'BNB-PERP', 'DOT-PERP', 'DOGE-PERP', 'AVAX-PERP', 'ALGO-PERP', 'LUNA2-PERP', 'KLUNC-PERP', 'LTC-PERP', 'RSR-PERP', 'CRV-PERP', 'EOS-PERP', 'BCH-PERP', 'AXS-PERP', 'NEAR-PERP', 'FTT-PERP', 'AAVE-PERP', 'FIL-PERP', 'ETHW-PERP', 'OP-PERP', 'LDO-PERP', 'SUSHI-PERP', 'XLM-PERP', 'SAND-PERP', 'IOTA-PERP', 'GMT-PERP', 'COMP-PERP', 'UNI-PERP', 'USDT-PERP', 'STG-PERP', 'TRX-PERP', 'FTM-PERP', 'BSV-PERP', 'MKR-PERP', 'SNX-PERP', 'GRT-PERP', 'YFI-PERP', 'CEL-PERP', 'REEF-PERP', 'THETA-PERP', 'WAVES-PERP', 'HNT-PERP', 'ENS-PERP', '1INCH-PERP', 'GALA-PERP', 'VET-PERP', 'ICP-PERP', 'CRO-PERP', 'MANA-PERP', 'DYDX-PERP', 'KSHIB-PERP', 'PEOPLE-PERP', 'RVN-PERP', 'ZEC-PERP', 'SRM-PERP', 'XTZ-PERP', 'KSM-PERP', 'RAY-PERP', 'LOOKS-PERP', 'KNC-PERP', 'CAKE-PERP', 'XMR-PERP', 'REN-PERP', 'ALT-PERP', 'SHIB-PERP', 'GAL-PERP', 'RUNE-PERP', 'CVX-PERP', 'SXP-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+ETHW-PERP ne sera pas utilisée : manque de données.
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': 0.6955, 'ETH-PERP': 7.3917}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+XRP-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+APE-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+FIL-PERP est en position d'achat LONG
+IOTA-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+MKR-PERP est en position d'achat LONG
+1INCH-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 132.62537008 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 12:00:02.369773
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['ETH-PERP', 'BTC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'LUNC-PERP', 'ETC-PERP', 'CHZ-PERP', 'LINK-PERP', 'APE-PERP', 'MATIC-PERP', 'LUNA2-PERP', 'ADA-PERP', 'KLUNC-PERP', 'DOT-PERP', 'BNB-PERP', 'AVAX-PERP', 'DOGE-PERP', 'ALGO-PERP', 'LTC-PERP', 'RSR-PERP', 'CRV-PERP', 'BCH-PERP', 'EOS-PERP', 'NEAR-PERP', 'FTT-PERP', 'AXS-PERP', 'AAVE-PERP', 'ETHW-PERP', 'FIL-PERP', 'OP-PERP', 'LDO-PERP', 'SUSHI-PERP', 'XLM-PERP', 'SAND-PERP', 'IOTA-PERP', 'GMT-PERP', 'COMP-PERP', 'USDT-PERP', 'STG-PERP', 'TRX-PERP', 'FTM-PERP', 'UNI-PERP', 'BSV-PERP', 'MKR-PERP', 'SNX-PERP', 'DYDX-PERP', 'YFI-PERP', 'CEL-PERP', 'THETA-PERP', 'REEF-PERP', 'GRT-PERP', 'WAVES-PERP', 'HNT-PERP', 'GALA-PERP', '1INCH-PERP', 'VET-PERP', 'ENS-PERP', 'CRO-PERP', 'ICP-PERP', 'MANA-PERP', 'PEOPLE-PERP', 'KSHIB-PERP', 'ZEC-PERP', 'RVN-PERP', 'SRM-PERP', 'XTZ-PERP', 'KSM-PERP', 'RAY-PERP', 'USTC-PERP', 'LOOKS-PERP', 'KNC-PERP', 'XMR-PERP', 'CAKE-PERP', 'ALT-PERP', 'SHIB-PERP', 'REN-PERP', 'GAL-PERP', 'RUNE-PERP', 'SXP-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+ETHW-PERP ne sera pas utilisée : manque de données.
+RVN-PERP ne sera pas utilisée : manque de données.
+{'ETH-PERP': 7.8862, 'XRP-PERP': -1.79225}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+XRP-PERP est en position d'achat LONG
+ETC-PERP est en position d'achat SHORT
+CHZ-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+APE-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+SAND-PERP est en position d'achat SHORT
+IOTA-PERP est en position d'achat LONG
+STG-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+SNX-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+GRT-PERP est en position d'achat SHORT
+WAVES-PERP est en position d'achat SHORT
+HNT-PERP est en position d'achat LONG
+1INCH-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+ZEC-PERP est en position d'achat LONG
+LOOKS-PERP est en position d'achat SHORT
+KNC-PERP est en position d'achat SHORT
+CAKE-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 130.69436325 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 13:00:02.330243
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['BTC-PERP', 'ETH-PERP', 'XRP-PERP', 'LUNC-PERP', 'SOL-PERP', 'ATOM-PERP', 'ETC-PERP', 'CHZ-PERP', 'KLUNC-PERP', 'LINK-PERP', 'LUNA2-PERP', 'APE-PERP', 'MATIC-PERP', 'ADA-PERP', 'DOT-PERP', 'BNB-PERP', 'AVAX-PERP', 'DOGE-PERP', 'ALGO-PERP', 'LTC-PERP', 'RSR-PERP', 'CRV-PERP', 'EOS-PERP', 'BCH-PERP', 'FTT-PERP', 'NEAR-PERP', 'AXS-PERP', 'ETHW-PERP', 'AAVE-PERP', 'LDO-PERP', 'OP-PERP', 'FIL-PERP', 'SUSHI-PERP', 'IOTA-PERP', 'XLM-PERP', 'SAND-PERP', 'GMT-PERP', 'COMP-PERP', 'BSV-PERP', 'USDT-PERP', 'TRX-PERP', 'FTM-PERP', 'STG-PERP', 'UNI-PERP', 'DYDX-PERP', 'MKR-PERP', 'SNX-PERP', 'YFI-PERP', 'CEL-PERP', 'THETA-PERP', 'HNT-PERP', 'WAVES-PERP', 'REEF-PERP', 'GALA-PERP', '1INCH-PERP', 'VET-PERP', 'USTC-PERP', 'CRO-PERP', 'ENS-PERP', 'PEOPLE-PERP', 'ZEC-PERP', 'MANA-PERP', 'ICP-PERP', 'KSHIB-PERP', 'GRT-PERP', 'SRM-PERP', 'RVN-PERP', 'XTZ-PERP', 'KSM-PERP', 'RAY-PERP', 'KNC-PERP', 'LOOKS-PERP', 'XMR-PERP', 'CAKE-PERP', 'REN-PERP', 'SHIB-PERP', 'ALT-PERP', 'GAL-PERP', 'SXP-PERP', 'RUNE-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+ETHW-PERP ne sera pas utilisée : manque de données.
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': -1.70665, 'ETH-PERP': 7.826}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+XRP-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+APE-PERP est en position d'achat LONG
+ADA-PERP est en position d'achat SHORT
+DOGE-PERP est en position d'achat SHORT
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+FIL-PERP est en position d'achat LONG
+IOTA-PERP est en position d'achat LONG
+XLM-PERP est en position d'achat SHORT
+SAND-PERP est en position d'achat SHORT
+COMP-PERP est en position d'achat LONG
+STG-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+HNT-PERP est en position d'achat LONG
+REEF-PERP est en position d'achat LONG
+GALA-PERP est en position d'achat SHORT
+1INCH-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+ZEC-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 130.70331579 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 14:00:02.307499
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['BTC-PERP', 'ETH-PERP', 'XRP-PERP', 'LUNC-PERP', 'SOL-PERP', 'ATOM-PERP', 'ETC-PERP', 'KLUNC-PERP', 'CHZ-PERP', 'LINK-PERP', 'LUNA2-PERP', 'APE-PERP', 'ADA-PERP', 'MATIC-PERP', 'DOT-PERP', 'BNB-PERP', 'AVAX-PERP', 'DOGE-PERP', 'ALGO-PERP', 'LTC-PERP', 'RSR-PERP', 'EOS-PERP', 'CRV-PERP', 'BCH-PERP', 'FTT-PERP', 'NEAR-PERP', 'ETHW-PERP', 'AXS-PERP', 'AAVE-PERP', 'OP-PERP', 'LDO-PERP', 'FIL-PERP', 'IOTA-PERP', 'SUSHI-PERP', 'XLM-PERP', 'SAND-PERP', 'GMT-PERP', 'BSV-PERP', 'COMP-PERP', 'TRX-PERP', 'USDT-PERP', 'DYDX-PERP', 'FTM-PERP', 'UNI-PERP', 'STG-PERP', 'MKR-PERP', 'SNX-PERP', 'YFI-PERP', 'CEL-PERP', 'THETA-PERP', 'HNT-PERP', 'REEF-PERP', 'WAVES-PERP', 'GALA-PERP', 'USTC-PERP', 'VET-PERP', '1INCH-PERP', 'ZEC-PERP', 'CRO-PERP', 'MANA-PERP', 'PEOPLE-PERP', 'ENS-PERP', 'ICP-PERP', 'KSHIB-PERP', 'SRM-PERP', 'GRT-PERP', 'RVN-PERP', 'XTZ-PERP', 'KSM-PERP', 'RAY-PERP', 'KNC-PERP', 'LOOKS-PERP', 'XMR-PERP', 'CAKE-PERP', 'SHIB-PERP', 'REN-PERP', 'ALT-PERP', 'SXP-PERP', 'RUNE-PERP', 'GAL-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+ETHW-PERP ne sera pas utilisée : manque de données.
+RVN-PERP ne sera pas utilisée : manque de données.
+{'ETH-PERP': 8.4796, 'XRP-PERP': -3.32235}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+XRP-PERP est en position d'achat LONG
+ATOM-PERP est en position d'achat SHORT
+ETC-PERP est en position d'achat SHORT
+CHZ-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+ADA-PERP est en position d'achat SHORT
+DOGE-PERP est en position d'achat SHORT
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+EOS-PERP est en position d'achat SHORT
+BCH-PERP est en position d'achat SHORT
+NEAR-PERP est en position d'achat SHORT
+AAVE-PERP est en position d'achat SHORT
+OP-PERP est en position d'achat SHORT
+LDO-PERP est en position d'achat SHORT
+IOTA-PERP est en position d'achat LONG
+SUSHI-PERP est en position d'achat SHORT
+XLM-PERP est en position d'achat SHORT
+SAND-PERP est en position d'achat SHORT
+GMT-PERP est en position d'achat SHORT
+BSV-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+TRX-PERP est en position d'achat SHORT
+FTM-PERP est en position d'achat SHORT
+UNI-PERP est en position d'achat SHORT
+STG-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+SNX-PERP est en position d'achat SHORT
+YFI-PERP est en position d'achat SHORT
+THETA-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+WAVES-PERP est en position d'achat SHORT
+GALA-PERP est en position d'achat SHORT
+VET-PERP est en position d'achat SHORT
+1INCH-PERP est en position d'achat LONG
+ZEC-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+MANA-PERP est en position d'achat SHORT
+PEOPLE-PERP est en position d'achat LONG
+ICP-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+GRT-PERP est en position d'achat SHORT
+RAY-PERP est en position d'achat SHORT
+KNC-PERP est en position d'achat SHORT
+LOOKS-PERP est en position d'achat SHORT
+CAKE-PERP est en position d'achat LONG
+SXP-PERP est en position d'achat SHORT
+RUNE-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 129.87152568 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 15:00:02.709987
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['BTC-PERP', 'ETH-PERP', 'XRP-PERP', 'LUNC-PERP', 'SOL-PERP', 'ATOM-PERP', 'ETC-PERP', 'KLUNC-PERP', 'LUNA2-PERP', 'CHZ-PERP', 'LINK-PERP', 'APE-PERP', 'MATIC-PERP', 'ADA-PERP', 'DOT-PERP', 'BNB-PERP', 'AVAX-PERP', 'DOGE-PERP', 'ALGO-PERP', 'LTC-PERP', 'EOS-PERP', 'RSR-PERP', 'CRV-PERP', 'BCH-PERP', 'ETHW-PERP', 'FTT-PERP', 'NEAR-PERP', 'AXS-PERP', 'AAVE-PERP', 'LDO-PERP', 'OP-PERP', 'FIL-PERP', 'IOTA-PERP', 'SUSHI-PERP', 'XLM-PERP', 'SAND-PERP', 'GMT-PERP', 'BSV-PERP', 'COMP-PERP', 'TRX-PERP', 'DYDX-PERP', 'USDT-PERP', 'FTM-PERP', 'UNI-PERP', 'STG-PERP', 'SNX-PERP', 'YFI-PERP', 'THETA-PERP', 'CEL-PERP', 'MKR-PERP', 'HNT-PERP', 'USTC-PERP', 'GALA-PERP', 'WAVES-PERP', 'VET-PERP', '1INCH-PERP', 'ICP-PERP', 'REEF-PERP', 'CRO-PERP', 'ENS-PERP', 'MANA-PERP', 'ZEC-PERP', 'PEOPLE-PERP', 'KSHIB-PERP', 'KSM-PERP', 'SRM-PERP', 'RAY-PERP', 'RVN-PERP', 'GRT-PERP', 'XTZ-PERP', 'KNC-PERP', 'LOOKS-PERP', 'XMR-PERP', 'REN-PERP', 'ALT-PERP', 'SHIB-PERP', 'SXP-PERP', 'RUNE-PERP', 'CAKE-PERP', 'ROSE-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+ETHW-PERP ne sera pas utilisée : manque de données.
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': -1.93135, 'ETH-PERP': 7.6927}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+XRP-PERP est en position d'achat LONG
+ETC-PERP est en position d'achat SHORT
+CHZ-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+IOTA-PERP est en position d'achat LONG
+XLM-PERP est en position d'achat SHORT
+BSV-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+DYDX-PERP est en position d'achat LONG
+MKR-PERP est en position d'achat LONG
+1INCH-PERP est en position d'achat LONG
+REEF-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+ENS-PERP est en position d'achat LONG
+ZEC-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+ROSE-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 130.45091698 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 16:00:02.714625
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['BTC-PERP', 'ETH-PERP', 'XRP-PERP', 'LUNC-PERP', 'SOL-PERP', 'ATOM-PERP', 'ETC-PERP', 'KLUNC-PERP', 'LUNA2-PERP', 'CHZ-PERP', 'LINK-PERP', 'APE-PERP', 'MATIC-PERP', 'DOT-PERP', 'ADA-PERP', 'BNB-PERP', 'AVAX-PERP', 'ALGO-PERP', 'DOGE-PERP', 'LTC-PERP', 'EOS-PERP', 'CRV-PERP', 'BCH-PERP', 'RSR-PERP', 'ETHW-PERP', 'FTT-PERP', 'NEAR-PERP', 'LDO-PERP', 'AAVE-PERP', 'AXS-PERP', 'OP-PERP', 'FIL-PERP', 'IOTA-PERP', 'SUSHI-PERP', 'GMT-PERP', 'BSV-PERP', 'XLM-PERP', 'SAND-PERP', 'DYDX-PERP', 'COMP-PERP', 'TRX-PERP', 'UNI-PERP', 'USDT-PERP', 'FTM-PERP', 'YFI-PERP', 'SNX-PERP', 'THETA-PERP', 'STG-PERP', 'CEL-PERP', 'MKR-PERP', 'HNT-PERP', 'USTC-PERP', '1INCH-PERP', 'WAVES-PERP', 'ICP-PERP', 'GALA-PERP', 'VET-PERP', 'ENS-PERP', 'MANA-PERP', 'PEOPLE-PERP', 'CRO-PERP', 'ZEC-PERP', 'REEF-PERP', 'KSM-PERP', 'SRM-PERP', 'KSHIB-PERP', 'RAY-PERP', 'XTZ-PERP', 'RVN-PERP', 'GRT-PERP', 'KNC-PERP', 'LOOKS-PERP', 'XMR-PERP', 'REN-PERP', 'SXP-PERP', 'ALT-PERP', 'SHIB-PERP', 'ROSE-PERP', 'RUNE-PERP', 'CAKE-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+ETHW-PERP ne sera pas utilisée : manque de données.
+RVN-PERP ne sera pas utilisée : manque de données.
+{'ETH-PERP': 7.0778, 'XRP-PERP': -1.58895}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+FIL-PERP est en position d'achat LONG
+IOTA-PERP est en position d'achat LONG
+BSV-PERP est en position d'achat LONG
+DYDX-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+MKR-PERP est en position d'achat LONG
+HNT-PERP est en position d'achat LONG
+ENS-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+ZEC-PERP est en position d'achat LONG
+REEF-PERP est en position d'achat LONG
+ROSE-PERP est en position d'achat LONG
+CAKE-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 129.97438413 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 17:00:02.326647
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['BTC-PERP', 'ETH-PERP', 'XRP-PERP', 'LUNC-PERP', 'SOL-PERP', 'ATOM-PERP', 'ETC-PERP', 'KLUNC-PERP', 'LUNA2-PERP', 'LINK-PERP', 'CHZ-PERP', 'APE-PERP', 'MATIC-PERP', 'DOT-PERP', 'ADA-PERP', 'BNB-PERP', 'AVAX-PERP', 'ALGO-PERP', 'DOGE-PERP', 'LTC-PERP', 'EOS-PERP', 'CRV-PERP', 'BCH-PERP', 'RSR-PERP', 'ETHW-PERP', 'FTT-PERP', 'NEAR-PERP', 'LDO-PERP', 'AAVE-PERP', 'AXS-PERP', 'OP-PERP', 'FIL-PERP', 'IOTA-PERP', 'SUSHI-PERP', 'BSV-PERP', 'COMP-PERP', 'GMT-PERP', 'DYDX-PERP', 'SAND-PERP', 'UNI-PERP', 'XLM-PERP', 'TRX-PERP', 'USDT-PERP', 'FTM-PERP', 'YFI-PERP', 'THETA-PERP', 'SNX-PERP', 'CEL-PERP', 'USTC-PERP', 'MKR-PERP', 'STG-PERP', 'HNT-PERP', '1INCH-PERP', 'ENS-PERP', 'ICP-PERP', 'WAVES-PERP', 'GALA-PERP', 'VET-PERP', 'MANA-PERP', 'ZEC-PERP', 'CRO-PERP', 'KSM-PERP', 'PEOPLE-PERP', 'SRM-PERP', 'REEF-PERP', 'RAY-PERP', 'KSHIB-PERP', 'RVN-PERP', 'XTZ-PERP', 'KNC-PERP', 'GRT-PERP', 'LOOKS-PERP', 'XMR-PERP', 'REN-PERP', 'SXP-PERP', 'ALT-PERP', 'ROSE-PERP', 'RUNE-PERP', 'SHIB-PERP', 'CVX-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+ETHW-PERP ne sera pas utilisée : manque de données.
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': -2.14535, 'ETH-PERP': 7.0262}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+XRP-PERP est en position d'achat LONG
+LUNC-PERP est en position d'achat LONG
+KLUNC-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+BCH-PERP est en position d'achat SHORT
+RSR-PERP est en position d'achat LONG
+FIL-PERP est en position d'achat LONG
+IOTA-PERP est en position d'achat LONG
+DYDX-PERP est en position d'achat LONG
+XLM-PERP est en position d'achat SHORT
+HNT-PERP est en position d'achat LONG
+ZEC-PERP est en position d'achat LONG
+REEF-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 129.37202204 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 18:00:02.780668
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['BTC-PERP', 'ETH-PERP', 'LUNC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'ETC-PERP', 'KLUNC-PERP', 'LUNA2-PERP', 'CHZ-PERP', 'LINK-PERP', 'APE-PERP', 'MATIC-PERP', 'DOT-PERP', 'ADA-PERP', 'BNB-PERP', 'AVAX-PERP', 'ALGO-PERP', 'DOGE-PERP', 'LTC-PERP', 'EOS-PERP', 'CRV-PERP', 'BCH-PERP', 'ETHW-PERP', 'RSR-PERP', 'FTT-PERP', 'LDO-PERP', 'NEAR-PERP', 'AAVE-PERP', 'AXS-PERP', 'OP-PERP', 'FIL-PERP', 'IOTA-PERP', 'SUSHI-PERP', 'GMT-PERP', 'BSV-PERP', 'COMP-PERP', 'UNI-PERP', 'DYDX-PERP', 'XLM-PERP', 'SAND-PERP', 'TRX-PERP', 'USDT-PERP', 'FTM-PERP', 'YFI-PERP', 'THETA-PERP', 'SNX-PERP', 'USTC-PERP', 'CEL-PERP', 'MKR-PERP', 'STG-PERP', 'ENS-PERP', 'HNT-PERP', '1INCH-PERP', 'ICP-PERP', 'WAVES-PERP', 'GALA-PERP', 'VET-PERP', 'ZEC-PERP', 'MANA-PERP', 'KSM-PERP', 'PEOPLE-PERP', 'SRM-PERP', 'CRO-PERP', 'RAY-PERP', 'REEF-PERP', 'RVN-PERP', 'KSHIB-PERP', 'XTZ-PERP', 'KNC-PERP', 'XMR-PERP', 'GRT-PERP', 'REN-PERP', 'LOOKS-PERP', 'SXP-PERP', 'ALT-PERP', 'ROSE-PERP', 'RUNE-PERP', 'SHIB-PERP', 'CVX-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+ETHW-PERP ne sera pas utilisée : manque de données.
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': -0.92555, 'ETH-PERP': 7.3315}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+LUNC-PERP est en position d'achat LONG
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+KLUNC-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+EOS-PERP est en position d'achat SHORT
+LDO-PERP est en position d'achat SHORT
+FIL-PERP est en position d'achat LONG
+IOTA-PERP est en position d'achat LONG
+BSV-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+DYDX-PERP est en position d'achat LONG
+XLM-PERP est en position d'achat SHORT
+CEL-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+HNT-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+REEF-PERP est en position d'achat LONG
+XMR-PERP est en position d'achat LONG
+GRT-PERP est en position d'achat SHORT
+ROSE-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 130.86744237 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 19:00:02.092440
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['BTC-PERP', 'ETH-PERP', 'LUNC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'ETC-PERP', 'KLUNC-PERP', 'LUNA2-PERP', 'LINK-PERP', 'CHZ-PERP', 'MATIC-PERP', 'DOT-PERP', 'APE-PERP', 'ADA-PERP', 'BNB-PERP', 'AVAX-PERP', 'ALGO-PERP', 'DOGE-PERP', 'LTC-PERP', 'EOS-PERP', 'CRV-PERP', 'ETHW-PERP', 'BCH-PERP', 'RSR-PERP', 'FTT-PERP', 'NEAR-PERP', 'LDO-PERP', 'AXS-PERP', 'AAVE-PERP', 'OP-PERP', 'FIL-PERP', 'IOTA-PERP', 'SUSHI-PERP', 'GMT-PERP', 'UNI-PERP', 'COMP-PERP', 'BSV-PERP', 'DYDX-PERP', 'USDT-PERP', 'XLM-PERP', 'SAND-PERP', 'TRX-PERP', 'FTM-PERP', 'THETA-PERP', 'USTC-PERP', 'SNX-PERP', 'CEL-PERP', 'ENS-PERP', 'YFI-PERP', 'MKR-PERP', 'HNT-PERP', 'STG-PERP', '1INCH-PERP', 'ICP-PERP', 'GALA-PERP', 'WAVES-PERP', 'ZEC-PERP', 'VET-PERP', 'MANA-PERP', 'KSM-PERP', 'PEOPLE-PERP', 'RAY-PERP', 'SRM-PERP', 'CRO-PERP', 'REEF-PERP', 'XTZ-PERP', 'RVN-PERP', 'KSHIB-PERP', 'KNC-PERP', 'XMR-PERP', 'REN-PERP', 'GRT-PERP', 'LOOKS-PERP', 'SXP-PERP', 'RUNE-PERP', 'ALT-PERP', 'ROSE-PERP', 'CVX-PERP', 'SHIB-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+ETHW-PERP ne sera pas utilisée : manque de données.
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': -1.81365, 'ETH-PERP': 7.4132}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+LUNC-PERP est en position d'achat LONG
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+ATOM-PERP est en position d'achat SHORT
+ETC-PERP est en position d'achat SHORT
+KLUNC-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+ADA-PERP est en position d'achat SHORT
+ALGO-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+RSR-PERP est en position d'achat LONG
+NEAR-PERP est en position d'achat SHORT
+LDO-PERP est en position d'achat SHORT
+AXS-PERP est en position d'achat SHORT
+AAVE-PERP est en position d'achat SHORT
+OP-PERP est en position d'achat SHORT
+FIL-PERP est en position d'achat LONG
+IOTA-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+BSV-PERP est en position d'achat LONG
+DYDX-PERP est en position d'achat LONG
+XLM-PERP est en position d'achat SHORT
+SAND-PERP est en position d'achat SHORT
+TRX-PERP est en position d'achat SHORT
+FTM-PERP est en position d'achat SHORT
+SNX-PERP est en position d'achat SHORT
+CEL-PERP est en position d'achat SHORT
+ENS-PERP est en position d'achat LONG
+YFI-PERP est en position d'achat SHORT
+MKR-PERP est en position d'achat LONG
+HNT-PERP est en position d'achat LONG
+STG-PERP est en position d'achat SHORT
+1INCH-PERP est en position d'achat LONG
+GALA-PERP est en position d'achat SHORT
+WAVES-PERP est en position d'achat SHORT
+ZEC-PERP est en position d'achat LONG
+VET-PERP est en position d'achat SHORT
+MANA-PERP est en position d'achat SHORT
+PEOPLE-PERP est en position d'achat LONG
+RAY-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+REEF-PERP est en position d'achat LONG
+XMR-PERP est en position d'achat LONG
+GRT-PERP est en position d'achat SHORT
+SXP-PERP est en position d'achat SHORT
+RUNE-PERP est en position d'achat SHORT
+ROSE-PERP est en position d'achat LONG
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 130.18526872 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 20:00:02.522659
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['BTC-PERP', 'ETH-PERP', 'LUNC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'ETC-PERP', 'KLUNC-PERP', 'LUNA2-PERP', 'CHZ-PERP', 'LINK-PERP', 'DOT-PERP', 'MATIC-PERP', 'APE-PERP', 'ADA-PERP', 'AVAX-PERP', 'BNB-PERP', 'ALGO-PERP', 'DOGE-PERP', 'LTC-PERP', 'EOS-PERP', 'CRV-PERP', 'ETHW-PERP', 'BCH-PERP', 'RSR-PERP', 'FTT-PERP', 'LDO-PERP', 'NEAR-PERP', 'AXS-PERP', 'AAVE-PERP', 'OP-PERP', 'FIL-PERP', 'IOTA-PERP', 'SUSHI-PERP', 'UNI-PERP', 'GMT-PERP', 'BSV-PERP', 'COMP-PERP', 'DYDX-PERP', 'XLM-PERP', 'USDT-PERP', 'TRX-PERP', 'SAND-PERP', 'FTM-PERP', 'THETA-PERP', 'USTC-PERP', 'ENS-PERP', 'MKR-PERP', 'SNX-PERP', 'STG-PERP', 'ICP-PERP', 'CEL-PERP', '1INCH-PERP', 'HNT-PERP', 'ZEC-PERP', 'VET-PERP', 'GALA-PERP', 'WAVES-PERP', 'MANA-PERP', 'YFI-PERP', 'KSM-PERP', 'RAY-PERP', 'PEOPLE-PERP', 'SRM-PERP', 'CRO-PERP', 'REEF-PERP', 'XTZ-PERP', 'RVN-PERP', 'XMR-PERP', 'KNC-PERP', 'KSHIB-PERP', 'REN-PERP', 'GRT-PERP', 'LOOKS-PERP', 'SXP-PERP', 'RUNE-PERP', 'ALT-PERP', 'ROSE-PERP', 'CVX-PERP', 'AR-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+ETHW-PERP ne sera pas utilisée : manque de données.
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': -1.1984, 'ETH-PERP': 7.2842}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+LUNC-PERP est en position d'achat LONG
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+ATOM-PERP est en position d'achat SHORT
+KLUNC-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+DOGE-PERP est en position d'achat SHORT
+EOS-PERP est en position d'achat SHORT
+RSR-PERP est en position d'achat LONG
+LDO-PERP est en position d'achat SHORT
+NEAR-PERP est en position d'achat SHORT
+AXS-PERP est en position d'achat SHORT
+OP-PERP est en position d'achat SHORT
+FIL-PERP est en position d'achat LONG
+IOTA-PERP est en position d'achat LONG
+GMT-PERP est en position d'achat SHORT
+BSV-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+DYDX-PERP est en position d'achat LONG
+XLM-PERP est en position d'achat SHORT
+TRX-PERP est en position d'achat SHORT
+SAND-PERP est en position d'achat SHORT
+FTM-PERP est en position d'achat SHORT
+ENS-PERP est en position d'achat LONG
+MKR-PERP est en position d'achat LONG
+SNX-PERP est en position d'achat SHORT
+STG-PERP est en position d'achat SHORT
+CEL-PERP est en position d'achat SHORT
+1INCH-PERP est en position d'achat LONG
+HNT-PERP est en position d'achat LONG
+ZEC-PERP est en position d'achat LONG
+VET-PERP est en position d'achat SHORT
+GALA-PERP est en position d'achat SHORT
+WAVES-PERP est en position d'achat SHORT
+MANA-PERP est en position d'achat SHORT
+PEOPLE-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+REEF-PERP est en position d'achat LONG
+REN-PERP est en position d'achat LONG
+GRT-PERP est en position d'achat SHORT
+RUNE-PERP est en position d'achat SHORT
+ROSE-PERP est en position d'achat LONG
+AR-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 130.73498005 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 21:00:02.292580
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['BTC-PERP', 'ETH-PERP', 'LUNC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'ETC-PERP', 'KLUNC-PERP', 'LUNA2-PERP', 'CHZ-PERP', 'LINK-PERP', 'MATIC-PERP', 'DOT-PERP', 'APE-PERP', 'ADA-PERP', 'AVAX-PERP', 'BNB-PERP', 'ALGO-PERP', 'DOGE-PERP', 'CRV-PERP', 'LTC-PERP', 'EOS-PERP', 'ETHW-PERP', 'BCH-PERP', 'RSR-PERP', 'FTT-PERP', 'LDO-PERP', 'NEAR-PERP', 'OP-PERP', 'AXS-PERP', 'AAVE-PERP', 'IOTA-PERP', 'SUSHI-PERP', 'FIL-PERP', 'UNI-PERP', 'GMT-PERP', 'BSV-PERP', 'COMP-PERP', 'DYDX-PERP', 'XLM-PERP', 'USDT-PERP', 'TRX-PERP', 'SAND-PERP', 'FTM-PERP', 'ENS-PERP', 'USTC-PERP', 'THETA-PERP', 'MKR-PERP', 'SNX-PERP', 'ICP-PERP', 'CEL-PERP', 'STG-PERP', '1INCH-PERP', 'HNT-PERP', 'ZEC-PERP', 'VET-PERP', 'GALA-PERP', 'WAVES-PERP', 'MANA-PERP', 'RAY-PERP', 'YFI-PERP', 'KSM-PERP', 'SRM-PERP', 'PEOPLE-PERP', 'CRO-PERP', 'XMR-PERP', 'XTZ-PERP', 'REEF-PERP', 'RVN-PERP', 'KNC-PERP', 'REN-PERP', 'KSHIB-PERP', 'GRT-PERP', 'LOOKS-PERP', 'SXP-PERP', 'ALT-PERP', 'RUNE-PERP', 'ROSE-PERP', 'CVX-PERP', 'AR-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+ETHW-PERP ne sera pas utilisée : manque de données.
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': -0.45475, 'ETH-PERP': 6.8499}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+LUNC-PERP est en position d'achat LONG
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+ATOM-PERP est en position d'achat SHORT
+KLUNC-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+LINK-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+NEAR-PERP est en position d'achat SHORT
+IOTA-PERP est en position d'achat LONG
+FIL-PERP est en position d'achat LONG
+BSV-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+DYDX-PERP est en position d'achat LONG
+MKR-PERP est en position d'achat LONG
+SNX-PERP est en position d'achat SHORT
+1INCH-PERP est en position d'achat LONG
+HNT-PERP est en position d'achat LONG
+ZEC-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+CRO-PERP est en position d'achat LONG
+REEF-PERP est en position d'achat LONG
+REN-PERP est en position d'achat LONG
+RUNE-PERP est en position d'achat SHORT
+ROSE-PERP est en position d'achat LONG
+AR-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 130.84105364 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 22:00:02.785689
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['BTC-PERP', 'ETH-PERP', 'LUNC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'KLUNC-PERP', 'ETC-PERP', 'LUNA2-PERP', 'LINK-PERP', 'CHZ-PERP', 'MATIC-PERP', 'DOT-PERP', 'APE-PERP', 'ADA-PERP', 'AVAX-PERP', 'BNB-PERP', 'ALGO-PERP', 'DOGE-PERP', 'CRV-PERP', 'EOS-PERP', 'LTC-PERP', 'ETHW-PERP', 'FTT-PERP', 'BCH-PERP', 'RSR-PERP', 'LDO-PERP', 'NEAR-PERP', 'OP-PERP', 'USDT-PERP', 'AXS-PERP', 'AAVE-PERP', 'IOTA-PERP', 'SUSHI-PERP', 'FIL-PERP', 'UNI-PERP', 'GMT-PERP', 'DYDX-PERP', 'BSV-PERP', 'COMP-PERP', 'XLM-PERP', 'TRX-PERP', 'SAND-PERP', 'FTM-PERP', 'USTC-PERP', 'ENS-PERP', 'THETA-PERP', 'MKR-PERP', 'SNX-PERP', 'ICP-PERP', 'STG-PERP', 'CEL-PERP', 'VET-PERP', '1INCH-PERP', 'HNT-PERP', 'GALA-PERP', 'RAY-PERP', 'ZEC-PERP', 'WAVES-PERP', 'MANA-PERP', 'YFI-PERP', 'SRM-PERP', 'KSM-PERP', 'CRO-PERP', 'PEOPLE-PERP', 'XMR-PERP', 'XTZ-PERP', 'RVN-PERP', 'KNC-PERP', 'REN-PERP', 'REEF-PERP', 'KSHIB-PERP', 'GRT-PERP', 'SXP-PERP', 'LOOKS-PERP', 'ALT-PERP', 'RUNE-PERP', 'ROSE-PERP', 'CVX-PERP', 'AR-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+ETHW-PERP ne sera pas utilisée : manque de données.
+RVN-PERP ne sera pas utilisée : manque de données.
+{'XRP-PERP': -1.1984, 'ETH-PERP': 7.0993}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+LUNC-PERP est en position d'achat LONG
+ATOM-PERP est en position d'achat SHORT
+KLUNC-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+RSR-PERP est en position d'achat LONG
+NEAR-PERP est en position d'achat SHORT
+IOTA-PERP est en position d'achat LONG
+FIL-PERP est en position d'achat LONG
+BSV-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+ICP-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+XMR-PERP est en position d'achat LONG
+REN-PERP est en position d'achat LONG
+REEF-PERP est en position d'achat LONG
+ROSE-PERP est en position d'achat LONG
+AR-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 130.65640292 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.
+No handles with labels found to put in legend.
+========================
+SUPER-REVERSAL-DUO sv2.04 - tv7.06
+2022-09-26 23:00:02.917364
+Sections recupérées dans le fichier de configuration: ['CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']
+Sections recupérées dans le fichier des indicateurs : ['params']
+Collecte des paires...
+Paires collectées sur https://ftx.com/api/futures avec succès.
+80 paires sélectionnées :
+ ['BTC-PERP', 'ETH-PERP', 'LUNC-PERP', 'XRP-PERP', 'SOL-PERP', 'ATOM-PERP', 'KLUNC-PERP', 'ETC-PERP', 'LUNA2-PERP', 'LINK-PERP', 'CHZ-PERP', 'MATIC-PERP', 'DOT-PERP', 'APE-PERP', 'ADA-PERP', 'BNB-PERP', 'AVAX-PERP', 'ALGO-PERP', 'DOGE-PERP', 'CRV-PERP', 'EOS-PERP', 'LTC-PERP', 'ETHW-PERP', 'FTT-PERP', 'BCH-PERP', 'RSR-PERP', 'LDO-PERP', 'NEAR-PERP', 'OP-PERP', 'USDT-PERP', 'AXS-PERP', 'IOTA-PERP', 'AAVE-PERP', 'SUSHI-PERP', 'UNI-PERP', 'FIL-PERP', 'DYDX-PERP', 'GMT-PERP', 'BSV-PERP', 'COMP-PERP', 'XLM-PERP', 'TRX-PERP', 'SAND-PERP', 'FTM-PERP', 'USTC-PERP', 'ENS-PERP', 'MKR-PERP', 'THETA-PERP', 'SNX-PERP', 'ICP-PERP', 'VET-PERP', 'CEL-PERP', 'STG-PERP', '1INCH-PERP', 'HNT-PERP', 'RAY-PERP', 'GALA-PERP', 'MANA-PERP', 'WAVES-PERP', 'ZEC-PERP', 'YFI-PERP', 'SRM-PERP', 'KSM-PERP', 'CRO-PERP', 'XMR-PERP', 'PEOPLE-PERP', 'KNC-PERP', 'XTZ-PERP', 'RVN-PERP', 'REN-PERP', 'KSHIB-PERP', 'REEF-PERP', 'SXP-PERP', 'GRT-PERP', 'LOOKS-PERP', 'ALT-PERP', 'RUNE-PERP', 'ROSE-PERP', 'CVX-PERP', 'SHIB-PERP']
+Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : USDT-PERP, USTC-PERP, LUNA2-PERP
+Récupération des 2300 dernières bougies en timeframe 1h pour l'ensemble des cryptos...
+ETHW-PERP ne sera pas utilisée : manque de données.
+RVN-PERP ne sera pas utilisée : manque de données.
+{'ETH-PERP': 7.2928, 'XRP-PERP': -1.18235}
+['XRP-PERP']
+TakeProfit est activé.
+Stoploss est activé
+ETH-PERP est en position d'achat SHORT
+LUNC-PERP est en position d'achat LONG
+XRP-PERP est en position d'achat LONG
+SOL-PERP est en position d'achat LONG
+ATOM-PERP est en position d'achat SHORT
+KLUNC-PERP est en position d'achat LONG
+ETC-PERP est en position d'achat SHORT
+LINK-PERP est en position d'achat LONG
+CHZ-PERP est en position d'achat LONG
+ADA-PERP est en position d'achat SHORT
+BNB-PERP est en position d'achat LONG
+ALGO-PERP est en position d'achat LONG
+CRV-PERP est en position d'achat SHORT
+BCH-PERP est en position d'achat SHORT
+RSR-PERP est en position d'achat LONG
+LDO-PERP est en position d'achat SHORT
+NEAR-PERP est en position d'achat SHORT
+IOTA-PERP est en position d'achat LONG
+AAVE-PERP est en position d'achat SHORT
+SUSHI-PERP est en position d'achat SHORT
+FIL-PERP est en position d'achat LONG
+DYDX-PERP est en position d'achat LONG
+BSV-PERP est en position d'achat LONG
+COMP-PERP est en position d'achat LONG
+XLM-PERP est en position d'achat SHORT
+TRX-PERP est en position d'achat SHORT
+SAND-PERP est en position d'achat SHORT
+FTM-PERP est en position d'achat SHORT
+THETA-PERP est en position d'achat SHORT
+SNX-PERP est en position d'achat SHORT
+ICP-PERP est en position d'achat LONG
+CEL-PERP est en position d'achat SHORT
+STG-PERP est en position d'achat SHORT
+1INCH-PERP est en position d'achat LONG
+HNT-PERP est en position d'achat LONG
+RAY-PERP est en position d'achat SHORT
+GALA-PERP est en position d'achat SHORT
+MANA-PERP est en position d'achat SHORT
+WAVES-PERP est en position d'achat SHORT
+SRM-PERP est en position d'achat SHORT
+CRO-PERP est en position d'achat LONG
+XMR-PERP est en position d'achat LONG
+PEOPLE-PERP est en position d'achat LONG
+KNC-PERP est en position d'achat SHORT
+XTZ-PERP est en position d'achat SHORT
+REEF-PERP est en position d'achat LONG
+RUNE-PERP est en position d'achat SHORT
+ROSE-PERP est en position d'achat LONG
+CVX-PERP est en position d'achat SHORT
+Lancement du check...
+Erreur survenue lors du check : [Errno 2] No such file or directory: '/home/moutonneux/ENV-PROD/super-reversal-duo/data/historiques-positions.dat'
+On maintient notre position short sur ETH-PERP
+On maintient notre position long sur XRP-PERP
+Nombre de position ouverte max atteint
+Solde du compte => 130.67223141 $ dont 130.0$ d'investissement initial sécurisé
+Aucun changement de données, aucune information n'a été envoyé à Telegram
+On attend que les ordres limites d'ouverture de positions se déclenchent...
+Fin d'execution du bot.

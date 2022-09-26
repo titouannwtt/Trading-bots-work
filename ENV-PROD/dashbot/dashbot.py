@@ -219,8 +219,8 @@ plt.legend(prop={"size": 30})
 plt.xlabel("Date", fontsize=20)
 plt.ylabel("Solde", fontsize=20)
 ax.plot(x, y)
-ax.set_xticks(x[:: int(4000 / figL)])
-ax.set_xticklabels(x[:: int(4000 / figL)], rotation=45)
+ax.set_xticks(x[:: int(400 / figL)])
+ax.set_xticklabels(x[:: int(400 / figL)], rotation=45)
 ax.grid(axis="y")
 try:
     plt.savefig(f"{path}soldes_par_bots.pdf", dpi=1000)
@@ -265,8 +265,8 @@ load_graph("BTC/USD")
 # load_graph("SOL/USD")
 
 plt.legend(prop={"size": 20})
-ax.set_xticks(x[:: int(4000 / figL)])
-ax.set_xticklabels(x[:: int(4000 / figL)], rotation=45)
+ax.set_xticks(x[:: int(400 / figL)])
+ax.set_xticklabels(x[:: int(400 / figL)], rotation=45)
 ax.grid(axis="y")
 
 try:

@@ -58,7 +58,7 @@ except IndexError :
     print(f"Mauvaise syntaxe : python3 {sys.argv[0]} <dossier-strategie>")
     exit(1)
 
-# Si le dossier termine par un /
+# Si le dossier ne termine pas par un /
 if path[-1] != "/":
     path = path + "/"
 
