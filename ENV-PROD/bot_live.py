@@ -1054,7 +1054,7 @@ def placeOrder(order, perpSymbol, quantityMax, price, leverage, position):
         elif order == "takeProfit":
             try:
                 ftx.place_market_take_profit(
-                    perpSymbol, "sell", quantityMax, price=price, leverage=leverage
+                    perpSymbol, "sell", quantityMax*2, price=price, leverage=leverage
                 )
                 changement = changement + 1
                 print(
@@ -1329,7 +1329,7 @@ def placeOrder(order, perpSymbol, quantityMax, price, leverage, position):
         elif order == "takeProfit":
             try:
                 ftx.place_market_take_profit(
-                    perpSymbol, "buy", quantityMax, price=price, leverage=leverage
+                    perpSymbol, "buy", quantityMax*2, price=price, leverage=leverage
                 )
                 changement = changement + 1
                 print(
