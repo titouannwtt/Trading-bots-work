@@ -9,8 +9,8 @@
         },
         "solde": {
             "totalInvestment": 63.64,
-            "currentSolde": 72.17902578,
-            "performance": 13.418
+            "currentSolde": 70.41015417,
+            "performance": 10.638
         },
         "timeframe": "1h",
         "levier": "2"
@@ -25,8 +25,8 @@
         },
         "solde": {
             "totalInvestment": 104.6,
-            "currentSolde": 32.27608977,
-            "performance": -69.143
+            "currentSolde": 33.53593829,
+            "performance": -67.939
         },
         "timeframe": "1h",
         "levier": "2"
@@ -41,8 +41,8 @@
         },
         "solde": {
             "totalInvestment": 80.0,
-            "currentSolde": 130.65640292,
-            "performance": 63.321
+            "currentSolde": 121.4723201,
+            "performance": 51.84
         },
         "timeframe": "1h",
         "levier": "1"
@@ -57,8 +57,8 @@
         },
         "solde": {
             "totalInvestment": 63.0,
-            "currentSolde": 66.48784657,
-            "performance": 5.536
+            "currentSolde": 61.32866686,
+            "performance": -2.653
         },
         "timeframe": "1h",
         "levier": "2"
