@@ -127,6 +127,7 @@ def openLongCondition(row, previousRow, dfList, indicators):
             and row['Keltner'] < 1.0
             and row['kst'] < 500.0
         ):
+            print(f"ohlc open : {row['open']}, {row['high']}, {row['low']}, {row['close']}")
             return True
         else:
             return False
@@ -145,6 +146,7 @@ def closeLongCondition(row, previousRow, dfList, indicators):
             or (row['Aroonindicateur'] < -84.0 and row['CCI'] > -80.0)
             or getEvolution(row, previousRow)<-10.0
         ):
+            print(f"ohlc close : {row['open']}, {row['high']}, {row['low']}, {row['close']}")
             return True
         else:
             return False

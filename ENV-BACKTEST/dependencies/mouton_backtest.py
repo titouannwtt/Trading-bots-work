@@ -61,11 +61,11 @@ class Backtest:
         self.forceDownload = forceDownload
         self.downloadFrom2019 = downloadFrom2019
         self.strategy_name = strategy_name
+        self.startingBalance = startingBalance
         self.ohlc = None
         self.dfList = None
         self.parametres = None
         self.configs = None
-        self.startingBalance = None
 
     #=========================================
     # Fichier parametres.cfg
@@ -330,16 +330,20 @@ class Backtest:
         else : 
             params=self.parametres
         self.dfList = self.internal_load_indicators(indicators=params)
+        if int(self.dfList["BTC-PERP"].shape[0]) < int(self.configs['STRATEGIE']['nbOfCandlesRecovered']) : 
+            print(f"Attention, vous avez indiqué dans les configurations que {int(self.configs['STRATEGIE']['nbOfCandlesRecovered'])} doivent être récupérées pour cette stratégie, hors vous n'avez que {self.dfList['BTC-PERP'].shape[0]} bougies de données pour le BTC.")
         self.botname = str(self.configs['CONFIGS']['botname'])
         self.useTakeProfit=str2bool(self.configs['STRATEGIE']['useTakeProfit'])
         self.useStoploss=str2bool(self.configs['STRATEGIE']['useStoploss'])
         maxPositions=int(self.configs['STRATEGIE']['maxPositions'])
         
         if startingBalance == None :
-            quantityUSD=float(self.configs['STRATEGIE']['totalInvestment'])
+            if self.startingBalance == None :
+                quantityUSD=float(self.configs['STRATEGIE']['totalInvestment'])
+            else :
+                quantityUSD=self.startingBalance
         else :
-            quantityUSD=startingBalance
-            
+            quantityUSD = startingBalance
         sys.path.append(self.get_strategy_path())
         from strategie import openShortCondition, closeShortCondition, openLongCondition, closeLongCondition, getTakeprofit, getStoploss
 
@@ -356,6 +360,7 @@ class Backtest:
         equivalentUSDdeCryptoEnPossession = [0] * len(self.dfList)
         activePositions = 0
         lastIndex = dfTestList[0].index.values[1]
+        lastlastIndex = dfTestList[0].index.values[1]
         positionsSkipped = []
         openLongPositions = []
         openShortPositions = []
@@ -367,29 +372,30 @@ class Backtest:
         useShort=str2bool(self.configs['STRATEGIE']['useShort'])
 
         for index, row in dfTestList[0].iterrows() :
+            print("================", index, " ================")
             # -- On vérifie si on a au moins une crypto en possession en ce moment --
             if (quantiteDeCoinDuneCrypto.count(0) == len(quantiteDeCoinDuneCrypto) ) == False or (quantiteDeCoinDuneCryptoShorted.count(0) == len(quantiteDeCoinDuneCryptoShorted))==False:
                 for i in range(0, len(dfTestList)):
                     if quantiteDeCoinDuneCrypto[i] != 0 and useLong==True :
                         try:
-                            row = dfTestList[i].loc[index]
-                            previousRow = dfTestList[i].loc[lastIndex]
+                            row = dfTestList[i].loc[lastIndex]
+                            previousRow = dfTestList[i].loc[lastlastIndex]
                             prixDeVente = 0
-                            #On regarde si les conditions de fermeture de position Long sont respectées
-                            if closeLongCondition(row, previousRow, self.dfList, self.get_params()['params']) and prixDeVente == 0:
-                                #On calcule le nouveau solde d'USD après la vente
-                                prixDeVente = row['close']
-                                raison = "Conditions respectées"
-                            #Si le takeprofit a été dépassé :
-                            if self.useTakeProfit==True and (takeProfit[i] <= row['high'] or takeProfit[i] <= previousRow['high']):
-                                prixDeVente = takeProfit[i]
-                                raison = "Takeprofit"
-                                takeProfit[i] = 5000000
                             #Si le stoploss a été dépassé :
                             if self.useStoploss==True and (stopLoss[i] >= row['low'] or stopLoss[i] >= previousRow['low']):
                                 prixDeVente = stopLoss[i]
                                 stopLoss[i] = 0
                                 raison = "Stoploss"
+                            #Si le takeprofit a été dépassé :
+                            if self.useTakeProfit==True and (takeProfit[i] <= row['high'] or takeProfit[i] <= previousRow['high']) and prixDeVente == 0:
+                                prixDeVente = takeProfit[i]
+                                raison = "Takeprofit"
+                                takeProfit[i] = 5000000
+                            #On regarde si les conditions de fermeture de position Long sont respectées
+                            if closeLongCondition(row, previousRow, self.dfList, self.get_params()['params']) and prixDeVente == 0:
+                                #On calcule le nouveau solde d'USD après la vente
+                                prixDeVente = row['close']
+                                raison = "Conditions respectées"
                             #Si une des conditions de vente est définie, on a un prix de vente fixé différent de 0 :
                             if prixDeVente != 0 :
                                 gain_perte = (prixDeVente - prixAchat[i])*quantiteDeCoinDuneCrypto[i]
@@ -412,7 +418,7 @@ class Backtest:
                                 activePositions -= 1
                                 while cryptoNameList[i] in openLongPositions:
                                     del openLongPositions[openLongPositions.index(cryptoNameList[i])]
-                                myrow = {'date': index, 'symbol': cryptoNameList[i], 'execution': dfTestList[i].loc[index], 'position': "CLOSE LONG", 'reason': raison, 'price': prixDeVente, 'frais': frais, 'fiat': quantiteUSD, 'coins': 0, 'wallet': sum(equivalentUSDdeCryptoEnPossession) + quantiteUSD}
+                                myrow = {'date': index, 'symbol': cryptoNameList[i], 'execution': dfTestList[i].loc[lastIndex], 'position': "CLOSE LONG", 'reason': raison, 'price': prixDeVente, 'frais': frais, 'fiat': quantiteUSD, 'coins': 0, 'wallet': sum(equivalentUSDdeCryptoEnPossession) + quantiteUSD}
                                 dfTrades = dfTrades.append(myrow, ignore_index=True)
                         except Exception as err:
                             print(traceback.format_exc())
@@ -420,22 +426,22 @@ class Backtest:
                     # -- Check if you have more than 0 coin in SHORT --
                     if quantiteDeCoinDuneCryptoShorted[i] != 0 and useShort==True :
                         try:
-                            row = dfTestList[i].loc[index]
-                            previousRow = dfTestList[i].loc[lastIndex]
+                            row = dfTestList[i].loc[lastIndex]
+                            previousRow = dfTestList[i].loc[lastlastIndex]
                             prixDeVente=0
-                            #On regarde si les conditions de fermeture de position Short sont respectées
-                            if closeShortCondition(row, previousRow, self.dfList, self.get_params()['params']) and prixDeVente != 0:
-                                #On calcule le nouveau solde d'USD après la vente
-                                prixDeVente = row['close']
-                                raison = "Conditions respectées"
-                            #Si le takeprofit a été dépassé :
-                            if self.useTakeProfit==True and (takeProfit[i] >= row['low']):
-                                prixDeVente = takeProfit[i]
-                                raison = "Takeprofit"
                             #Si le stoploss a été dépassé :
                             if self.useStoploss==True and stopLoss[i] <= row['high'] or stopLoss[i] <= previousRow['high']:
                                 prixDeVente = stopLoss[i]
                                 raison = "Stoploss"
+                            #Si le takeprofit a été dépassé :
+                            if self.useTakeProfit==True and (takeProfit[i] >= row['low']) and prixDeVente == 0 :
+                                prixDeVente = takeProfit[i]
+                                raison = "Takeprofit"
+                            #On regarde si les conditions de fermeture de position Short sont respectées
+                            if closeShortCondition(row, previousRow, self.dfList, self.get_params()['params']) and prixDeVente == 0:
+                                #On calcule le nouveau solde d'USD après la vente
+                                prixDeVente = row['close']
+                                raison = "Conditions respectées"
                             if prixDeVente != 0 :
                                 gain_perte = (prixAchat[i]-prixDeVente)*quantiteDeCoinDuneCryptoShorted[i]
                                 if raison=="Takeprofit" :
@@ -458,7 +464,7 @@ class Backtest:
                                 while cryptoNameList[i] in openShortPositions:
                                     del openShortPositions[openShortPositions.index(cryptoNameList[i])]
                                 #-- Add the trade to DfTrades to analyse it later --
-                                myrow = {'date': index, 'symbol': cryptoNameList[i], 'execution': dfTestList[i].loc[index], 'position': "CLOSE SHORT", 'reason': raison, 'price': prixDeVente, 'frais': frais, 'fiat': quantiteUSD, 'coins': 0,  'wallet': sum(equivalentUSDdeCryptoEnPossession) + quantiteUSD}
+                                myrow = {'date': index, 'symbol': cryptoNameList[i], 'execution': dfTestList[i].loc[lastIndex], 'position': "CLOSE SHORT", 'reason': raison, 'price': prixDeVente, 'frais': frais, 'fiat': quantiteUSD, 'coins': 0,  'wallet': sum(equivalentUSDdeCryptoEnPossession) + quantiteUSD}
                                 dfTrades = dfTrades.append(myrow, ignore_index=True)
                         except Exception as err:
                             print(traceback.format_exc())
@@ -469,8 +475,8 @@ class Backtest:
                 perf = {}
                 for i in range(0, len(dfTestList)):
                     try :
-                        row = dfTestList[i].loc[index]
-                        previousRow = dfTestList[i].loc[lastIndex]
+                        row = dfTestList[i].loc[lastIndex]
+                        previousRow = dfTestList[i].loc[lastlastIndex]
                         if useLong==True and openLongCondition(row, previousRow, self.dfList, self.get_params()['params']) and activePositions < maxPositions and quantiteDeCoinDuneCryptoShorted[i]==0 and quantiteDeCoinDuneCrypto[i]==0:
                             try :
                                 prixAchat[i] = row['close']
@@ -497,7 +503,7 @@ class Backtest:
                                     print(index, "| OPEN  LONG  :", round(quantiteDeCoinDuneCrypto[i], 5), cryptoNameList[i].split('-')[0],"at", round(prixAchat[i],5), '$')
 
                                 # -- Add the trade to dfTrades to analyse it later --
-                                myrow = {'date': index,'symbol': cryptoNameList[i], 'execution': dfTestList[i].loc[index], 'position': "OPEN LONG",'reason': 'Conditions respectées','price': prixAchat[i],'frais': frais,'fiat': quantiteUSD,'coins': coin,'wallet': sum(equivalentUSDdeCryptoEnPossession) + quantiteUSD}
+                                myrow = {'date': index,'symbol': cryptoNameList[i], 'execution': dfTestList[i].loc[lastIndex], 'position': "OPEN LONG",'reason': 'Conditions respectées','price': prixAchat[i],'frais': frais,'fiat': quantiteUSD,'coins': coin,'wallet': sum(equivalentUSDdeCryptoEnPossession) + quantiteUSD}
                                 dfTrades = dfTrades.append(myrow, ignore_index=True)    
                             except Exception as err :
                                 print(traceback.format_exc())
@@ -526,7 +532,7 @@ class Backtest:
                                 if showLog:
                                     print(index, "| OPEN  SHORT :", round(quantiteDeCoinDuneCryptoShorted[i],5) , cryptoNameList[i].split('-')[0],"at", round(prixAchat[i],5), '$')
                                 # -- Add the trade to dfTrades to analyse it later --
-                                myrow = {'date': index,'symbol': cryptoNameList[i], 'execution': dfTestList[i].loc[index], 'position': "OPEN SHORT",'reason': 'Conditions respectées','price': prixAchat[i],'frais': frais,'fiat': quantiteUSD,'coins': coin,'wallet': sum(equivalentUSDdeCryptoEnPossession) + quantiteUSD}
+                                myrow = {'date': index,'symbol': cryptoNameList[i], 'execution': dfTestList[i].loc[lastIndex], 'position': "OPEN SHORT",'reason': 'Conditions respectées','price': prixAchat[i],'frais': frais,'fiat': quantiteUSD,'coins': coin,'wallet': sum(equivalentUSDdeCryptoEnPossession) + quantiteUSD}
                                 dfTrades = dfTrades.append(myrow, ignore_index=True)    
                             except Exception as err :
                                 print(traceback.format_exc())
@@ -536,6 +542,7 @@ class Backtest:
             else:
                 positionsSkipped.append(1)
             # -- Keep last index to define last row --            
+            lastlastIndex = lastIndex
             lastIndex = index
 
         dfTrades['walletAth'] = dfTrades['wallet'].cummax()
@@ -553,7 +560,15 @@ class Backtest:
             print("Timeframe=", str(self.get_configs()['STRATEGIE']['timeframe']))
             print("maxPositions=", maxPositions)
             print(f"Frais : {makerFrais*100}% de makerFees et {takerFrais*100}% de takerFees")
-            BTobject = Backtesting()
-            newDf = BTobject.multi_spot_backtest_analys(dfTrades=dfTrades, dfTest=dfTestList[0], pairList=cryptoNameList, timeframe=str(self.get_configs()['STRATEGIE']['timeframe']))
+            try :
+                BTobject = Backtesting()
+                newDf = BTobject.multi_spot_backtest_analys(dfTrades=dfTrades, dfTest=dfTestList[0], pairList=cryptoNameList, timeframe=str(self.get_configs()['STRATEGIE']['timeframe']))
+            except Exception as err :
+                if 'single positional indexer is out-of-bounds' in str(err) :
+                    print("ERREUR : Votre backtest semble n'avoir fait aucune ouverture de position")
+                    if int(self.dfList["BTC-PERP"].shape[0]) < int(self.configs['STRATEGIE']['nbOfCandlesRecovered']) : 
+                        print(f"TIPS : Il semblerait que vous n'ayez que {self.dfList['BTC-PERP'].shape[0]} bougies téléchargées pour le BTC, or, d'après les configurations votre stratégie a besoin de {int(self.configs['STRATEGIE']['nbOfCandlesRecovered'])} bougies. Essayez de rajouter au moins {int((int(self.configs['STRATEGIE']['nbOfCandlesRecovered'])-self.dfList['BTC-PERP'].shape[0])/24+1)} jours de données")
+                else :
+                    print(f"ERREUR : {err}")
         return sum(equivalentUSDdeCryptoEnPossession) + quantiteUSD, len(dfTrades)/2, drawdown
 

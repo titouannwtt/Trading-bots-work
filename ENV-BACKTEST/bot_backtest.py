@@ -20,21 +20,20 @@ warnings.simplefilter("ignore")
 
 # ===================================
 
-downloadFrom2019 = True
-forceDownload = False
+downloadFrom2019 = False
 
 # ===================================
 
 backtest = Backtest(
     strategy_name=sys.argv[1],
 
-    start_date = "2022-05-01T00:00:00",
-    end_date   = "2022-09-26T00:00:00",
+    start_date = "2022-08-01T00:00:00",
+    end_date   = "2022-09-30T15:00:00",
 
-    forceDownload=forceDownload,
-    downloadFrom2019=downloadFrom2019,
+    forceDownload=False,
+    downloadFrom2019=False,
     showLog=True,
-    startingBalance=100.0,
+    startingBalance=None,
 
 )
 print(backtest.run())
