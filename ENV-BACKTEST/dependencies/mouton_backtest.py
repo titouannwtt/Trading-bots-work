@@ -382,12 +382,12 @@ class Backtest:
                             previousRow = dfTestList[i].loc[lastlastIndex]
                             prixDeVente = 0
                             #Si le stoploss a été dépassé :
-                            if self.useStoploss==True and (stopLoss[i] >= row['low'] or stopLoss[i] >= previousRow['low']):
+                            if self.useStoploss==True and (stopLoss[i] >= row['low']):
                                 prixDeVente = stopLoss[i]
                                 stopLoss[i] = 0
                                 raison = "Stoploss"
                             #Si le takeprofit a été dépassé :
-                            if self.useTakeProfit==True and (takeProfit[i] <= row['high'] or takeProfit[i] <= previousRow['high']) and prixDeVente == 0:
+                            if self.useTakeProfit==True and takeProfit[i] <= row['high'] and prixDeVente == 0:
                                 prixDeVente = takeProfit[i]
                                 raison = "Takeprofit"
                                 takeProfit[i] = 5000000
@@ -430,11 +430,11 @@ class Backtest:
                             previousRow = dfTestList[i].loc[lastlastIndex]
                             prixDeVente=0
                             #Si le stoploss a été dépassé :
-                            if self.useStoploss==True and stopLoss[i] <= row['high'] or stopLoss[i] <= previousRow['high']:
+                            if self.useStoploss==True and stopLoss[i] <= row['high'] :
                                 prixDeVente = stopLoss[i]
                                 raison = "Stoploss"
                             #Si le takeprofit a été dépassé :
-                            if self.useTakeProfit==True and (takeProfit[i] >= row['low']) and prixDeVente == 0 :
+                            if self.useTakeProfit==True and takeProfit[i] >= row['low'] and prixDeVente == 0 :
                                 prixDeVente = takeProfit[i]
                                 raison = "Takeprofit"
                             #On regarde si les conditions de fermeture de position Short sont respectées
