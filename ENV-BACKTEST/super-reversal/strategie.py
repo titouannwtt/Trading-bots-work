@@ -8,8 +8,8 @@ import ta
 # =======================================
 def load_indicators(dfList, dfListSorted, indicators, showLog=False):
     # On récupère les paramètres des indicateurs spécifiés dans le fichier parametres.cfg
-    ST_length = int(indicators["ST_length"])
-    ST_multiplier = float(indicators["ST_multiplier"])
+    ST_length = int(indicators["st_length"])
+    ST_multiplier = float(indicators["st_multiplier"])
     ema_short_windows = int(indicators["ema_short_windows"])
     ema_long_windows = int(indicators["ema_long_windows"])
     i=0
@@ -147,7 +147,7 @@ def btcOk(dfList):
 
 # -- Fonction to get the takeprofit price --
 def getTakeprofit(position, prixAchat, row, previousRow, dfList, indicators):
-    tpMultiplicator=float(indicators['tpMultiplicator'])
+    tpMultiplicator=float(indicators['tpmultiplicator'])
     if position=="long" :
 
         tp = float(prixAchat+tpMultiplicator*row["atr"])
@@ -166,7 +166,7 @@ def getTakeprofit(position, prixAchat, row, previousRow, dfList, indicators):
 
 # -- Fonction to get the stoploss price --
 def getStoploss(position, prixAchat, row, previousRow, dfList, indicators):
-    slMultiplicator=float(indicators['slMultiplicator'])
+    slMultiplicator=float(indicators['slmultiplicator'])
     if position=="long" :
 
         sl = prixAchat - (prixAchat / 2) * slMultiplicator

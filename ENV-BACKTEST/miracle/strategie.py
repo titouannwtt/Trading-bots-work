@@ -8,28 +8,28 @@ import ta
 # =======================================
 def load_indicators(dfList, dfListSorted, indicators, showLog=False):
     # On récupère les paramètres des indicateurs spécifiés dans le fichier parametres.cfg
-    trixLength = int(indicators['trixLength'])
-    trixSignal = int(indicators['trixSignal'])
-    RSI_WINDOWS = int(indicators['RSI_WINDOWS'])
-    BB_WINDOWS_BULL = int(indicators['BB_WINDOWS_BULL'])
-    BB_WINDOWS_DEV_BULL = float(indicators['BB_WINDOWS_DEV_BULL'])
-    BB_WINDOWS_BEAR = int(indicators['BB_WINDOWS_BEAR'])
-    BB_WINDOWS_DEV_BEAR = float(indicators['BB_WINDOWS_DEV_BEAR'])
-    parametrePVO_BEAR = int(indicators['parametrePVO_BEAR'])
-    parametrePVO_BULL = int(indicators['parametrePVO_BULL'])
-    parametrePERF_BULL = int(indicators['parametrePERF_BULL'])
-    parametrePERF_BEAR = int(indicators['parametrePERF_BEAR'])
-    parametrePVO2 = int(indicators['parametrePVO2'])
-    parametreADXV_BULL = float(indicators['parametreADXV_BULL'])
-    parametreADXV_BEAR = float(indicators['parametreADXV_BEAR'])
-    parametreTRIX_HISTO_BULL = float(indicators['parametreTRIX_HISTO_BULL'])
-    parametreTRIX_HISTO_BEAR = float(indicators['parametreTRIX_HISTO_BEAR'])
-    parametreSTOCH_RSI_BULL = float(indicators['parametreSTOCH_RSI_BULL'])
-    parametreSTOCH_RSI_BEAR = float(indicators['parametreSTOCH_RSI_BEAR'])
-    parametreSTOCH_RSI2_BULL = float(indicators['parametreSTOCH_RSI2_BULL'])
-    parametreSTOCH_RSI2_BEAR = float(indicators['parametreSTOCH_RSI2_BEAR'])
-    parametreTRIX_HISTO2_BULL = float(indicators['parametreTRIX_HISTO2_BULL'])
-    parametreTRIX_HISTO2_BEAR = float(indicators['parametreTRIX_HISTO2_BEAR'])
+    trixLength = int(indicators['trixlength'])
+    trixSignal = int(indicators['trixsignal'])
+    RSI_WINDOWS = int(indicators['rsi_windows'])
+    BB_WINDOWS_BULL = int(indicators['bb_windows_bull'])
+    BB_WINDOWS_DEV_BULL = float(indicators['bb_windows_dev_bull'])
+    BB_WINDOWS_BEAR = int(indicators['bb_windows_bear'])
+    BB_WINDOWS_DEV_BEAR = float(indicators['bb_windows_dev_bear'])
+    parametrePVO_BEAR = int(indicators['parametrepvo_bear'])
+    parametrePVO_BULL = int(indicators['parametrepvo_bull'])
+    parametrePERF_BULL = int(indicators['parametreperf_bull'])
+    parametrePERF_BEAR = int(indicators['parametreperf_bear'])
+    parametrePVO2 = int(indicators['parametrepvo2'])
+    parametreADXV_BULL = float(indicators['parametreadxv_bull'])
+    parametreADXV_BEAR = float(indicators['parametreadxv_bear'])
+    parametreTRIX_HISTO_BULL = float(indicators['parametretrix_histo_bull'])
+    parametreTRIX_HISTO_BEAR = float(indicators['parametretrix_histo_bear'])
+    parametreSTOCH_RSI_BULL = float(indicators['parametrestoch_rsi_bull'])
+    parametreSTOCH_RSI_BEAR = float(indicators['parametrestoch_rsi_bear'])
+    parametreSTOCH_RSI2_BULL = float(indicators['parametrestoch_rsi2_bull'])
+    parametreSTOCH_RSI2_BEAR = float(indicators['parametrestoch_rsi2_bear'])
+    parametreTRIX_HISTO2_BULL = float(indicators['parametretrix_histo2_bull'])
+    parametreTRIX_HISTO2_BEAR = float(indicators['parametretrix_histo2_bear'])
 
     for perpSymbol in dfList:
         try :
@@ -117,9 +117,9 @@ def getEvolution(row, previousRow):
 def openLongCondition(row, previousRow, dfList, indicators):
     try:
         if (
-            row['TRIX_HISTO'] >= float(indicators['parametreTRIX_HISTO_BEAR'])
-            and row['STOCH_RSI'] < float(indicators['parametreSTOCH_RSI_BEAR'])
-            and row['ADXV'] > float(indicators['parametreADXV_BEAR'])
+            row['TRIX_HISTO'] >= float(indicators['parametretrix_histo_bear'])
+            and row['STOCH_RSI'] < float(indicators['parametrestoch_rsi_bear'])
+            and row['ADXV'] > float(indicators['parametreadxv_bear'])
             and row['EMA9D'] > row['EMA13D']
             and row['MACD_SIGNAL'] > previousRow['MACD_SIGNAL']
             and row['EMA50'] < row['EMA10']
@@ -127,7 +127,6 @@ def openLongCondition(row, previousRow, dfList, indicators):
             and row['Keltner'] < 1.0
             and row['kst'] < 500.0
         ):
-            print(f"ohlc open : {row['open']}, {row['high']}, {row['low']}, {row['close']}")
             return True
         else:
             return False
@@ -140,13 +139,12 @@ def openLongCondition(row, previousRow, dfList, indicators):
 def closeLongCondition(row, previousRow, dfList, indicators):
     try:
         if (
-            (row['TRIX_HISTO'] < float(indicators['parametreTRIX_HISTO2_BEAR'])
-            and row['STOCH_RSI'] > float(indicators['parametreSTOCH_RSI2_BEAR']))
+            (row['TRIX_HISTO'] < float(indicators['parametretrix_histo2_bear'])
+            and row['STOCH_RSI'] > float(indicators['parametrestoch_rsi2_bear']))
             or row['BOL_L_BAND'] == 1
             or (row['Aroonindicateur'] < -84.0 and row['CCI'] > -80.0)
             or getEvolution(row, previousRow)<-10.0
         ):
-            print(f"ohlc close : {row['open']}, {row['high']}, {row['low']}, {row['close']}")
             return True
         else:
             return False
@@ -177,8 +175,8 @@ def openShortCondition(row, previousRow, dfList, indicators):
 def closeShortCondition(row, previousRow, dfList, indicators):
     try:
         if (
-            (row['TRIX_HISTO'] > indicators['parametreTRIX_HISTO2_BEAR']
-            and row['STOCH_RSI'] < indicators['parametreSTOCH_RSI2_BEAR'])
+            (row['TRIX_HISTO'] > indicators['parametretrix_histo2_bear']
+            and row['STOCH_RSI'] < indicators['parametrestoch_rsi2_bear'])
         ):
             return True
         else:
@@ -188,7 +186,7 @@ def closeShortCondition(row, previousRow, dfList, indicators):
 
 # -- Fonction to get the takeprofit price --
 def getTakeprofit(position, prixAchat, row, previousRow, dfList, indicators):
-    tpMultiplicator=float(indicators['tpMultiplicator'])
+    tpMultiplicator=float(indicators['tpmultiplicator'])
     if position=="long" :
         return float(prixAchat+tpMultiplicator*row["atr"])
     elif position=="short":
@@ -198,7 +196,7 @@ def getTakeprofit(position, prixAchat, row, previousRow, dfList, indicators):
 
 # -- Fonction to get the stoploss price --
 def getStoploss(position, prixAchat, row, previousRow, dfList, indicators):
-    slMultiplicator=float(indicators['slMultiplicator'])
+    slMultiplicator=float(indicators['slmultiplicator'])
     if position=="long" :
         return prixAchat - (prixAchat / 2) * slMultiplicator
     elif position=="short":
