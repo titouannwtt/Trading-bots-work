@@ -1,0 +1,6 @@
+,finalBalance,totalTrades,drawDown,startingBalance,configs,parametres
+0,0.0,0,0.0,1000.0,0,0
+1,63.0,0,,63.0,"['DEFAULT', 'params', 'CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']","{'tpmultiplicator': 3.0, 'slmultiplicator': 0.6, 'st_length': 17.0, 'st_multiplier': 5.5, 'ema_short_windows': 5.0, 'ema_long_windows': 250.0}"
+2,59.10162624435965,156,17.19,63.0,"['DEFAULT', 'params', 'CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']","{'params': {'tpmultiplicator': 3.0, 'slmultiplicator': 0.6, 'st_length': 17.0, 'st_multiplier': 5.5, 'ema_short_windows': 5.0, 'ema_long_windows': 250.0}}"
+3,55.34345033321085,150,23.11,63.0,"['DEFAULT', 'params', 'CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']","{'params': {'tpmultiplicator': 3.0, 'slmultiplicator': 0.6, 'st_length': 17.0, 'st_multiplier': 5.5, 'ema_short_windows': 10.0, 'ema_long_windows': 250.0}}"
+4,62.460727912021945,142,15.45,63.0,"['DEFAULT', 'params', 'CONFIGS', 'STRATEGIE', 'FICHIER.HISTORIQUE']","{'params': {'tpmultiplicator': 3.0, 'slmultiplicator': 0.6, 'st_length': 17.0, 'st_multiplier': 5.5, 'ema_short_windows': 15.0, 'ema_long_windows': 250.0}}"
