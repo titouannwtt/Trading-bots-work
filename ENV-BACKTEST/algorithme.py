@@ -149,7 +149,7 @@ def launch_backtest(parametres):
             startingBalance=startingBalance,
         )
         backtest.set_params(parametres)
-        finalBalance, totalTrades, drawDown = backtest.run(params=parametres, showLog=False)
+        finalBalance, totalTrades, drawDown = backtest.run(params=parametres, showLog=True)
         end = time.time()
         elapsed = end - start
         print("Terminé, résultats:")
@@ -185,9 +185,10 @@ for j in range(2):
             pas=float(params_algo[param_name]['pas'])
             while(float(params_algo[param_name]['current'])<=max) :
                 parametres={}
+                parametres['params']={}
                 print(param_name, params_algo[param_name]['current'], max)
                 for param_name2 in params_algo :
-                    parametres[param_name2] = float(params_algo[param_name2]['current'])
+                    parametres['params'][param_name2] = float(params_algo[param_name2]['current'])
                 if j==1 : 
                     launch_backtest(parametres)
                 else :
