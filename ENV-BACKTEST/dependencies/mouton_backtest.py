@@ -351,6 +351,7 @@ class Backtest:
         self.parametres = self.get_configs()
         if params != None:
             self.set_params(params)
+            params=params['params']
         else:
             params = self.parametres['params']
         self.dfList = self.internal_load_indicators(indicators=params)
