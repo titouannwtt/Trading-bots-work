@@ -26,13 +26,13 @@ def str2bool(v):
 
 # ===================================
 
-start_date="2022-08-01"
-end_date="2022-09-30"
+start_date="2022-06-01"
+end_date="2022-10-04"
 strategy_name = sys.argv[1]
 
 forceDownload=False
-downloadFrom2019=False
-showLog=True
+downloadFrom2019=True
+showLog=False
 startingBalance=None
 
 backtest = Backtest(
@@ -55,7 +55,10 @@ for param in backtest.get_params() :
     if useThisParam==False :
         params_algo[param]={
                             'use' : useThisParam,
-                            'current' : float(backtest.get_params()[param])
+                            'current' : float(backtest.get_params()[param]),
+                            'min' : float(backtest.get_params()[param]),
+                            'max' : float(backtest.get_params()[param]),
+                            'pas' : 1.0
                             }
     else :
         print(f"\nLa valeur par défaut de {param} est {backtest.get_params()[param]}, précisez ici de combien vous voulez la faire varier :")
@@ -129,7 +132,7 @@ def launch_backtest(parametres):
     pourcent=round(100*i/count,4)
     start = time.time()
     configs=[]
-    for config in backtest.get_configs():
+    for config in backtest.get_configs()['STRATEGIE']:
         configs.append(config)
     print(f"La dernière execution a durée : {elapsed} secondes")
     print(f"Avancement total d'execution : {i}/{count} ({pourcent}%) (Temps restant estimé {round((count-i)*elapsed/60/60, 1)} heures ou {round((count-i)*elapsed/60/60/24, 1)} jours)")
@@ -149,7 +152,7 @@ def launch_backtest(parametres):
             startingBalance=startingBalance,
         )
         backtest.set_params(parametres)
-        finalBalance, totalTrades, drawDown = backtest.run(params=parametres, showLog=True)
+        finalBalance, totalTrades, drawDown = backtest.run(params=parametres, showLog=False)
         end = time.time()
         elapsed = end - start
         print("Terminé, résultats:")
@@ -170,28 +173,55 @@ def launch_backtest(parametres):
         
         classement.to_csv(fichierEnregistrement)
         classement2 = classement.sort_values(by=['finalBalance'], ascending=False)
-        classement2 = classement2[classement2.finalBalance >= 50000.0]
+        classement2 = classement2[classement2.finalBalance >= 0.0]
         #classement2 = classement2.drop_duplicates(subset=['finalBalance'])
         classement2.to_csv(file2)
     return True
 
-#params_algo
-count=0
-for j in range(2):
-    for param_name in params_algo :
-        if params_algo[param_name]['use']==True :
-            min=float(params_algo[param_name]['min'])
-            max=float(params_algo[param_name]['max'])
-            pas=float(params_algo[param_name]['pas'])
-            while(float(params_algo[param_name]['current'])<=max) :
+
+def giveMeNextParam(params_algo, param_name) :
+    nextOne=False
+    for param in params_algo :
+        if nextOne==True :
+            return param
+        if param == param_name :
+            nextOne=True
+
+def recursive_function(params_algo, param_name, lastParam) : 
+    global count
+    if params_algo[param_name]['use']==True :
+        params_algo[param_name]['current'] = params_algo[param_name]['min']
+    else:
+        params_algo[param_name]['current'] = params_algo[param_name]['current'] 
+        params_algo[param_name]['min'] = params_algo[param_name]['current']
+        params_algo[param_name]['max'] = params_algo[param_name]['current']
+        params_algo[param_name]['pas'] = 0
+    while float(params_algo[param_name]['current']) <= float(params_algo[param_name]['max']):
+        if param_name == lastParam :
+            if j==1:
                 parametres={}
                 parametres['params']={}
-                print(param_name, params_algo[param_name]['current'], max)
-                for param_name2 in params_algo :
-                    parametres['params'][param_name2] = float(params_algo[param_name2]['current'])
-                if j==1 : 
-                    launch_backtest(parametres)
-                else :
-                    count = count+1
-                params_algo[param_name]['current'] = float(params_algo[param_name]['current'])+pas
-            params_algo[param_name]['current']=min
+                for param1 in params_algo :
+                    parametres['params'][param1] = float(params_algo[param1]['current'])
+                launch_backtest(parametres)
+            else :
+                count=count+1
+        else :
+            recursive_function(params_algo, giveMeNextParam(params_algo, param_name), lastParam)
+        
+        if params_algo[param_name]['use']==True :
+            params_algo[param_name]['current']=float(params_algo[param_name]['current'])+float(params_algo[param_name]['pas'])
+        else :
+            break
+
+#params_algo
+count=0
+initialParams=params_algo
+for j in range(2):
+    firstParam=None
+    for params_name in params_algo :
+        if firstParam == None :
+            firstParam=params_name
+        lastParam = params_name 
+    recursive_function(params_algo, firstParam, lastParam)
+    params_algo=initialParams
