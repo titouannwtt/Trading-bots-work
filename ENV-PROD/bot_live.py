@@ -390,11 +390,15 @@ def check():
 
 # Cette fonction permet d'obtenir le prix actuel d'une crypto sur FTX
 def getCurrentPrice(perpSymbol):
+    if "/USD:USD" in perpSymbol:
+        perpSymbol = perpSymbol.replace("/USD:USD", "-PERP")
     return ftx.get_bid_ask_price(symbol=perpSymbol)["ask"]
 
 
 # Récupère le prix auquel a été fixé le stoploss sur une position ouverte
 def getSecureStopLossPrice(perpSymbol, position=None, price=None, levier=None):
+    if "/USD:USD" in perpSymbol:
+        perpSymbol = perpSymbol.replace("/USD:USD", "-PERP")
     if price == None:
         price = getPrixAchat(perpSymbol)
     if levier == None:
@@ -429,7 +433,9 @@ def getSecureStopLossPrice(perpSymbol, position=None, price=None, levier=None):
 
 # Permet de récupérer le prix d'achat sur une position ouverte
 def getPrixAchat(perpSymbol):
-    ct = ftx.get_open_position(perpSymbol)
+    if "/USD:USD" in perpSymbol:
+        perpSymbol = perpSymbol.replace("/USD:USD", "-PERP")
+    ct = ftx.get_open_position()
     for i in range(0, len(ct)):
         if ct[i]["info"]["future"] == perpSymbol:
             # renvoit un float, par exemple 24183.16
@@ -451,6 +457,8 @@ def getNumberOfPositions():
 
 # Permet de récupérer le type de position (LONG/SHORT) pour une position donnée
 def getTypeOfPosition(perpSymbol):
+    if "/USD:USD" in perpSymbol:
+        perpSymbol = perpSymbol.replace("/USD:USD", "-PERP")
     cointrades = ftx.get_open_position()
     for i in range(0, len(cointrades)):
         if cointrades[i]["symbol"] == perpSymbol:
@@ -460,7 +468,7 @@ def getTypeOfPosition(perpSymbol):
 
 # Permet de récupérer la quantité de crypto d'une position ouverte
 def getQuantite(perpSymbol):
-    cointrades = ftx.get_open_position(perpSymbol)
+    cointrades = ftx.get_open_position()
     for i in range(0, len(cointrades)):
         if cointrades[i]["info"]["future"] == perpSymbol:
             try:
@@ -481,7 +489,9 @@ def getQuantite(perpSymbol):
 
 # Permet de récupérer le levier d'une position ouverte
 def getLevier(perpSymbol):
-    cointrades = ftx.get_open_position(perpSymbol)
+    if "/USD:USD" in perpSymbol:
+        perpSymbol = perpSymbol.replace("/USD:USD", "-PERP")
+    cointrades = ftx.get_open_position()
     for i in range(0, len(cointrades)):
         if cointrades[i]["info"]["future"] == perpSymbol:
             return float(cointrades[i]["leverage"])
@@ -489,11 +499,15 @@ def getLevier(perpSymbol):
 
 # Permet de récupérer la performance d'une position ouverte
 def getPerformance(perpSymbol):
+    if "/USD:USD" in perpSymbol:
+        perpSymbol = perpSymbol.replace("/USD:USD", "-PERP")
     return float(percentage[perpSymbol])
 
 
 # Permet de récupérer les gains/pertes d'une position ouverte
 def getProfit(perpSymbol):
+    if "/USD:USD" in perpSymbol:
+        perpSymbol = perpSymbol.replace("/USD:USD", "-PERP")
     return float(Pnl[perpSymbol])
 
 
@@ -564,13 +578,13 @@ cointrades = ftx.get_open_position()
 try :
     # On récupère les paires présentent dans des positions déja ouvertes pour les ajouter à la liste des cryptos que le bot va utiliser pour être en mesure de les vendre même si elles n'étaient pas dans la liste initialement.
     cointrades = ftx.get_open_position()
-    print(cointrades)
     for cointrade in cointrades:
-        if cointrade.get("symbol") not in perpListBase:
-            perpListBase.append(cointrade.get("symbol"))
+        print("POSITION OUVERTE : ", cointrade.get("info")['future'])
+        if cointrade.get("info")['future'] not in perpListBase:
+            perpListBase.append(cointrade.get("info")['future'])
             if debug == True:
                 print(
-                    cointrade.get("symbol"),
+                    cointrade.get("info")['future'],
                     "n'aurait pas dû être utilisé mais a été ajouté à la liste car une position est en cours avec cette paire.",
                 )
 except Exception as err :
@@ -585,9 +599,9 @@ pairs_short_ouvertes = []
 cointrades = ftx.get_open_position()
 for cointrade in cointrades:
     if cointrade.get("side") == "long":
-        pairs_long_ouvertes.append(cointrade.get("symbol"))
+        pairs_long_ouvertes.append(cointrade.get("info")['future'])
     if cointrade.get("side") == "short":
-        pairs_short_ouvertes.append(cointrade.get("symbol"))
+        pairs_short_ouvertes.append(cointrade.get("info")['future'])
 
 # ======================================
 #  COLLECTE DES COURS ET PERFORMANCES
@@ -700,9 +714,8 @@ levier = {}
 amount = {}
 cointrade = ftx.get_open_position()
 for cointrade in cointrade:
-    pair = cointrade.get("symbol")
+    pair = cointrade.get("info")['future']
     Pnl[pair] = float(cointrade.get("unrealizedPnl"))
-    levier[pair] = int(cointrade.get("leverage"))
     percentage[pair] = float(cointrade.get("percentage"))
     amount[pair] = float(cointrade.get("contracts"))
 if debug == True:
@@ -2330,9 +2343,9 @@ pairs_short_ouvertes = []
 cointrades = ftx.get_open_position()
 for cointrade in cointrades:
     if cointrade.get("side") == "long":
-        pairs_long_ouvertes.append(cointrade.get("symbol"))
+        pairs_long_ouvertes.append(cointrade.get("info")['future'])
     if cointrade.get("side") == "short":
-        pairs_short_ouvertes.append(cointrade.get("symbol"))
+        pairs_short_ouvertes.append(cointrade.get("info")['future'])
 
 # Suppression de tout les ordres potentiellement ouvert et mises en place des takeprofits et des stop loss
 # print("Fermeture des ordres dans 5 secondes...")
@@ -2430,7 +2443,7 @@ if useLimitOrderToOpen != "false":
     ):
         openPositionsList = []
         for cointrade in ftx.get_open_position():
-            openPositionsList.append(cointrade.get("symbol"))
+            openPositionsList.append(cointrade.get("info")['future'])
         if len(ordresLong) > 0:
             for perpSymbol in ordresLong:
                 if perpSymbol in openPositionsList:
@@ -2586,7 +2599,7 @@ if useLimitOrderToOpen != "false":
             if len(ordresLong) > 0 or len(ordresShort) > 0:
                 openPositionsList = []
                 for cointrade in ftx.get_open_position():
-                    openPositionsList.append(cointrade.get("symbol"))
+                    openPositionsList.append(cointrade.get("info")['future'])
                 print(
                     f"Fin du check et certains ordres limites n'ont pas été atteint : abandon des positions concernées : {ordresLong} {ordresShort}"
                 )
