@@ -186,9 +186,12 @@ class Backtest:
             df["volume"] = df["volume"] * df["marginPrice"]
             df.drop(df.loc[df["perpetual"] == False].index, inplace=True)
             df.sort_values(by="volume", ascending=False, inplace=True)
-            cryptoNameList = getCryptoListFromDf(
-                df, int(self.get_configs()["STRATEGIE"]["classementminimum"])
-            )
+            if "parametres:" in str(self.get_configs()["STRATEGIE"]["classementminimum"]) :
+                value = str(str(self.get_configs()["STRATEGIE"]["classementminimum"]).split(':')[1])
+                nbOfCrypto = int(self.get_params()["params"][value])
+            else :
+                nbOfCrypto = int(self.get_configs()["STRATEGIE"]["classementminimum"])
+            cryptoNameList = getCryptoListFromDf(df, nbOfCrypto)
         else:
             cryptoNameList = pairJson["whitelist"]
         if useBlacklist == True:
@@ -364,7 +367,11 @@ class Backtest:
         self.botname = str(self.configs["CONFIGS"]["botname"])
         self.useTakeProfit = str2bool(self.configs["STRATEGIE"]["useTakeProfit"])
         self.useStoploss = str2bool(self.configs["STRATEGIE"]["useStoploss"])
-        maxPositions = int(self.configs["STRATEGIE"]["maxPositions"])
+        if "parametres:" in self.configs["STRATEGIE"]["maxPositions"] :
+            print("Récupération de maxPositions dans le fichier parametres.cfg...")
+            maxPositions = int(params[str(self.configs["STRATEGIE"]["maxPositions"]).split(':')[1]])
+        else :
+            maxPositions = int(self.configs["STRATEGIE"]["maxPositions"])
         useFixAmountOfUSD = str2bool(self.configs["STRATEGIE"]["useFixAmountOfUSD"])
         fixAmount = float(self.configs["STRATEGIE"]["fixAmount"])
         repartitionLongAndShort = str2bool(

@@ -250,7 +250,11 @@ nombreDeBougiesMinimum = int(
 )*-1
 
 # Nombre de pairs que l'on utilisera pour l'execution du bot
-classementminimum = int(config["STRATEGIE"]["classementminimum"])
+if "parametres:" in str(config["STRATEGIE"]["classementminimum"]) :
+    value = str(str(config["STRATEGIE"]["classementminimum"]).split(':')[1])
+    classementminimum = int(indicators["params"][value])
+else :
+    classementminimum = int(config["STRATEGIE"]["classementminimum"])
 # Timeframe utilisée par le bot pour récupérer les données, vous devrez executé ce script sur la même période (par défaut : 1h)
 timeframe = str(config["STRATEGIE"]["timeframe"])
 # Liste de paires spécifiées dans un json, sera utilisée à la place des {classementminimum} premières paires de FTX si vous mettez useWhitelist=true (par défaut : false)
@@ -556,10 +560,11 @@ if str(config["STRATEGIE"]["useBlacklist"])=="true" :
         print(
             f"Les cryptos qu'on aurait dû utiliser mais qui appartiennent à la blacklist sont : {noUse}"
         )
-
+cointrades = ftx.get_open_position()
 try :
     # On récupère les paires présentent dans des positions déja ouvertes pour les ajouter à la liste des cryptos que le bot va utiliser pour être en mesure de les vendre même si elles n'étaient pas dans la liste initialement.
     cointrades = ftx.get_open_position()
+    print(cointrades)
     for cointrade in cointrades:
         if cointrade.get("symbol") not in perpListBase:
             perpListBase.append(cointrade.get("symbol"))
@@ -568,9 +573,10 @@ try :
                     cointrade.get("symbol"),
                     "n'aurait pas dû être utilisé mais a été ajouté à la liste car une position est en cours avec cette paire.",
                 )
-except TypeError as err :
+except Exception as err :
     if 'Not logged in: Invalid API key' in str(err) :
         print("ERROR : Connexion impossible à l'API FTX, veuillez vérifier vos clés API et votre subaccount dans credentials.json")
+    print(err)
     exit(300)
 
 # On créer 2 listes, une contenant les positions actuellement ouvertes en long et une contenant les positions actuellement ouvertes en short
@@ -737,7 +743,11 @@ heureComplète = str(separateDate[1])
 addMessageComponent(f"{date}\n{botname} v{version}")
 addMessageComponent("===================\n")
 
-maxOpenPosition = int(config["STRATEGIE"]["maxPositions"])
+if "parametres:" in str(config["STRATEGIE"]["maxPositions"]) :
+    value = str(str(config["STRATEGIE"]["maxPositions"]).split(':')[1])
+    maxOpenPosition = int(indicators["params"][value])
+else :
+    maxOpenPosition = int(config["STRATEGIE"]["maxPositions"])
 maxPositions=maxOpenPosition
 
 # A ce stade du code, on a récupéré toutes les informations nécessaires nous permettant de traiter les données.
