@@ -8,9 +8,9 @@
             "config_file": "/home/moutonneux/ENV-PROD/miracle/config-bot.cfg"
         },
         "solde": {
-            "totalInvestment": 63.64,
-            "currentSolde": 70.41015417,
-            "performance": 10.638
+            "totalInvestment": 242.0,
+            "currentSolde": 228.49634415,
+            "performance": -5.58
         },
         "timeframe": "1h",
         "levier": "2"
@@ -25,8 +25,8 @@
         },
         "solde": {
             "totalInvestment": 104.6,
-            "currentSolde": 33.53593829,
-            "performance": -67.939
+            "currentSolde": 32.58757292,
+            "performance": -68.846
         },
         "timeframe": "1h",
         "levier": "2"
@@ -40,9 +40,9 @@
             "config_file": "/home/moutonneux/ENV-PROD/super-reversal-duo/config-bot.cfg"
         },
         "solde": {
-            "totalInvestment": 80.0,
-            "currentSolde": 121.4723201,
-            "performance": 51.84
+            "totalInvestment": 20.0,
+            "currentSolde": 20.87820206,
+            "performance": 4.391
         },
         "timeframe": "1h",
         "levier": "1"
@@ -56,9 +56,9 @@
             "config_file": "/home/moutonneux/ENV-PROD/super-reversal/config-bot.cfg"
         },
         "solde": {
-            "totalInvestment": 63.0,
-            "currentSolde": 61.32866686,
-            "performance": -2.653
+            "totalInvestment": 20.0,
+            "currentSolde": 21.38041976,
+            "performance": 6.902
         },
         "timeframe": "1h",
         "levier": "2"
